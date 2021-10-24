@@ -1,22 +1,18 @@
-# TS-Boilerplate
+# Birthworks
 
-![demo](docs/images/demo.png 'Demo')
+Dashboard to access, filter, and search users in birthworks unified databse.
 
-Dead simple monorepo boilerplate web project designed to take you from Git Cloning to Heroku Deployment in less 5 minutes. 🚀🤩
+**Project Manager/Technical Lead:** Ziya Xu, Mohamed Abaker.
 
-It is built using the TypeScript, React, Express, Mongoose, MongoDB stack. If you want to checkout an example project based on TS-Boilerplate, check out [TS-Canvas](https://github.com/orang-utan/ts-canvas).
+**Team Members:**
 
-## Features
-
-Essentially, here're some of its features:
-
-- JWT-based user authentication / authorization system
-- Silent refresh / access token retrieval
-- Clean mono-repo structure with Express Server and React Client
-- Code linting setup according to Airbnb standards
-- Able to connect to MongoDB and WebSockets
-- Pretty UI using Bulma and Styled Components
-- Easy deployability on Heroku (literally 3 steps, it's really easy)
+- Ben Demmers
+- Silvi Kabra
+- Ricky Raup
+- Grace Fujinaga
+- Joseph Zhang
+- Aditya Bhati
+- Taran Anantasagar
 
 ## Setting Up
 
@@ -28,30 +24,30 @@ Essentially, here're some of its features:
 - Install [Node.JS](https://nodejs.org/en/download/)
 - Install [Yarn Package Manager](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
-#### Installing Requirements
-
-```bash
-$ git clone https://github.com/Orang-utan/ts-boilerplate.git
-$ cd ts-boilerplate
-$ yarn setup
-```
-
 ##### Configuring Enviromental Variable
 
-Create file called ".env.development" in root directory, it should look like the following:
+Create file called ".env.development" in a "config" folder in the root directory (you may have to create a new config folder).
+It should look like the following:
 
 ```
 ATLAS_URI=mongodb-connection-string-placeholder
 JWT_SECRET=my-secret-jwt-key-placeholder
 ```
 
-Then, create another file called ".env" in "src/client", it should look like the following:
+Then, create another file called ".env.development.local" in "src/client", it should look like the following:
 
 ```
 REACT_APP_API_URL="http://localhost:5000"
 ```
 
 #### Running Project
+
+For the first time after cloning only:
+
+```bash
+$ # setup yarn
+$ yarn setup
+```
 
 ```bash
 $ # run both server and client
@@ -61,16 +57,3 @@ $ yarn server
 $ # run client only
 $ yarn client
 ```
-
-#### To Deploy
-
-Deploying this project on Heroku is dead simple. Basically, go on Heroku and create a new Heroku app, connect your project Github to your new Heroku app, and hit Deploy. Note, that you will need to configure the enviromental variable under settings.
-
-
-## Todo
-- [ ] Account Confirmation / Password Reset (SendGrid)
-- [ ] Migrate Project from MongoDB to PostgreSQL
-- [ ] Refactor Backend to CLEAN architecture
-- [ ] File upload functionality
-- [ ] CRUD Operations Demo
-- [ ] Dockerize + Kubernetes Infrastructure
