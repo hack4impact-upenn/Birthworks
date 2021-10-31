@@ -3,6 +3,77 @@ import { Formik, Form } from 'formik';
 import { Redirect } from 'react-router-dom';
 import { AuthContext } from '../../context';
 import FormField from '../../components/FormField';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const Container = styled.div`
+  background-color: #edf0f1;
+  border-radius: 20px;
+  padding: 60px;
+  max-width: 700px !important;
+  top: 100px;
+`;
+
+const Divider = styled.hr`
+  color: black;
+  background-color: rgba(150, 150, 150, 1);
+  width: 40%;
+  margin: 20px auto;
+`;
+
+const SubmitButton = styled.button`
+  width: 70%;
+  font-weight: 700;
+  background-color: #b4579e !important;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+`;
+
+const StyledHeader = styled.h1`
+  text-align: center;
+  margin: 0 !important;
+  font-weight: 700;
+`;
+
+const IconContainer = styled.span`
+  color: #969696 !important;
+`;
+
+const StyledField = styled.div`
+  margin: 20px auto !important;
+  width: 70%;
+`;
+
+const inputStyles = {
+  backgroundColor: 'white',
+  color: 'rgba(150, 150, 150, 1)',
+  borderRadius: '5px',
+  padding: '10px 20px 8px 36px',
+  border: 'none',
+  width: '100%',
+  fontFamily: 'Montserrat',
+};
+
+const GlobalStyle = createGlobalStyle`
+  ::placeholder {
+    color: rgba(150, 150, 150, 1) !important;
+  }
+`;
+
+const FieldWrapper = ({ children, icon }) => {
+  if (!icon) return children;
+
+  return (
+    <StyledField className="field">
+      <p className="control has-icons-left has-icons-right">
+        {children}
+        <IconContainer className="icon is-small is-left">
+          <i className={`fas ${icon}`}></i>
+        </IconContainer>
+      </p>
+    </StyledField>
+  );
+};
 
 function LoginPage() {
   const auth = useContext(AuthContext);
@@ -19,43 +90,52 @@ function LoginPage() {
         error.response.status === 400
           ? error.response.data.message
           : 'An unknown error occurred.';
-      actions.setFieldError('email', message);
       actions.setFieldError('password', message);
     }
   }
 
   return (
-    <div className="container">
-      <h1 className="title mt-4">Login</h1>
+    <Container className="container">
+      <GlobalStyle></GlobalStyle>
+      <StyledHeader className="title mt-4">Birthworks Dashboard</StyledHeader>
+      <Divider></Divider>
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={handleSubmit}
       >
         {({ errors, isSubmitting }) => (
           <Form>
-            <FormField
-              name="email"
-              type="email"
-              label="Email"
-              errors={errors}
-            />
-            <FormField
-              name="password"
-              type="password"
-              label="Password"
-              errors={errors}
-            />
-            <button
+            <FieldWrapper icon="fa-user">
+              <FormField
+                name="email"
+                type="email"
+                placeholder="Username"
+                placeholderTextColor="#969696"
+                errors={errors}
+                style={inputStyles}
+              />
+            </FieldWrapper>
+            <FieldWrapper icon="fa-lock">
+              <FormField
+                name="password"
+                type="password"
+                placeholder="Password"
+                placeholderTextColor="#969696"
+                errors={errors}
+                style={inputStyles}
+              />
+            </FieldWrapper>
+            <SubmitButton
               type="submit"
               className="button is-link"
               disabled={isSubmitting}
             >
-              Submit
-            </button>
+              Log In
+            </SubmitButton>
           </Form>
         )}
       </Formik>
-    </div>
+    </Container>
   );
 }
 
