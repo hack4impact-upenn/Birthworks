@@ -45,7 +45,7 @@ function App() {
       <Router>
         <AppContainer>
           <ReactQueryCacheProvider queryCache={queryCache}>
-            <ReactQueryDevtools />
+            {false && <ReactQueryDevtools />}
             <main>
               <Switch>
                 <PublicRoute exact path="/" component={IndexPage} />
