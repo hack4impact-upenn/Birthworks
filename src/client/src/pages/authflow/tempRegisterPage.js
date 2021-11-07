@@ -66,6 +66,19 @@ const MenuButton1 = styled.button`
   display: block;
 `;
 
+const MenuButton2 = styled.button`
+  width: 10%;
+  font-weight: 700;
+  text-align: left;
+  font-size: 10px;
+  background-color: #ffffff !important;
+  border: 10px #000000 !important;
+  color: #000000 !important;
+  border-radius: 1px;
+  margin-right: left;
+  display: block;
+`;
+
 const StyledField = styled.div`
   margin: 20px auto !important;
   width: 50%;
@@ -138,13 +151,13 @@ function RegisterPage() {
               >
                 View Existing Users
               </MenuButton1>
-              <MenuButton1
+              <MenuButton2
                 type="menu"
                 className="button is-link"
                 disabled={isSubmitting}
               >
                 Add Users
-              </MenuButton1>
+              </MenuButton2>
             </Container3>
             <Container3 className="container"></Container3>
             <Container2 className="container">
