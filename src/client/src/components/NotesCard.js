@@ -40,7 +40,16 @@ const OldNotesField = styled.div`
     color: #969696;
     padding-bottom: 10px;
   }
-  p {
+  span {
+    white-space: pre-line;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #969696;
   }
 `;
 const NewNotesField = styled.div`
@@ -74,6 +83,29 @@ const NewNotesField = styled.div`
   }
   span {
     white-space: pre-line;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #969696;
+  }
+  input[type='submit'] {
+    padding: 5px 15px;
+    background: #b4579e;
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
   }
 `;
 const Icon = styled.span`
@@ -114,21 +146,20 @@ function NotesCard() {
         {editing ? (
           <form onSubmit={UpdateText}>
             <textarea value={newNotes} onChange={handleChange} rows="10" />
-            <input type="submit" value="Save" />{' '}
+            <input type="submit" value="Save" />
           </form>
         ) : (
           <div>
-            <span>{newNotes}</span>{' '}
+            <span>{newNotes}</span>
             <Icon onClick={() => setEditing(!editing)}>
-              {' '}
               <i class="fas fa-pencil-alt"></i>
-            </Icon>{' '}
+            </Icon>
           </div>
         )}
       </NewNotesField>
       <OldNotesField>
         <h1>Old Notes</h1>
-        <p>{dummyUser.oldNotes}</p>
+        <span>{dummyUser.oldNotes}</span>
       </OldNotesField>
     </Container>
   );
