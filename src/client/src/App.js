@@ -15,6 +15,8 @@ import IndexPage from './pages/IndexPage';
 import NotFoundPage from './pages/NotFoundPage';
 import DashboardPage from './pages/DashboardPage';
 import AdminUserManagementPage from './pages/AdminUserManagementPage';
+import CertificationPage from './pages/CertificationPage';
+import CertificationBox from './components/CertificationBox';
 
 const queryCache = new QueryCache();
 
