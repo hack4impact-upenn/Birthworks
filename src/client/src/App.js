@@ -14,6 +14,8 @@ import RegisterPage from './pages/authflow/RegisterPage';
 import IndexPage from './pages/IndexPage';
 import NotFoundPage from './pages/NotFoundPage';
 import DashboardPage from './pages/DashboardPage';
+import CertificationPage from './pages/CertificationPage';
+import CertificationBox from './components/CertificationBox';
 
 const queryCache = new QueryCache();
 
