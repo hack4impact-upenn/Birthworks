@@ -2,11 +2,7 @@ import { Field, ErrorMessage } from 'formik';
 import clsx from 'clsx';
 
 /** A `<Field />` from Formik with error messages & basic styling. */
-<<<<<<< HEAD
-function FormField({ name, type, label, placeholder, errors }) {
-=======
 function FormField({ name, type, label, placeholder, style, errors }) {
->>>>>>> c9f1e37 (task completed)
   return (
     <div className="field">
       <label className="label">{label}</label>

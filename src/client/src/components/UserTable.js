@@ -6,6 +6,7 @@ const Table = styled.table`
   border: 1px solid #000000;
   display: table;
   width: 100%;
+  padding-bottom: 20px;
   border-collapse: separate;
   border-spacing: 0px 10px;
   border-top-left-radius: 15px;
