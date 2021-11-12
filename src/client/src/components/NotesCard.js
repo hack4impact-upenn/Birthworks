@@ -50,6 +50,7 @@ const OldNotesField = styled.div`
     display: flex;
     align-items: center;
     color: #969696;
+  p {
   }
 `;
 const NewNotesField = styled.div`
@@ -146,20 +147,21 @@ function NotesCard() {
         {editing ? (
           <form onSubmit={UpdateText}>
             <textarea value={newNotes} onChange={handleChange} rows="10" />
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" />{' '}
           </form>
         ) : (
           <div>
-            <span>{newNotes}</span>
+            <span>{newNotes}</span>{' '}
             <Icon onClick={() => setEditing(!editing)}>
+              {' '}
               <i class="fas fa-pencil-alt"></i>
-            </Icon>
+            </Icon>{' '}
           </div>
         )}
       </NewNotesField>
       <OldNotesField>
         <h1>Old Notes</h1>
-        <span>{dummyUser.oldNotes}</span>
+        <p>{dummyUser.oldNotes}</p>
       </OldNotesField>
     </Container>
   );
