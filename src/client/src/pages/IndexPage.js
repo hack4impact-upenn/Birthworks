@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import api from '../api';
+import CertificationPage from './CertificationPage';
 
 function IndexPage() {
   // Example API request with caching, fetch list of users.
@@ -10,6 +11,25 @@ function IndexPage() {
       return res.data;
     })
   );
+
+  const certifications = [
+    {
+      entryDate: Date.now(),
+      completionDate: Date.now(),
+      recertificationDate: Date.now(),
+      certificationDate: Date.now(),
+      trainer: 'some trainer',
+      name: 'some name',
+    },
+    {
+      entryDate: Date.now(),
+      completionDate: Date.now(),
+      recertificationDate: Date.now(),
+      certificationDate: Date.now(),
+      trainer: 'cert trainer',
+      name: 'another name',
+    },
+  ];
 
   return (
     <div className="container center">
@@ -35,6 +55,7 @@ function IndexPage() {
               <p>{user.email}</p>
             </article>
           ))}
+          <CertificationPage certifications={certifications} />
         </div>
       )}
       <footer className="section">
