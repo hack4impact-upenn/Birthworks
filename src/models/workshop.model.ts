@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 interface IWorkshop extends mongoose.Document {
-  id: number;
+  _id: number;
   customer_id: number;
   start_date: Date;
   end_date: Date;
