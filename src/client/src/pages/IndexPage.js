@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query';
 import api from '../api';
 import CertificationPage from './CertificationPage';
+import NotesCard from '../components/NotesCard';
 
 function IndexPage() {
   // Example API request with caching, fetch list of users.
@@ -58,6 +59,7 @@ function IndexPage() {
           <CertificationPage certifications={certifications} />
         </div>
       )}
+      <NotesCard />
       <footer className="section">
         To be filled in with the actual app, soon! :)
       </footer>
