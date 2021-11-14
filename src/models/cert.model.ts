@@ -4,21 +4,23 @@ const { Schema } = mongoose;
 
 interface ICert extends mongoose.Document {
   _id: string;
+  customer_id: number;
   name: string;
-  entryDate: Date;
-  completionDate: Date;
-  certificationDate: Date;
-  recertificationDate: Date;
-  trainer: string;
+  entry_date: Date;
+  completion_date: Date;
+  certificate: Date;
+  recertification_date: [Date];
+  mentor: string;
 }
 
 const CertSchema = new Schema({
   name: { type: String, required: true },
-  entryDate: { type: Date, required: true },
-  completionDate: { type: Date, required: true },
-  certificationDate: { type: Date, required: true },
-  recertificationDate: { type: Date, required: true },
-  trainer: { type: String, required: true },
+  customer_id: { type: Number, required: true },
+  entry_date: { type: Date, required: true },
+  completion_date: { type: Date, required: true },
+  certificate: { type: Date, required: true },
+  recertification_date: { type: [Date], required: true },
+  mentor: { type: String, required: false },
 });
 
 const Cert = mongoose.model<ICert>('Cert', CertSchema);
