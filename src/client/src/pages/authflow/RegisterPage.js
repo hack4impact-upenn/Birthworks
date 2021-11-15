@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { AuthContext } from '../../context';
 import api from '../../api';
 import FormField from '../../components/FormField';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -87,12 +87,6 @@ const inputStyles1 = {
   fontFamily: 'Montserrat',
 };
 
-const GlobalStyle = createGlobalStyle`
-  ::placeholder {
-    color: rgba(150, 150, 150, 1) !important;
-  }
-  `;
-
 function RegisterPage() {
   const auth = useContext(AuthContext);
 
@@ -123,7 +117,6 @@ function RegisterPage() {
 
   return (
     <Container className="container">
-      <GlobalStyle></GlobalStyle>
       <Formik
         initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
         onSubmit={handleSubmit}
@@ -154,7 +147,6 @@ function RegisterPage() {
                 placeholder="First Name"
                 placeholderTextColor="#969696"
                 errors={errors}
-                style={inputStyles1}
               />
             </Container2>
             <Container4 className="container">
@@ -164,7 +156,6 @@ function RegisterPage() {
                 placeholder="Last Name"
                 placeholderTextColor="#969696"
                 errors={errors}
-                style={inputStyles1}
               />
             </Container4>
             <FormField
@@ -173,7 +164,6 @@ function RegisterPage() {
               placeholder="Email"
               placeholderTextColor="#969696"
               errors={errors}
-              style={inputStyles1}
             />
             <FormField
               name="password"
@@ -181,7 +171,6 @@ function RegisterPage() {
               placeholder="Password"
               placeholderTextColor="#969696"
               errors={errors}
-              style={inputStyles1}
             />
 
             <CreateUserButton

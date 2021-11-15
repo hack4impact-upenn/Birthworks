@@ -20,6 +20,12 @@ import CertificationBox from './components/CertificationBox';
 
 const queryCache = new QueryCache();
 
+const GlobalStyle = createGlobalStyle`
+  ::placeholder {
+    color: rgba(150, 150, 150, 1) !important;
+  }
+  `;
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     () => auth.isAuthenticated
@@ -47,6 +53,7 @@ function App() {
     <AuthContext.Provider value={authContextValue}>
       <Router>
         <AppContainer>
+          <GlobalStyle></GlobalStyle>
           <ReactQueryCacheProvider queryCache={queryCache}>
             {false && <ReactQueryDevtools />}
             <main>
