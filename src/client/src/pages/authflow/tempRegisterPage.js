@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { AuthContext } from '../../context';
 import api from '../../api';
 import FormField from '../../components/FormField';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -66,6 +66,19 @@ const MenuButton1 = styled.button`
   display: block;
 `;
 
+const MenuButton2 = styled.button`
+  width: 10%;
+  font-weight: 700;
+  text-align: left;
+  font-size: 10px;
+  background-color: #ffffff !important;
+  border: 10px #000000 !important;
+  color: #000000 !important;
+  border-radius: 1px;
+  margin-right: left;
+  display: block;
+`;
+
 const StyledField = styled.div`
   margin: 20px auto !important;
   width: 50%;
@@ -86,6 +99,12 @@ const inputStyles1 = {
   width: '100%',
   fontFamily: 'Montserrat',
 };
+
+const GlobalStyle = createGlobalStyle`
+  ::placeholder {
+    color: rgba(150, 150, 150, 1) !important;
+  }
+  `;
 
 function RegisterPage() {
   const auth = useContext(AuthContext);
@@ -117,6 +136,7 @@ function RegisterPage() {
 
   return (
     <Container className="container">
+      <GlobalStyle></GlobalStyle>
       <Formik
         initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
         onSubmit={handleSubmit}
@@ -131,13 +151,13 @@ function RegisterPage() {
               >
                 View Existing Users
               </MenuButton1>
-              <MenuButton1
+              <MenuButton2
                 type="menu"
                 className="button is-link"
                 disabled={isSubmitting}
               >
                 Add Users
-              </MenuButton1>
+              </MenuButton2>
             </Container3>
             <Container3 className="container"></Container3>
             <Container2 className="container">
@@ -147,6 +167,7 @@ function RegisterPage() {
                 placeholder="First Name"
                 placeholderTextColor="#969696"
                 errors={errors}
+                style={inputStyles1}
               />
             </Container2>
             <Container4 className="container">
@@ -156,6 +177,7 @@ function RegisterPage() {
                 placeholder="Last Name"
                 placeholderTextColor="#969696"
                 errors={errors}
+                style={inputStyles1}
               />
             </Container4>
             <FormField
@@ -164,6 +186,7 @@ function RegisterPage() {
               placeholder="Email"
               placeholderTextColor="#969696"
               errors={errors}
+              style={inputStyles1}
             />
             <FormField
               name="password"
@@ -171,6 +194,7 @@ function RegisterPage() {
               placeholder="Password"
               placeholderTextColor="#969696"
               errors={errors}
+              style={inputStyles1}
             />
 
             <CreateUserButton
