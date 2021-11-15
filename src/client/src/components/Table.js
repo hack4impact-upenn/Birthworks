@@ -5,6 +5,7 @@ import Colors from '../common/Colors';
 const StyledTable = styled.table`
   border: 1px solid #000000;
   display: table;
+  table-layout: auto;
   width: 100%;
   padding-bottom: 20px;
   border-collapse: separate;
@@ -21,24 +22,14 @@ const StyledTable = styled.table`
     align-items: center;
     text-align: center;
     color: #000000;
+    padding-right: 1%;
+    max-width: 400px;
   }
-  th#col0 {
+  th:first-child {
     padding-left: 1%;
   }
-  th#col1 {
-    width: 20%;
-    padding-left: 30px;
-  }
-  th#col2 {
-    width: 60%;
-    text-align: left;
-    align-items: left;
-    padding-left: 80px;
-  }
-  th#col3 {
-    text-align: left;
-    align-items: left;
-    padding-right: 20px;
+  td:first-child {
+    padding-left: 1%;
   }
   tr#hoverableRow:hover {
     text-decoration: underline;
@@ -52,29 +43,11 @@ const StyledTable = styled.table`
     font-size: 16px;
     padding-bottom: 10px;
     border-bottom: 1px solid #969696;
+    margin-right: 1%;
+    max-width: 400px;
+    word-break: break-all;
   }
-  td#dataCol0 {
-    position: relative;
-    top: 4px;
-    padding-left: 4%;
-  }
-  td#dataCol1 {
-    width: 25%;
-    position: relative;
-    top: 4px;
-    padding-left: 7%;
-  }
-  td#dataCol2 {
-    width: 30%;
-    position: relative;
-    top: 4px;
-    text-align: left;
-    padding-left: 10%;
-  }
-  td#dataCol3 {
-    position: relative;
-    top: 4px;
-    padding-right: 20px;
+  .deleteData {
     color: #ff0505;
     font-weight: 600;
   }
@@ -84,7 +57,7 @@ function getDeleteElement(i, j) {
   console.log('delete col');
   console.log(`dataCol${j}`);
   return (
-    <td key={`row${i}col${j}`} id={`dataCol${j}`}>
+    <td key={`row${i}col${j}`} id={`dataCol${j}`} class={'deleteData'}>
       Delete
     </td>
   );

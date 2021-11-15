@@ -12,8 +12,7 @@ const placeholderCustomers = [
   {
     Id: '2',
     Name: 'Mohamed Abaker',
-    Email:
-      'mohamed.abakerggggggggggggggggggggggggggggggggggggggggggggggggggggggg@hack4impact.org',
+    Email: 'mohamed.abakergggggggggggggggggggggggggggggggg@hack4impact.org',
     PhoneNumber: 'XXX-XXX-XXXX',
   },
   {
