@@ -53,17 +53,17 @@ const StyledTable = styled.table`
     padding-left: 4%;
   }
   td#dataCol1 {
-    width: 20%;
+    width: 25%;
     position: relative;
     top: 4px;
     padding-left: 7%;
   }
   td#dataCol2 {
-    width: 60%;
+    width: 30%;
     position: relative;
     top: 4px;
     text-align: left;
-    padding-left: 80px;
+    padding-left: 10%;
   }
   td#dataCol3 {
     position: relative;
