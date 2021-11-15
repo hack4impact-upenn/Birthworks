@@ -2,6 +2,7 @@ import { useQuery } from 'react-query';
 import api from '../api';
 import CertificationPage from './CertificationPage';
 import NotesCard from '../components/NotesCard';
+import WorkshopCard from '../components/WorkshopCard';
 
 function IndexPage() {
   // Example API request with caching, fetch list of users.
@@ -29,6 +30,23 @@ function IndexPage() {
       certificationDate: Date.now(),
       trainer: 'cert trainer',
       name: 'another name',
+    },
+  ];
+
+  const workshops = [
+    {
+      startDate: Date.now(),
+      endDate: Date.now(),
+      location: 'virtual',
+      mentor: 'some trainer',
+      name: 'some name',
+    },
+    {
+      startDate: Date.now(),
+      endDate: Date.now(),
+      location: 'virtual',
+      mentor: 'some trainer',
+      name: 'some name',
     },
   ];
 
@@ -60,6 +78,7 @@ function IndexPage() {
         </div>
       )}
       <NotesCard />
+      <WorkshopCard workshops={workshops} />
       <footer className="section">
         To be filled in with the actual app, soon! :)
       </footer>
