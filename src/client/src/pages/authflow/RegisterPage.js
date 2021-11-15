@@ -145,7 +145,6 @@ function RegisterPage() {
                 name="firstName"
                 type="firstName"
                 placeholder="First Name"
-                placeholderTextColor="#969696"
                 errors={errors}
               />
             </Container2>
@@ -154,22 +153,19 @@ function RegisterPage() {
                 name="lastName"
                 type="lastName"
                 placeholder="Last Name"
-                placeholderTextColor="#969696"
                 errors={errors}
               />
             </Container4>
             <FormField
-              name="name=email"
+              name="name"
               type="email"
               placeholder="Email"
-              placeholderTextColor="#969696"
               errors={errors}
             />
             <FormField
               name="password"
               type="password"
               placeholder="Password"
-              placeholderTextColor="#969696"
               errors={errors}
             />
 
