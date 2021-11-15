@@ -17,6 +17,8 @@ import DashboardPage from './pages/DashboardPage';
 import AdminUserManagementPage from './pages/AdminUserManagementPage';
 import CertificationPage from './pages/CertificationPage';
 import CertificationBox from './components/CertificationBox';
+import PersonalInfoPage from './pages/PersonalInfoPage';
+//import PersonalInfoBox from './components/PersonalInfoBox';
 
 const queryCache = new QueryCache();
 
@@ -55,9 +57,12 @@ function App() {
                 <PublicRoute exact path="/login" component={LoginPage} />
                 <PublicRoute exact path="/register" component={RegisterPage} />
                 <PublicRoute
-                  exact
-                  path="/users"
+                  exact path="/users"
                   component={AdminUserManagementPage}
+                />
+                <PublicRoute
+                  exact path="/personalinfo"
+                  component={PersonalInfoPage}
                 />
                 <PrivateRoute
                   exact
