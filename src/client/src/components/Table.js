@@ -40,6 +40,12 @@ const StyledTable = styled.table`
     align-items: left;
     padding-right: 20px;
   }
+  tr#hoverableRow:hover {
+    text-decoration: underline;
+  }
+  tr#hoverableRow {
+    text-decoration: none;
+  }
   td {
     font-style: normal;
     font-weight: 400;
@@ -101,8 +107,9 @@ function Table(props) {
       <tbody>
         {props.data.map(function (entry, i) {
           if (props.hoverable) {
+            console.log('hoverable');
             return (
-              <tr key={i} onClick={props.rowLink}>
+              <tr key={i} id={'hoverableRow'} onClick={props.rowLink}>
                 {props.dataColumns.map(function (col, j) {
                   if (col == 'Delete') {
                     return getDeleteElement(i, j);
