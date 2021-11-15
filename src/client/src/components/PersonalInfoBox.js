@@ -20,23 +20,30 @@ function PersonalInfoBox({ personal_info }) {
     <div className="container">
       <Box>
         <div className="block">
-          <strong>{personal_info.name}</strong>.
+          <strong>{personal_info.name || 'Last Name, First Name'}</strong>.
+        </div>
+        <div className="block">
+          {personal_info.location || 'City, State, Country'}
         </div>
         <div className="block">
           {' '}
-          {format(personal_info.location, 'City, State, Country')}
+          Phone Number: {personal_info.phoneNumber || '(xxx) xxx-xxxx'}
         </div>
         <div className="block">
-          Phone Number: {format(personal_info.phoneNumber, '(xxx)xxx-xxxx')}
+          Email: {personal_info.email || 'username@birthworks.org'}
         </div>
         <div className="block">
-          Email: {format(personal_info.email, 'username@birthworks.org')}
+          {' '}
+          Member Since:{' '}
+          {personal_info.memberSinceDate
+            ? format(personal_info.memberSinceDate, 'MM/dd/yy')
+            : 'MM/DD/YY'}
         </div>
         <div className="block">
-          Member Since: {format(personal_info.memberSinceDate, 'MM/DD/YY')}
-        </div>
-        <div className="block">
-          Member Until: {format(personal_info.memberUntilDate, 'MM/DD/YY')}
+          Member Until:{' '}
+          {personal_info.memberUntilDate
+            ? format(personal_info.memberUntilDate, 'MM/dd/yy')
+            : 'MM/DD/YY'}
         </div>
       </Box>
     </div>

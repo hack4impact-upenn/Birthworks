@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PersonalInfoBox from '../components/PersonalInfoBox';
 import 'bulma/css/bulma.min.css';
 import { Box, Block, Columns, Column } from 'react-bulma-components';
+import { data } from 'dom7';
 
 // type PersonalInfoProps = {
 //   personal_info: IPersInf[],
@@ -43,34 +44,20 @@ const PersonalInfoContainer = styled.div`
 `;
 
 function PersonalInfoPage({ personal_info }) {
+  let date1 = new Date('2014-12-26');
+  let date2 = new Date('2020-12-26');
+  var dict = {
+    name: 'Abaker, Mo',
+    location: 'Costa Rica',
+    phoneNumber: '4085555555',
+    email: 'mobamba@email.com',
+    memberSinceDate: date1,
+    memberUntilDate: date2,
+  };
   return (
     <div className="container">
       <WrapperBox>
-        <PersonalInfoContainer>
-          <div className="block">
-            <NameHeading>Last Name, First Name</NameHeading>
-          </div>
-
-          <div className="block">
-            <SmallerHeading>City, State, Country</SmallerHeading>
-          </div>
-
-          <div className="block">
-            <SmallerHeading>Phone Number: (xxx) xxx-xxxx</SmallerHeading>
-          </div>
-
-          <div className="block">
-            <SmallerHeading>Email: username@birthworks.org</SmallerHeading>
-          </div>
-
-          <div className="block">
-            <SmallerHeading>Member Since: MM/DD/YYYY</SmallerHeading>
-          </div>
-
-          <div className="block">
-            <SmallerHeading>Member Until: MM/DD/YYYY</SmallerHeading>
-          </div>
-        </PersonalInfoContainer>
+        <PersonalInfoBox personal_info={dict}></PersonalInfoBox>
       </WrapperBox>
     </div>
   );
