@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import api from '../api';
-import CertificationPage from './CertificationPage';
+import CertificationPage from '../components/CertificationCard';
 import NotesCard from '../components/NotesCard';
 import WorkshopCard from '../components/WorkshopCard';
 import DropdownComponent from '../components/DropdownComponent';
@@ -126,7 +126,7 @@ function IndexPage() {
               <p>{user.email}</p>
             </article>
           ))}
-          <CertificationPage certifications={certifications} />
+          <CertificationCard certifications={certifications} />
         </div>
       )}
       <UserFilter

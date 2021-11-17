@@ -1,3 +1,4 @@
+import { divide } from 'mathjs';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Colors from '../common/Colors';
@@ -14,7 +15,6 @@ const Container = styled.div`
   padding: 51px;
 
   h1 {
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -25,16 +25,14 @@ const Container = styled.div`
     padding-bottom: 30px;
   }
 `;
+
 const OldNotesField = styled.div`
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
     #ffffff;
-  border: 1px solid #969696;
   box-sizing: border-box;
-  border-radius: 20px;
   padding: 27px;
 
   h1 {
-    font-family: 'Roboto';
     font-weight: 700;
     font-size: 24px;
     color: #969696;
@@ -42,7 +40,6 @@ const OldNotesField = styled.div`
   }
   span {
     white-space: pre-line;
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -57,13 +54,8 @@ const NewNotesField = styled.div`
   position: relative;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
     #ffffff;
-  border: 1px solid #969696;
-  box-sizing: border-box;
-  border-radius: 20px;
   padding: 27px;
-  margin-bottom: 45px;
   h1 {
-    font-family: 'Roboto';
     font-weight: 700;
     font-size: 24px;
     color: #969696;
@@ -74,17 +66,14 @@ const NewNotesField = styled.div`
     width: 100%;
     border: 1px solid #969696;
     position: relative;
-    margin-bottom: 10px;
   }
   input {
     position: absolute;
     bottom: 0;
     left: 17px;
-    margin: 10px;
   }
   span {
     white-space: pre-line;
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -100,7 +89,6 @@ const NewNotesField = styled.div`
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
     display: flex;
@@ -114,6 +102,11 @@ const Icon = styled.span`
   position: absolute;
   right: 25px;
   bottom: 23px;
+`;
+
+const NameHeading = styled.h1`
+  font-size: 24px;
+  font-weight: 700;
 `;
 
 const dummyUser = {
@@ -138,32 +131,42 @@ function NotesCard() {
   };
 
   return (
-    <Container>
-      <h1>
-        {dummyUser.lastName}, {dummyUser.firstName}
-      </h1>
-      <NewNotesField>
-        <h1>New Notes</h1>
-        {editing ? (
-          <form onSubmit={UpdateText}>
-            <textarea value={newNotes} onChange={handleChange} rows="10" />
-            <input type="submit" value="Save" />{' '}
-          </form>
-        ) : (
-          <div>
-            <span>{newNotes}</span>{' '}
-            <Icon onClick={() => setEditing(!editing)}>
-              {' '}
-              <i class="fas fa-pencil-alt"></i>
-            </Icon>{' '}
-          </div>
-        )}
-      </NewNotesField>
-      <OldNotesField>
-        <h1>Old Notes</h1>
-        <p>{dummyUser.oldNotes}</p>
-      </OldNotesField>
-    </Container>
+    <div>
+      <div class="block">
+        <NameHeading>
+          {dummyUser.lastName}, {dummyUser.firstName}
+        </NameHeading>
+      </div>
+      <div class="block">
+        <div class="box">
+          <NewNotesField>
+            <h1>New Notes</h1>
+            {editing ? (
+              <form onSubmit={UpdateText}>
+                <textarea value={newNotes} onChange={handleChange} rows="10" />
+                <input type="submit" value="Save" />{' '}
+              </form>
+            ) : (
+              <div>
+                <span>{newNotes}</span>{' '}
+                <Icon onClick={() => setEditing(!editing)}>
+                  {' '}
+                  <i class="fas fa-pencil-alt"></i>
+                </Icon>{' '}
+              </div>
+            )}
+          </NewNotesField>
+        </div>
+      </div>
+      <div class="block">
+        <div class="box">
+          <OldNotesField>
+            <h1>Old Notes</h1>
+            <p>{dummyUser.oldNotes}</p>
+          </OldNotesField>
+        </div>
+      </div>
+    </div>
   );
 }
 
