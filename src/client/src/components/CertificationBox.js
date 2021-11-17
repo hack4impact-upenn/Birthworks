@@ -16,8 +16,10 @@ function CertificationBox({ certification }) {
   return (
     <div className="container">
       <Box>
-        <div>
-          <strong>{certification.name}</strong>.
+        <div className="block">
+          <div>
+            <strong>{certification.name}</strong>.
+          </div>
         </div>
         <div className="block">
           <Columns>
