@@ -3,6 +3,8 @@ import api from '../api';
 import CertificationPage from './CertificationPage';
 import NotesCard from '../components/NotesCard';
 import WorkshopCard from '../components/WorkshopCard';
+import DropdownComponent from '../components/DropdownComponent';
+import UserFilter from '../components/UserFilter';
 
 function IndexPage() {
   // Example API request with caching, fetch list of users.
@@ -50,6 +52,56 @@ function IndexPage() {
     },
   ];
 
+  const options1 = [
+    {
+      name: 'Due in 6 months',
+    },
+    {
+      name: 'Due in 3 months',
+    },
+    {
+      name: 'Due in 1 month',
+    },
+    {
+      name: 'Expired',
+    },
+  ];
+
+  const name1 = 'Recertification';
+
+  const options2 = [
+    {
+      name: 'Due in 2 months',
+    },
+    {
+      name: 'Due in 1 month',
+    },
+    {
+      name: 'Expired',
+    },
+  ];
+  const name2 = 'Membership Renewal';
+
+  const options3 = [
+    {
+      name: 'Childbirth Educator',
+    },
+    {
+      name: 'Birth Doula',
+    },
+    {
+      name: 'Postpartum Doula',
+    },
+    {
+      name: 'ACED',
+    },
+    {
+      name: 'Kangaroula',
+    },
+  ];
+
+  const name3 = 'Program';
+
   return (
     <div className="container center">
       <header className="hero">
@@ -77,6 +129,14 @@ function IndexPage() {
           <CertificationPage certifications={certifications} />
         </div>
       )}
+      <UserFilter
+        name1={name1}
+        options1={options1}
+        name2={name2}
+        options2={options2}
+        name3={name3}
+        options3={options3}
+      />
       <NotesCard />
       <WorkshopCard workshops={workshops} />
       <footer className="section">
