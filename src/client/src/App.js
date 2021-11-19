@@ -15,6 +15,7 @@ import IndexPage from './pages/IndexPage';
 import NotFoundPage from './pages/NotFoundPage';
 import DashboardPage from './pages/DashboardPage';
 import AdminUserManagementPage from './pages/AdminUserManagementPage';
+import ViewCustomersPage from './pages/ViewCustomersPage';
 import CertificationPage from './pages/CertificationPage';
 import CertificationBox from './components/CertificationBox';
 import PersonalInfoPage from './pages/PersonalInfoPage';
@@ -57,11 +58,18 @@ function App() {
                 <PublicRoute exact path="/login" component={LoginPage} />
                 <PublicRoute exact path="/register" component={RegisterPage} />
                 <PublicRoute
-                  exact path="/users"
+                  exact
+                  path="/users"
                   component={AdminUserManagementPage}
                 />
                 <PublicRoute
-                  exact path="/personalinfo"
+                  exact
+                  path="/customers"
+                  component={ViewCustomersPage}
+                />
+                <PublicRoute
+                  exact
+                  path="/personalinfo"
                   component={PersonalInfoPage}
                 />
                 <PrivateRoute
