@@ -21,11 +21,12 @@ function getMaxExpDate(months: number) {
   return new Date(year, month, day);
 }
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
   console.log(getMaxExpDate(27));
   console.log(getMaxExpDate(1));
-  const { filters } = req.body.filters;
-  const { query } = req.body.query;
+  const { page_num } = req.body;
+  const { filters } = req.body;
+  const { query } = req.body;
   Customer.find({
     $or: [
       { first_name: { $regex: query } },
@@ -34,6 +35,7 @@ router.get('/', async (req, res) => {
       { phone: { $regex: query } },
     ],
   })
+    .skip(page_num * number_of_customers)
     .limit(number_of_customers)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((e) => errorHandler(res, e));
