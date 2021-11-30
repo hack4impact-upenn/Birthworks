@@ -1,10 +1,5 @@
 import { useQuery } from 'react-query';
 import api from '../api';
-import CertificationPage from '../components/CertificationCard';
-import NotesCard from '../components/NotesCard';
-import WorkshopCard from '../components/WorkshopCard';
-import DropdownComponent from '../components/DropdownComponent';
-import UserFilter from '../components/UserFilter';
 
 function IndexPage() {
   // Example API request with caching, fetch list of users.
@@ -126,7 +121,6 @@ function IndexPage() {
               <p>{user.email}</p>
             </article>
           ))}
-          <CertificationCard certifications={certifications} />
         </div>
       )}
       <UserFilter
@@ -137,8 +131,6 @@ function IndexPage() {
         name3={name3}
         options3={options3}
       />
-      <NotesCard />
-      <WorkshopCard workshops={workshops} />
       <footer className="section">
         To be filled in with the actual app, soon! :)
       </footer>
