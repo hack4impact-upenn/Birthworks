@@ -1,0 +1,1067 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: chrome://new-tab-page/
+Subject: New Tab
+Date: Wed, 17 Nov 2021 19:50:22 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----"
+
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/html
+Content-ID: <frame-EC9AC92B42877F5E745C8B8D6195949D@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome://new-tab-page/
+
+<!DOCTYPE html><html dir=3D"ltr" lang=3D"en" class=3D"focus-outline-visible=
+"><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-bfc7ed30-a=
+966-4cbc-a6e5-55f6a09e638c@mhtml.blink" /><link rel=3D"stylesheet" type=3D"=
+text/css" href=3D"cid:css-5c1a8519-15aa-418a-b36f-5679408276a2@mhtml.blink"=
+ /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-daad3ce0-78d7=
+-4c8e-b827-e611744569f5@mhtml.blink" /><link rel=3D"stylesheet" type=3D"tex=
+t/css" href=3D"cid:css-f5d727fb-133e-4271-9d04-9b31bb674bd5@mhtml.blink" />=
+<link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-7ed5dbb0-23ad-43=
+30-954c-1149a5cdeb15@mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/c=
+ss" href=3D"cid:css-2966bba6-cf92-40d8-829b-b4c3967a4d03@mhtml.blink" />
+   =20
+    <title>New Tab</title>
+   =20
+  <custom-style>
+ =20
+</custom-style>
+<custom-style>
+
+</custom-style>
+<custom-style>
+ =20
+</custom-style>
+<custom-style>
+ =20
+</custom-style><iron-iconset-svg name=3D"cr20" size=3D"20" style=3D"display=
+: none;">
+  <svg>
+    <defs>
+      <!--
+      Keep these in sorted order by id=3D"". See also http://goo.gl/Y1OdAq
+      -->
+      <g id=3D"domain">
+        <path d=3D"M2,3 L2,17 L11.8267655,17 L13.7904799,17 L18,17 L18,7 L1=
+2,7 L12,3 L2,3 Z M8,13 L10,13 L10,15 L8,15 L8,13 Z M4,13 L6,13 L6,15 L4,15 =
+L4,13 Z M8,9 L10,9 L10,11 L8,11 L8,9 Z M4,9 L6,9 L6,11 L4,11 L4,9 Z M12,9 L=
+16,9 L16,15 L12,15 L12,9 Z M12,11 L14,11 L14,13 L12,13 L12,11 Z M8,5 L10,5 =
+L10,7 L8,7 L8,5 Z M4,5 L6,5 L6,7 L4,7 L4,5 Z">
+        </path>
+      </g>
+      <g id=3D"kite">
+        <path fill-rule=3D"evenodd" clip-rule=3D"evenodd" d=3D"M4.6327 8.00=
+094L10.3199 2L16 8.00094L10.1848 16.8673C10.0995 16.9873 10.0071 17.1074 9.=
+90047 17.2199C9.42417 17.7225 8.79147 18 8.11611 18C7.44076 18 6.80806 17.7=
+225 6.33175 17.2199C5.85545 16.7173 5.59242 16.0497 5.59242 15.3371C5.59242=
+ 14.977 5.46445 14.647 5.22275 14.3919C4.98104 14.1369 4.66825 14.0019 4.32=
+701 14.0019H4V12.6667H4.32701C5.00237 12.6667 5.63507 12.9442 6.11137 13.44=
+68C6.58768 13.9494 6.85071 14.617 6.85071 15.3296C6.85071 15.6896 6.97867 1=
+6.0197 7.22038 16.2747C7.46209 16.5298 7.77488 16.6648 8.11611 16.6648C8.45=
+735 16.6648 8.77014 16.5223 9.01185 16.2747C9.02396 16.2601 9.03607 16.246 =
+9.04808 16.2319C9.08541 16.1883 9.12176 16.1458 9.15403 16.0947L9.55213 15.=
+4946L4.6327 8.00094ZM10.3199 13.9371L6.53802 8.17116L10.3199 4.1814L14.0963=
+ 8.17103L10.3199 13.9371Z">
+        </path>
+      </g>
+      <g id=3D"menu">
+        <path d=3D"M2 4h16v2H2zM2 9h16v2H2zM2 14h16v2H2z"></path>
+      </g>
+     =20
+  </defs></svg>
+</iron-iconset-svg>
+<iron-iconset-svg name=3D"cr" size=3D"24" style=3D"display: none;">
+  <svg>
+    <defs>
+      <!--
+      These icons are copied from Polymer's iron-icons and kept in sorted o=
+rder.
+      See http://goo.gl/Y1OdAq for instructions on adding additional icons.
+      -->
+      <g id=3D"account-child-invert" viewBox=3D"0 0 48 48">
+        <path d=3D"M24 4c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-=
+6z"></path>
+        <path fill=3D"none" d=3D"M0 0h48v48H0V0z"></path>
+        <circle fill=3D"none" cx=3D"24" cy=3D"26" r=3D"4"></circle>
+        <path d=3D"M24 18c-6.16 0-13 3.12-13 7.23v11.54c0 2.32 2.19 4.33 5.=
+2 5.63 2.32 1 5.12 1.59 7.8 1.59.66 0 1.33-.06 2-.14v-5.2c-.67.08-1.34.14-2=
+ .14-2.63 0-5.39-.57-7.68-1.55.67-2.12 4.34-3.65 7.68-3.65.86 0 1.75.11 2.6=
+.29 2.79.62 5.2 2.15 5.2 4.04v4.47c3.01-1.31 5.2-3.31 5.2-5.63V25.23C37 21.=
+12 30.16 18 24 18zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4=
+z">
+        </path>
+      </g>
+      <g id=3D"add">
+        <path d=3D"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+      </g>
+      <g id=3D"arrow-back">
+        <path d=3D"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20=
+v-2z"></path>
+      </g>
+      <g id=3D"arrow-drop-up">
+        <path d=3D"M7 14l5-5 5 5z">
+      </path></g>
+      <g id=3D"arrow-drop-down">
+        <path d=3D"M7 10l5 5 5-5z"></path>
+      </g>
+      <g id=3D"arrow-forward">
+        <path d=3D"M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8=
+z"></path>
+      </g>
+      <g id=3D"arrow-right">
+        <path d=3D"M10 7l5 5-5 5z"></path>
+      </g>
+     =20
+      <g id=3D"cancel">
+        <path d=3D"M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.=
+53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7=
+ 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z">
+        </path>
+      </g>
+      <g id=3D"check">
+        <path d=3D"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></pat=
+h>
+      </g>
+      <g id=3D"check-circle">
+        <path d=3D"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.=
+52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+        </path>
+      </g>
+      <g id=3D"chevron-left">
+        <path d=3D"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+      </g>
+      <g id=3D"chevron-right">
+        <path d=3D"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+      </g>
+      <g id=3D"clear">
+        <path d=3D"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59=
+ 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+        </path>
+      </g>
+      <g id=3D"close">
+        <path d=3D"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59=
+ 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+        </path>
+      </g>
+      <g id=3D"computer">
+        <path d=3D"M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0=
+-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z">
+        </path>
+      </g>
+      <g id=3D"delete">
+        <path d=3D"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-=
+1-1h-5l-1 1H5v2h14V4z"></path>
+      </g>
+      <g id=3D"domain">
+        <path d=3D"M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4=
+V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2z=
+m10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z">
+        </path>
+      </g>
+      <g id=3D"error">
+        <path d=3D"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.=
+52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+        </path>
+      </g>
+      <g id=3D"error-outline">
+        <path d=3D"M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47=
+ 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8=
+-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z">
+        </path>
+      </g>
+      <g id=3D"expand-less">
+        <path d=3D"M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+      </g>
+      <g id=3D"expand-more">
+        <path d=3D"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+      </g>
+      <g id=3D"extension">
+        <path d=3D"M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5=
+ 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1=
+.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 =
+2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 =
+11 20.5 11z">
+        </path>
+      </g>
+      <g id=3D"file-download">
+        <path d=3D"M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+      </g>
+     =20
+      <g id=3D"fullscreen">
+        <path d=3D"M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2=
+v3zM14 5v2h3v3h2V5h-5z"></path>
+      </g>
+      <g id=3D"group">
+        <path d=3D"M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.=
+34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 =
+8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 =
+0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.=
+5-7-3.5z">
+        </path>
+      </g>
+      <g id=3D"help-outline">
+        <path d=3D"M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 =
+10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3=
+.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h=
+2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z">
+        </path>
+      </g>
+      <g id=3D"info">
+        <path d=3D"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.=
+52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+        </path>
+      </g>
+      <g id=3D"info-outline">
+        <path d=3D"M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 =
+10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3=
+.59 8-8 8zM11 9h2V7h-2v2z">
+        </path>
+      </g>
+      <g id=3D"insert-drive-file">
+        <path d=3D"M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 =
+0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z">
+        </path>
+      </g>
+      <g id=3D"location-on">
+        <path d=3D"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3=
+.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.=
+5 2.5-1.12 2.5-2.5 2.5z">
+        </path>
+      </g>
+      <g id=3D"mic">
+        <path d=3D"M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 =
+3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 =
+3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z">
+        </path>
+      </g>
+      <g id=3D"more-vert">
+        <path d=3D"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1=
+.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9=
+ 2-2-.9-2-2-2z">
+        </path>
+      </g>
+      <g id=3D"open-in-new">
+        <path d=3D"M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1=
+.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"=
+>
+        </path>
+      </g>
+      <g id=3D"person">
+        <path d=3D"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4=
+ 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+        </path>
+      </g>
+      <g id=3D"print">
+        <path d=3D"M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-=
+3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm=
+-1-9H6v4h12V3z">
+        </path>
+      </g>
+      <g id=3D"search">
+        <path d=3D"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.=
+91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.=
+28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 =
+7.01 14 9.5 11.99 14 9.5 14z">
+        </path>
+      </g>
+      <g id=3D"security">
+        <path d=3D"M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12=
+V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z">
+        </path>
+      </g>
+     =20
+      <!-- The <g> IDs are exposed as global variables in Vulcanized mode, =
+which
+        conflicts with the "settings" namespace of MD Settings. Using an "_=
+icon"
+        suffix prevents the naming conflict. -->
+      <g id=3D"settings_icon">
+        <path d=3D"M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11=
+-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4=
+-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.4=
+2l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-=
+.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65=
+c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.9=
+8l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-=
+.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11=
+-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1=
+.57 3.5-3.5 3.5z">
+        </path>
+      </g>
+      <g id=3D"star">
+        <path d=3D"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.1=
+9 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+      </g>
+      <g id=3D"sync">
+        <path d=3D"M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2=
+.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2=
+.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8=
+ 8 8v3l4-4-4-4v3z">
+        </path>
+      </g>
+      <g id=3D"videocam">
+        <path d=3D"M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.4=
+5 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z">
+        </path>
+      </g>
+      <g id=3D"warning">
+        <path d=3D"M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></pa=
+th>
+      </g>
+    </defs>
+  </svg>
+</iron-iconset-svg>
+</head>
+  <body style=3D"background-color: rgb(53, 54, 58);">
+    <iframe id=3D"backgroundImage" src=3D"cid:frame-3F1EF6E581C82FADF950300=
+1EB3E8063@mhtml.blink">
+    </iframe>
+    <ntp-app><template shadowmode=3D"open"><!--_html_template_start_--><div=
+ id=3D"content" style=3D"--ntp-theme-text-color: rgba(232, 234, 237, 1); --=
+ntp-logo-color: rgba(255, 255, 255, 1);"><ntp-iframe id=3D"oneGoogleBar" sr=
+c=3D"chrome-untrusted://new-tab-page/one-google-bar?paramsencoded=3D"><temp=
+late shadowmode=3D"open"><!--_html_template_start_--><iframe id=3D"iframe" =
+src=3D"cid:frame-1360494B91A353F999496AF8A01A2083@mhtml.blink"></iframe><!-=
+-_html_template_end_--></template></ntp-iframe><dom-if style=3D"display: no=
+ne;"><template is=3D"dom-if"></template></dom-if><!-- TODO(crbug.com/116836=
+1): Instead of hidden$=3D"[[!logoEnabled_]]" it would
+       be nicer to use a dom-if. However, that breaks
+       StartupBrowserCreatorPickerNoParamsTest.ShowPickerWhenAlreadyLaunche=
+d on
+       the msan builder. See crbug.com/1169070. --><ntp-logo id=3D"logo" si=
+ngle-colored=3D""><template shadowmode=3D"open"><!--_html_template_start_--=
+><div id=3D"logo"></div><dom-if restamp=3D"" style=3D"display: none;"><temp=
+late is=3D"dom-if"></template></dom-if><dom-if restamp=3D"" style=3D"displa=
+y: none;"><template is=3D"dom-if"></template></dom-if><dom-if restamp=3D"" =
+style=3D"display: none;"><template is=3D"dom-if"></template></dom-if><!--_h=
+tml_template_end_--></template></ntp-logo><ntp-realbox id=3D"realbox" shown=
+=3D""><template shadowmode=3D"open"><!--_html_template_start_--><div id=3D"=
+inputWrapper"><input id=3D"input" type=3D"search" autocomplete=3D"off" spel=
+lcheck=3D"false" role=3D"combobox" aria-live=3D"polite" placeholder=3D"Sear=
+ch Google or type a URL"><ntp-realbox-icon id=3D"icon" in-searchbox=3D"" ba=
+ckground-image=3D"" mask-image=3D"search.svg"><template shadowmode=3D"open"=
+><!--_html_template_start_--><div id=3D"container" style=3D"--container-bg-=
+color: ;"><img id=3D"image"><div id=3D"icon" style=3D"-webkit-mask-image: u=
+rl(&quot;search.svg&quot;);"></div></div><!--_html_template_end_--></templa=
+te></ntp-realbox-icon><button id=3D"voiceSearchButton" title=3D"Search by v=
+oice"></button></div><!--_html_template_end_--></template></ntp-realbox><cr=
+-most-visited id=3D"mostVisited" use-white-tile-icon_=3D"" is-dark_=3D"" vi=
+sible_=3D"" custom-links-enabled_=3D""><template shadowmode=3D"open"><!--_h=
+tml_template_start_--><div id=3D"container" style=3D"--tile-background-colo=
+r: rgba(32, 33, 36, 1); --column-count: 4; --row-count: 2;"><a class=3D"til=
+e" title=3D"YouTube" href=3D"https://www.youtube.com/"><cr-icon-button id=
+=3D"actionMenuButton" class=3D"icon-more-vert" tabindex=3D"0" title=3D"More=
+ actions" aria-disabled=3D"false" role=3D"button"><template shadowmode=3D"o=
+pen"><!--_html_template_start_--><div id=3D"icon"><div id=3D"maskedImage"><=
+/div></div><!--_html_template_end_--></template></cr-icon-button><div class=
+=3D"tile-icon"><img draggable=3D"false" alt=3D"" src=3D"chrome://favicon2/?=
+size=3D24&amp;scale_factor=3D1x&amp;show_fallback_monogram=3D&amp;page_url=
+=3Dhttps%3A%2F%2Fwww.youtube.com%2F"></div><div class=3D"tile-title title-l=
+tr"><span>YouTube</span></div></a><a class=3D"tile" title=3D"Fundacion Cole=
+gio del Mundo Unido Costa Rica Mail" href=3D"https://mail.google.com/mail/u=
+/1/#inbox"><cr-icon-button id=3D"actionMenuButton" class=3D"icon-more-vert"=
+ tabindex=3D"0" title=3D"More actions" aria-disabled=3D"false" role=3D"butt=
+on"><template shadowmode=3D"open"><!--_html_template_start_--><div id=3D"ic=
+on"><div id=3D"maskedImage"></div></div><!--_html_template_end_--></templat=
+e></cr-icon-button><div class=3D"tile-icon"><img draggable=3D"false" alt=3D=
+"" src=3D"chrome://favicon2/?size=3D24&amp;scale_factor=3D1x&amp;show_fallb=
+ack_monogram=3D&amp;page_url=3Dhttps%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F1=
+%2F%23inbox"></div><div class=3D"tile-title title-ltr"><span>Fundacion Cole=
+gio del Mundo Unido Costa Rica Mail</span></div></a><a class=3D"tile" title=
+=3D"Messenger" href=3D"https://www.facebook.com/messages"><cr-icon-button i=
+d=3D"actionMenuButton" class=3D"icon-more-vert" tabindex=3D"0" title=3D"Mor=
+e actions" aria-disabled=3D"false" role=3D"button"><template shadowmode=3D"=
+open"><!--_html_template_start_--><div id=3D"icon"><div id=3D"maskedImage">=
+</div></div><!--_html_template_end_--></template></cr-icon-button><div clas=
+s=3D"tile-icon"><img draggable=3D"false" alt=3D"" src=3D"chrome://favicon2/=
+?size=3D24&amp;scale_factor=3D1x&amp;show_fallback_monogram=3D&amp;page_url=
+=3Dhttps%3A%2F%2Fwww.facebook.com%2Fmessages"></div><div class=3D"tile-titl=
+e title-ltr"><span>Messenger</span></div></a><a class=3D"tile" title=3D"Log=
+in" href=3D"https://key.admissions.upenn.edu/account/login?r=3Dhttps%3a%2f%=
+2fkey.admissions.upenn.edu%2fapply%2fstatus%3ftab%3dhome"><cr-icon-button i=
+d=3D"actionMenuButton" class=3D"icon-more-vert" tabindex=3D"0" title=3D"Mor=
+e actions" aria-disabled=3D"false" role=3D"button"><template shadowmode=3D"=
+open"><!--_html_template_start_--><div id=3D"icon"><div id=3D"maskedImage">=
+</div></div><!--_html_template_end_--></template></cr-icon-button><div clas=
+s=3D"tile-icon"><img draggable=3D"false" alt=3D"" src=3D"chrome://favicon2/=
+?size=3D24&amp;scale_factor=3D1x&amp;show_fallback_monogram=3D&amp;page_url=
+=3Dhttps%3A%2F%2Fkey.admissions.upenn.edu%2Faccount%2Flogin%3Fr%3Dhttps%253=
+a%252f%252fkey.admissions.upenn.edu%252fapply%252fstatus%253ftab%253dhome">=
+</div><div class=3D"tile-title title-ltr"><span>Login</span></div></a><a cl=
+ass=3D"tile" title=3D"Netflix" href=3D"https://www.netflix.com/browse"><cr-=
+icon-button id=3D"actionMenuButton" class=3D"icon-more-vert" tabindex=3D"0"=
+ title=3D"More actions" aria-disabled=3D"false" role=3D"button"><template s=
+hadowmode=3D"open"><!--_html_template_start_--><div id=3D"icon"><div id=3D"=
+maskedImage"></div></div><!--_html_template_end_--></template></cr-icon-but=
+ton><div class=3D"tile-icon"><img draggable=3D"false" alt=3D"" src=3D"chrom=
+e://favicon2/?size=3D24&amp;scale_factor=3D1x&amp;show_fallback_monogram=3D=
+&amp;page_url=3Dhttps%3A%2F%2Fwww.netflix.com%2Fbrowse"></div><div class=3D=
+"tile-title title-ltr"><span>Netflix</span></div></a><a class=3D"tile" titl=
+e=3D"College Planning" href=3D"https://www.collegeconfidential.com/"><cr-ic=
+on-button id=3D"actionMenuButton" class=3D"icon-more-vert" tabindex=3D"0" t=
+itle=3D"More actions" aria-disabled=3D"false" role=3D"button"><template sha=
+dowmode=3D"open"><!--_html_template_start_--><div id=3D"icon"><div id=3D"ma=
+skedImage"></div></div><!--_html_template_end_--></template></cr-icon-butto=
+n><div class=3D"tile-icon"><img draggable=3D"false" alt=3D"" src=3D"chrome:=
+//favicon2/?size=3D24&amp;scale_factor=3D1x&amp;show_fallback_monogram=3D&a=
+mp;page_url=3Dhttps%3A%2F%2Fwww.collegeconfidential.com%2F"></div><div clas=
+s=3D"tile-title title-ltr"><span>College Planning</span></div></a><a class=
+=3D"tile" title=3D"Google Docs" href=3D"https://docs.google.com/document/d/=
+1S0Jp55yhnH_tNWcCfoLdURdxpFaSrgslrAchLrYV_7U/edit"><cr-icon-button id=3D"ac=
+tionMenuButton" class=3D"icon-more-vert" tabindex=3D"0" title=3D"More actio=
+ns" aria-disabled=3D"false" role=3D"button"><template shadowmode=3D"open"><=
+!--_html_template_start_--><div id=3D"icon"><div id=3D"maskedImage"></div><=
+/div><!--_html_template_end_--></template></cr-icon-button><div class=3D"ti=
+le-icon"><img draggable=3D"false" alt=3D"" src=3D"chrome://favicon2/?size=
+=3D24&amp;scale_factor=3D1x&amp;show_fallback_monogram=3D&amp;page_url=3Dht=
+tps%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1S0Jp55yhnH_tNWcCfoLdURdxpFaSr=
+gslrAchLrYV_7U%2Fedit"></div><div class=3D"tile-title title-ltr"><span>Goog=
+le Docs</span></div></a><dom-repeat id=3D"tiles" style=3D"display: none;"><=
+template></template></dom-repeat><cr-button id=3D"addShortcut" tabindex=3D"=
+0" noink=3D"" aria-disabled=3D"false" role=3D"button"><div class=3D"tile-ic=
+on"><div id=3D"addShortcutIcon" draggable=3D"false"></div></div><div class=
+=3D"tile-title"><span>Add shortcut</span></div><template shadowmode=3D"open=
+"><!--_html_template_start_--><slot></slot><!--_html_template_end_--></temp=
+late></cr-button><cr-dialog id=3D"dialog"><div slot=3D"title"> </div><div s=
+lot=3D"body"><cr-input id=3D"dialogInputName" spellcheck=3D"false" autofocu=
+s=3D"" aria-disabled=3D"false" tabindex=3D"0"><template shadowmode=3D"open"=
+><!--_html_template_start_--><div id=3D"label" class=3D"cr-form-field-label=
+" aria-hidden=3D"true">
+      Name
+    </div><div id=3D"row-container" part=3D"row-container"><div id=3D"input=
+-container"><div id=3D"inner-input-container"><slot name=3D"inline-prefix">=
+</slot><!-- Only attributes that are named inconsistently between html and =
+js
+              need to use attr$=3D"", such as |tabindex| vs .tabIndex and
+              |readonly| vs .readOnly. --><input id=3D"input" part=3D"input=
+" autocomplete=3D"off" aria-label=3D"Name" autofocus=3D"" aria-invalid=3D"f=
+alse" tabindex=3D"0"><slot name=3D"inline-suffix"></slot></div><div id=3D"u=
+nderline"></div></div><slot name=3D"suffix"></slot></div><div id=3D"error" =
+aria-live=3D"assertive"></div><!--_html_template_end_--></template></cr-inp=
+ut><cr-input id=3D"dialogInputUrl" spellcheck=3D"false" type=3D"url" aria-d=
+isabled=3D"false" tabindex=3D"0"><template shadowmode=3D"open"><!--_html_te=
+mplate_start_--><div id=3D"label" class=3D"cr-form-field-label" aria-hidden=
+=3D"true">
+      URL
+    </div><div id=3D"row-container" part=3D"row-container"><div id=3D"input=
+-container"><div id=3D"inner-input-container"><slot name=3D"inline-prefix">=
+</slot><!-- Only attributes that are named inconsistently between html and =
+js
+              need to use attr$=3D"", such as |tabindex| vs .tabIndex and
+              |readonly| vs .readOnly. --><input id=3D"input" part=3D"input=
+" autocomplete=3D"off" aria-label=3D"URL" aria-invalid=3D"false" tabindex=
+=3D"0" type=3D"url"><slot name=3D"inline-suffix"></slot></div><div id=3D"un=
+derline"></div></div><slot name=3D"suffix"></slot></div><div id=3D"error" a=
+ria-live=3D"assertive"></div><!--_html_template_end_--></template></cr-inpu=
+t></div><div slot=3D"button-container"><cr-button class=3D"cancel-button" a=
+ria-disabled=3D"false" role=3D"button" tabindex=3D"0">
+        Cancel
+      <template shadowmode=3D"open"><!--_html_template_start_--><slot></slo=
+t><!--_html_template_end_--></template></cr-button><cr-button class=3D"acti=
+on-button" aria-disabled=3D"true" role=3D"button" tabindex=3D"-1" disabled=
+=3D"">
+        Done
+      <template shadowmode=3D"open"><!--_html_template_start_--><slot></slo=
+t><!--_html_template_end_--></template></cr-button></div><template shadowmo=
+de=3D"open"><!--_html_template_start_--><!-- TODO(crbug/1139958): Remove "n=
+ot chromeos" block when chromeVox issue is fixed--><!--Update both "not chr=
+omeos" and "chromeos" blocks if either changes--><dialog id=3D"dialog" part=
+=3D"dialog" aria-labelledby=3D"title"><!-- This wrapper is necessary, such =
+that the "pulse" animation is not
+        erroneously played when the user clicks on the outer-most scrollbar=
+. --><div id=3D"content-wrapper" part=3D"wrapper"><div class=3D"top-contain=
+er"><div id=3D"title" class=3D"title-container" tabindex=3D"-1"><slot name=
+=3D"title"></slot></div></div><slot name=3D"header"></slot><div id=3D"cr-co=
+ntainer-shadow-top" class=3D"cr-container-shadow"></div><div class=3D"body-=
+container" id=3D"container" show-bottom-shadow=3D"" part=3D"body-container"=
+><div></div><slot name=3D"body"></slot><div></div></div><div id=3D"cr-conta=
+iner-shadow-bottom" class=3D"cr-container-shadow"></div><slot name=3D"butto=
+n-container"></slot><slot name=3D"footer"></slot></div></dialog><!--_html_t=
+emplate_end_--></template></cr-dialog><cr-action-menu id=3D"actionMenu"><bu=
+tton id=3D"actionMenuEdit" class=3D"dropdown-item">
+      Edit shortcut
+    </button><button id=3D"actionMenuRemove" class=3D"dropdown-item">
+      Remove
+    </button><template shadowmode=3D"open"><!--_html_template_start_--><dia=
+log id=3D"dialog" part=3D"dialog" role=3D"application"><div id=3D"wrapper" =
+class=3D"item-wrapper" role=3D"menu" tabindex=3D"-1"><slot id=3D"contentNod=
+e"></slot></div></dialog><!--_html_template_end_--></template></cr-action-m=
+enu></div><cr-toast id=3D"toast" duration=3D"10000"><div> </div><dom-if sty=
+le=3D"display: none;"><template></template></dom-if><template shadowmode=3D=
+"open"><!--_html_template_start_--><slot></slot><!--_html_template_end_--><=
+/template></cr-toast><!--_html_template_end_--></template></cr-most-visited=
+><dom-if style=3D"display: none;"><template is=3D"dom-if"></template></dom-=
+if><ntp-middle-slot-promo><template shadowmode=3D"open"><!--_html_template_=
+start_--><!-- Promo parts are added by JS. --><!--_html_template_end_--><di=
+v id=3D"container"><a href=3D"https://www.google.com/url?q=3Dhttps://about.=
+google/stories/native-owned-business-grants/%3Futm_source%3Dgoogle%26utm_me=
+dium%3Dhpp%26utm_campaign%3DEN-US&amp;source=3Dhpp&amp;id=3D19026854&amp;ct=
+=3D3&amp;usg=3DAFQjCNEVTquTI-Yi-s_a0XNnMFIXAbdkVg&amp;prid=3D243">See how G=
+oogle is supporting Native American-owned businesses</a></div></template></=
+ntp-middle-slot-promo><dom-if style=3D"display: none;"><template is=3D"dom-=
+if"></template></dom-if><dom-if style=3D"display: none;"><template is=3D"do=
+m-if"></template></dom-if><!-- cr-button has a transparent background. This=
+ leads to incorrect
+           results when a custom background is set. Therefore, wrap customi=
+ze
+           button in container to enfore solid background color. --><div id=
+=3D"customizeButtonContainer"><cr-button id=3D"customizeButton" title=3D"Cu=
+stomize this page" aria-disabled=3D"false" role=3D"button" tabindex=3D"0"><=
+div id=3D"customizeIcon"></div><div id=3D"customizeText">
+            Customize Chrome
+          </div><template shadowmode=3D"open"><!--_html_template_start_--><=
+slot></slot><!--_html_template_end_--></template></cr-button></div><dom-if =
+style=3D"display: none;"><template></template></dom-if><div id=3D"contentBo=
+ttomSpacer"></div></div><dom-if restamp=3D"" style=3D"display: none;"><temp=
+late></template></dom-if><dom-if id=3D"customizeDialogIf" restamp=3D"" styl=
+e=3D"display: none;"><template is=3D"dom-if"></template></dom-if><svg><defs=
+><clipPath id=3D"oneGoogleBarClipPath"><!-- Set an initial non-empty clip-p=
+ath so the OneGoogleBar resize events
+           are processed. When the clip-path is empty, it's possible for th=
+e
+           OneGoogleBar to get into a state where it does not send  the
+           'overlayUpdates' message which is used to populate this
+           clip-path. --><rect x=3D"0" y=3D"0" width=3D"1" height=3D"1"></r=
+ect></clipPath></defs></svg><!--_html_template_end_--></template></ntp-app>
+   =20
+    <link rel=3D"stylesheet" href=3D"chrome://resources/css/text_defaults_m=
+d.css">
+    <link rel=3D"stylesheet" href=3D"chrome://new-tab-page/shared_vars.css"=
+>
+ =20
+
+<dom-module id=3D"cr-icons" assetpath=3D"chrome://resources/">
+  <template>
+   =20
+  </template>
+</dom-module>
+<dom-module id=3D"cr-hidden-style" assetpath=3D"chrome://resources/">
+  <template>
+   =20
+  </template>
+</dom-module>
+<dom-module id=3D"cr-shared-style" assetpath=3D"chrome://resources/">
+  <template>
+   =20
+  </template>
+</dom-module>
+<dom-module id=3D"cr-input-style" assetpath=3D"chrome://resources/">
+  <template>
+   =20
+  </template>
+</dom-module>
+<dom-module id=3D"cr-radio-button-style" assetpath=3D"chrome://resources/">
+  <template>
+   =20
+  </template>
+</dom-module>
+</body></html>
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-bfc7ed30-a966-4cbc-a6e5-55f6a09e638c@mhtml.blink
+
+@charset "utf-8";
+
+body { background: rgb(53, 54, 58); margin: 0px; }
+
+#backgroundImage { border: none; height: 100%; pointer-events: none; positi=
+on: fixed; top: 0px; visibility: hidden; width: 100%; }
+
+[show-background-image] #backgroundImage { visibility: visible; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-5c1a8519-15aa-418a-b36f-5679408276a2@mhtml.blink
+
+@charset "utf-8";
+
+html { --google-red-100-rgb: 244, 199, 195; --google-red-100: rgb(var(--goo=
+gle-red-100-rgb)); --google-red-300-rgb: 230, 124, 115; --google-red-300: r=
+gb(var(--google-red-300-rgb)); --google-red-500-rgb: 219, 68, 55; --google-=
+red-500: rgb(var(--google-red-500-rgb)); --google-red-700-rgb: 197, 57, 41;=
+ --google-red-700: rgb(var(--google-red-700-rgb)); --google-blue-100-rgb: 1=
+98, 218, 252; --google-blue-100: rgb(var(--google-blue-100-rgb)); --google-=
+blue-300-rgb: 123, 170, 247; --google-blue-300: rgb(var(--google-blue-300-r=
+gb)); --google-blue-500-rgb: 66, 133, 244; --google-blue-500: rgb(var(--goo=
+gle-blue-500-rgb)); --google-blue-700-rgb: 51, 103, 214; --google-blue-700:=
+ rgb(var(--google-blue-700-rgb)); --google-green-100-rgb: 183, 225, 205; --=
+google-green-100: rgb(var(--google-green-100-rgb)); --google-green-300-rgb:=
+ 87, 187, 138; --google-green-300: rgb(var(--google-green-300-rgb)); --goog=
+le-green-500-rgb: 15, 157, 88; --google-green-500: rgb(var(--google-green-5=
+00-rgb)); --google-green-700-rgb: 11, 128, 67; --google-green-700: rgb(var(=
+--google-green-700-rgb)); --google-yellow-100-rgb: 252, 232, 178; --google-=
+yellow-100: rgb(var(--google-yellow-100-rgb)); --google-yellow-300-rgb: 247=
+, 203, 77; --google-yellow-300: rgb(var(--google-yellow-300-rgb)); --google=
+-yellow-500-rgb: 244, 180, 0; --google-yellow-500: rgb(var(--google-yellow-=
+500-rgb)); --google-yellow-700-rgb: 240, 147, 0; --google-yellow-700: rgb(v=
+ar(--google-yellow-700-rgb)); --google-grey-100-rgb: 245, 245, 245; --googl=
+e-grey-100: rgb(var(--google-grey-100-rgb)); --google-grey-300-rgb: 224, 22=
+4, 224; --google-grey-300: rgb(var(--google-grey-300-rgb)); --google-grey-5=
+00-rgb: 158, 158, 158; --google-grey-500: rgb(var(--google-grey-500-rgb)); =
+--google-grey-700-rgb: 97, 97, 97; --google-grey-700: rgb(var(--google-grey=
+-700-rgb)); --paper-red-50: #ffebee; --paper-red-100: #ffcdd2; --paper-red-=
+200: #ef9a9a; --paper-red-300: #e57373; --paper-red-400: #ef5350; --paper-r=
+ed-500: #f44336; --paper-red-600: #e53935; --paper-red-700: #d32f2f; --pape=
+r-red-800: #c62828; --paper-red-900: #b71c1c; --paper-red-a100: #ff8a80; --=
+paper-red-a200: #ff5252; --paper-red-a400: #ff1744; --paper-red-a700: #d500=
+00; --paper-light-blue-50: #e1f5fe; --paper-light-blue-100: #b3e5fc; --pape=
+r-light-blue-200: #81d4fa; --paper-light-blue-300: #4fc3f7; --paper-light-b=
+lue-400: #29b6f6; --paper-light-blue-500: #03a9f4; --paper-light-blue-600: =
+#039be5; --paper-light-blue-700: #0288d1; --paper-light-blue-800: #0277bd; =
+--paper-light-blue-900: #01579b; --paper-light-blue-a100: #80d8ff; --paper-=
+light-blue-a200: #40c4ff; --paper-light-blue-a400: #00b0ff; --paper-light-b=
+lue-a700: #0091ea; --paper-yellow-50: #fffde7; --paper-yellow-100: #fff9c4;=
+ --paper-yellow-200: #fff59d; --paper-yellow-300: #fff176; --paper-yellow-4=
+00: #ffee58; --paper-yellow-500: #ffeb3b; --paper-yellow-600: #fdd835; --pa=
+per-yellow-700: #fbc02d; --paper-yellow-800: #f9a825; --paper-yellow-900: #=
+f57f17; --paper-yellow-a100: #ffff8d; --paper-yellow-a200: #ffff00; --paper=
+-yellow-a400: #ffea00; --paper-yellow-a700: #ffd600; --paper-orange-50: #ff=
+f3e0; --paper-orange-100: #ffe0b2; --paper-orange-200: #ffcc80; --paper-ora=
+nge-300: #ffb74d; --paper-orange-400: #ffa726; --paper-orange-500: #ff9800;=
+ --paper-orange-600: #fb8c00; --paper-orange-700: #f57c00; --paper-orange-8=
+00: #ef6c00; --paper-orange-900: #e65100; --paper-orange-a100: #ffd180; --p=
+aper-orange-a200: #ffab40; --paper-orange-a400: #ff9100; --paper-orange-a70=
+0: #ff6500; --paper-grey-50: #fafafa; --paper-grey-100: #f5f5f5; --paper-gr=
+ey-200: #eeeeee; --paper-grey-300: #e0e0e0; --paper-grey-400: #bdbdbd; --pa=
+per-grey-500: #9e9e9e; --paper-grey-600: #757575; --paper-grey-700: #616161=
+; --paper-grey-800: #424242; --paper-grey-900: #212121; --paper-blue-grey-5=
+0: #eceff1; --paper-blue-grey-100: #cfd8dc; --paper-blue-grey-200: #b0bec5;=
+ --paper-blue-grey-300: #90a4ae; --paper-blue-grey-400: #78909c; --paper-bl=
+ue-grey-500: #607d8b; --paper-blue-grey-600: #546e7a; --paper-blue-grey-700=
+: #455a64; --paper-blue-grey-800: #37474f; --paper-blue-grey-900: #263238; =
+--dark-divider-opacity: 0.12; --dark-disabled-opacity: 0.38; --dark-seconda=
+ry-opacity: 0.54; --dark-primary-opacity: 0.87; --light-divider-opacity: 0.=
+12; --light-disabled-opacity: 0.3; --light-secondary-opacity: 0.7; --light-=
+primary-opacity: 1; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-daad3ce0-78d7-4c8e-b827-e611744569f5@mhtml.blink
+
+@charset "utf-8";
+
+html { --google-blue-50-rgb: 232, 240, 254; --google-blue-50: rgb(var(--goo=
+gle-blue-50-rgb)); --google-blue-200-rgb: 174, 203, 250; --google-blue-200:=
+ rgb(var(--google-blue-200-rgb)); --google-blue-600-rgb: 26, 115, 232; --go=
+ogle-blue-600: rgb(var(--google-blue-600-rgb)); --google-grey-50-rgb: 248, =
+249, 250; --google-grey-50: rgb(var(--google-grey-50-rgb)); --google-grey-2=
+00-rgb: 232, 234, 237; --google-grey-200: rgb(var(--google-grey-200-rgb)); =
+--google-grey-400-rgb: 189, 193, 198; --google-grey-400: rgb(var(--google-g=
+rey-400-rgb)); --google-grey-600-rgb: 128, 134, 139; --google-grey-600: rgb=
+(var(--google-grey-600-rgb)); --google-grey-800-rgb: 60, 64, 67; --google-g=
+rey-800: rgb(var(--google-grey-800-rgb)); --google-grey-900-rgb: 32, 33, 36=
+; --google-grey-900: rgb(var(--google-grey-900-rgb)); --google-grey-900-whi=
+te-4-percent: #292a2d; --google-red-600-rgb: 217, 48, 37; --google-red-600:=
+ rgb(var(--google-red-600-rgb)); --google-yellow-50-rgb: 254, 247, 224; --g=
+oogle-yellow-50: rgb(var(--google-yellow-50-rgb)); --google-blue-refresh-10=
+0-rgb: 210, 227, 252; --google-blue-refresh-100: rgb(var(--google-blue-refr=
+esh-100-rgb)); --google-blue-refresh-300-rgb: 138, 180, 248; --google-blue-=
+refresh-300: rgb(var(--google-blue-refresh-300-rgb)); --google-blue-refresh=
+-500-rgb: 66, 133, 244; --google-blue-refresh-500: rgb(var(--google-blue-re=
+fresh-500-rgb)); --google-blue-refresh-700-rgb: 25, 103, 210; --google-blue=
+-refresh-700: rgb(var(--google-blue-refresh-700-rgb)); --google-green-refre=
+sh-300-rgb: 129, 201, 149; --google-green-refresh-300: rgb(var(--google-gre=
+en-refresh-300-rgb)); --google-green-refresh-700-rgb: 24, 128, 56; --google=
+-green-refresh-700: rgb(var(--google-green-refresh-700-rgb)); --google-grey=
+-refresh-100-rgb: 241, 243, 244; --google-grey-refresh-100: rgb(var(--googl=
+e-grey-refresh-100-rgb)); --google-grey-refresh-300-rgb: 218, 220, 224; --g=
+oogle-grey-refresh-300: rgb(var(--google-grey-refresh-300-rgb)); --google-g=
+rey-refresh-500-rgb: 154, 160, 166; --google-grey-refresh-500: rgb(var(--go=
+ogle-grey-refresh-500-rgb)); --google-grey-refresh-700-rgb: 95, 99, 104; --=
+google-grey-refresh-700: rgb(var(--google-grey-refresh-700-rgb)); --google-=
+red-refresh-300-rgb: 242, 139, 130; --google-red-refresh-300: rgb(var(--goo=
+gle-red-refresh-300-rgb)); --google-red-refresh-500-rgb: 234, 67, 53; --goo=
+gle-red-refresh-500: rgb(var(--google-red-refresh-500-rgb)); --google-yello=
+w-refresh-300-rgb: 253, 214, 51; --google-yellow-refresh-300: rgb(var(--goo=
+gle-yellow-refresh-300-rgb)); --cr-primary-text-color: var(--google-grey-90=
+0); --cr-secondary-text-color: var(--google-grey-refresh-700); --cr-card-ba=
+ckground-color: white; --cr-card-shadow-color-rgb: var(--google-grey-800-rg=
+b); --cr-elevation-1: rgba(var(--cr-card-shadow-color-rgb), 0.3) 0 1px 2px =
+0, rgba(var(--cr-card-shadow-color-rgb), 0.15) 0 1px 3px 1px; --cr-elevatio=
+n-2: rgba(var(--cr-card-shadow-color-rgb), 0.3) 0 1px 2px 0, rgba(var(--cr-=
+card-shadow-color-rgb), 0.15) 0 2px 6px 2px; --cr-elevation-3: rgba(var(--c=
+r-card-shadow-color-rgb), 0.3) 0 1px 3px 0, rgba(var(--cr-card-shadow-color=
+-rgb), 0.15) 0 4px 8px 3px; --cr-elevation-4: rgba(var(--cr-card-shadow-col=
+or-rgb), 0.3) 0 2px 3px 0, rgba(var(--cr-card-shadow-color-rgb), 0.15) 0 6p=
+x 10px 4px; --cr-elevation-5: rgba(var(--cr-card-shadow-color-rgb), 0.3) 0 =
+4px 4px 0, rgba(var(--cr-card-shadow-color-rgb), 0.15) 0 8px 12px 6px; --cr=
+-card-shadow: var(--cr-elevation-1); --cr-checked-color: var(--google-blue-=
+600); --cr-focused-item-color: var(--google-grey-300); --cr-form-field-labe=
+l-color: var(--google-grey-refresh-700); --cr-hairline-rgb: 0, 0, 0; --cr-l=
+ink-color: var(--google-blue-700); --cr-menu-background-color: white; --cr-=
+menu-background-focus-color: var(--google-grey-400); --cr-menu-shadow: 0 2p=
+x 6px var(--paper-grey-500); --cr-separator-color: rgba(0, 0, 0, 0.06); --c=
+r-title-text-color: rgb(90, 90, 90); --cr-toggle-color: var(--google-blue-5=
+00); --cr-toolbar-background-color: var(--google-blue-700); --cr-hover-back=
+ground-color: rgba(var(--google-grey-900-rgb), 0.1); --cr-active-background=
+-color: rgba(var(--google-grey-900-rgb), 0.16); --cr-focus-outline-color: r=
+gba(var(--google-blue-600-rgb), 0.4); }
+
+@media (prefers-color-scheme: light) {
+  html[enable-branding-update] { --cr-toolbar-background-color: white; }
+}
+
+@media (prefers-color-scheme: dark) {
+  html { --cr-primary-text-color: var(--google-grey-200); --cr-secondary-te=
+xt-color: var(--google-grey-refresh-500); --cr-card-background-color: var(-=
+-google-grey-900-white-4-percent); --cr-card-shadow-color-rgb: 0, 0, 0; --c=
+r-checked-color: var(--google-blue-refresh-300); --cr-form-field-label-colo=
+r: var(--dark-secondary-color); --cr-hairline-rgb: 255, 255, 255; --cr-link=
+-color: var(--google-blue-refresh-300); --cr-menu-background-color: var(--g=
+oogle-grey-900); --cr-menu-background-focus-color: var(--google-grey-refres=
+h-700); --cr-menu-background-sheen: rgba(255, 255, 255, 0.06); --cr-menu-sh=
+adow: rgba(0, 0, 0, 0.3) 0 1px 2px 0, rgba(0, 0, 0, 0.15) 0 3px 6px 2px; --=
+cr-separator-color: rgba(255, 255, 255, 0.1); --cr-title-text-color: var(--=
+cr-primary-text-color); --cr-toolbar-background-color: var(--google-grey-90=
+0-white-4-percent); --cr-hover-background-color: rgba(255, 255, 255, 0.1); =
+--cr-active-background-color: rgba(var(--google-grey-200-rgb), 0.16); --cr-=
+focus-outline-color: rgba(var(--google-blue-300-rgb), 0.4); }
+}
+
+html { --cr-button-edge-spacing: 12px; --cr-button-height: 32px; --cr-contr=
+olled-by-spacing: 24px; --cr-default-input-max-width: 264px; --cr-icon-ripp=
+le-size: 36px; --cr-icon-ripple-padding: 8px; --cr-icon-size: 20px; --cr-ic=
+on-button-margin-start: 16px; --cr-icon-ripple-margin: calc(var(--cr-icon-r=
+ipple-padding) * -1); --cr-section-min-height: 48px; --cr-section-two-line-=
+min-height: 64px; --cr-section-padding: 20px; --cr-section-vertical-padding=
+: 12px; --cr-section-indent-width: 40px; --cr-section-indent-padding: calc(=
+ var(--cr-section-padding) + var(--cr-section-indent-width)); --cr-section-=
+vertical-margin: 21px; --cr-centered-card-max-width: 680px; --cr-centered-c=
+ard-width-percentage: 0.96; --cr-hairline: 1px solid rgba(var(--cr-hairline=
+-rgb), 0.14); --cr-separator-height: 1px; --cr-separator-line: var(--cr-sep=
+arator-height) solid var(--cr-separator-color); --cr-toolbar-overlay-animat=
+ion-duration: 150ms; --cr-toolbar-height: 56px; --cr-container-shadow-heigh=
+t: 6px; --cr-container-shadow-margin: calc(-1 * var(--cr-container-shadow-h=
+eight)); --cr-container-shadow-max-opacity: 1; --cr-card-border-radius: 4px=
+; --cr-disabled-opacity: 0.38; --cr-form-field-bottom-spacing: 16px; --cr-f=
+orm-field-label-font-size: 0.625rem; --cr-form-field-label-height: 1em; --c=
+r-form-field-label-line-height: 1em; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-f5d727fb-133e-4271-9d04-9b31bb674bd5@mhtml.blink
+
+@charset "utf-8";
+
+[hidden] { display: none !important; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-7ed5dbb0-23ad-4330-954c-1149a5cdeb15@mhtml.blink
+
+@charset "utf-8";
+
+html { --layout_-_display: flex; --layout-inline_-_display: inline-flex; --=
+layout-horizontal_-_display: var(--layout_-_display); --layout-horizontal_-=
+_flex-direction: row; --layout-horizontal-reverse_-_display: var(--layout_-=
+_display); --layout-horizontal-reverse_-_flex-direction: row-reverse; --lay=
+out-vertical_-_display: var(--layout_-_display); --layout-vertical_-_flex-d=
+irection: column; --layout-vertical-reverse_-_display: var(--layout_-_displ=
+ay); --layout-vertical-reverse_-_flex-direction: column-reverse; --layout-w=
+rap_-_flex-wrap: wrap; --layout-wrap-reverse_-_flex-wrap: wrap-reverse; --l=
+ayout-flex-auto_-_flex: 1 1 auto; --layout-flex-none_-_flex: none; --layout=
+-flex_-_flex: 1; --layout-flex_-_flex-basis: 1.00000e-9px; --layout-flex-2_=
+-_flex: 2; --layout-flex-3_-_flex: 3; --layout-flex-4_-_flex: 4; --layout-f=
+lex-5_-_flex: 5; --layout-flex-6_-_flex: 6; --layout-flex-7_-_flex: 7; --la=
+yout-flex-8_-_flex: 8; --layout-flex-9_-_flex: 9; --layout-flex-10_-_flex: =
+10; --layout-flex-11_-_flex: 11; --layout-flex-12_-_flex: 12; --layout-star=
+t_-_align-items: flex-start; --layout-center_-_align-items: center; --layou=
+t-end_-_align-items: flex-end; --layout-baseline_-_align-items: baseline; -=
+-layout-start-justified_-_justify-content: flex-start; --layout-center-just=
+ified_-_justify-content: center; --layout-end-justified_-_justify-content: =
+flex-end; --layout-around-justified_-_justify-content: space-around; --layo=
+ut-justified_-_justify-content: space-between; --layout-center-center_-_ali=
+gn-items: var(--layout-center_-_align-items); --layout-center-center_-_just=
+ify-content: var(--layout-center-justified_-_justify-content); --layout-sel=
+f-start_-_align-self: flex-start; --layout-self-center_-_align-self: center=
+; --layout-self-end_-_align-self: flex-end; --layout-self-stretch_-_align-s=
+elf: stretch; --layout-self-baseline_-_align-self: baseline; --layout-start=
+-aligned_-_align-content: flex-start; --layout-end-aligned_-_align-content:=
+ flex-end; --layout-center-aligned_-_align-content: center; --layout-betwee=
+n-aligned_-_align-content: space-between; --layout-around-aligned_-_align-c=
+ontent: space-around; --layout-block_-_display: block; --layout-relative_-_=
+position: relative; --layout-fit_-_position: absolute; --layout-fit_-_top: =
+0; --layout-fit_-_right: 0; --layout-fit_-_bottom: 0; --layout-fit_-_left: =
+0; --layout-scroll_-_-webkit-overflow-scrolling: touch; --layout-scroll_-_o=
+verflow: auto; --layout-fullbleed_-_margin: 0; --layout-fullbleed_-_height:=
+ 100vh; --layout-fixed-top_-_position: fixed; --layout-fixed-top_-_top: 0; =
+--layout-fixed-top_-_left: 0; --layout-fixed-top_-_right: 0; --layout-fixed=
+-right_-_position: fixed; --layout-fixed-right_-_top: 0; --layout-fixed-rig=
+ht_-_right: 0; --layout-fixed-right_-_bottom: 0; --layout-fixed-bottom_-_po=
+sition: fixed; --layout-fixed-bottom_-_right: 0; --layout-fixed-bottom_-_bo=
+ttom: 0; --layout-fixed-bottom_-_left: 0; --layout-fixed-left_-_position: f=
+ixed; --layout-fixed-left_-_top: 0; --layout-fixed-left_-_bottom: 0; --layo=
+ut-fixed-left_-_left: 0; --layout-invisible_-_visibility: hidden  !importan=
+t; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-2966bba6-cf92-40d8-829b-b4c3967a4d03@mhtml.blink
+
+@charset "utf-8";
+
+[hidden] { display: none !important; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome://new-tab-page/search.svg
+
+<svg xmlns=3D"http://www.w3.org/2000/svg" width=3D"24" height=3D"24" fill=
+=3D"#5F6368"><path d=3D"M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5=
+ 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.9=
+9-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14=
+z"/></svg>
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fwww.youtube.com%2F
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAC9UlEQVRIib2Vz2tUVxTHP+fcN78S
+EuOPJsQGwW40Cylm15WYv0AQAqJ015W46qbQTRAKrgJ113WQdlEL6cqFYulO6EJCKxFECjZNMJ06
+YiYzmTfvni7ufZM3yUyKkPbAl/veO+ede34f+J9JDGQR1N4DUV4MhIB+iszkqKw0cIug9N1mJiws
+jH7z8uXY+TStToqUzqsmZJlSrTqSROh2rScrYuzudvE+e+pc1oD0WanUvjk93WRlZRsRA0QArsPM
+l0nyeblUujjm3KmK6ngCI6MiFcwSwCFimEkwkHCKdM0sfQepwU7L+3c7ZnXrdJ5/n6ZffwG/8RVM
+rcFPBnaUeAVr9+Ej/RiunoNLQNsgBTIDTxEihqpF64vwgLc9ZAZdg/YMnHOwkFThkyhUEnCAxcQU
+8xNAjGr+HGUKZWPsVZP/AOZ0Gs6wV17GoFKbnYXLl/cuc25YAfXpOA5ndAJO9rK9X3H+9exZePgQ
+7tyBqSnIssCTgyVf1HUKTvAKfjewLISpP1mq4Zyftx6trppdu/ZvSfYGVod1lWi1Btf6aX/cOx24
+cAGWl+HBA5ibGxaqXFdZdZjIYeQcnD4N4+PDtOexk6QbnzzI0MvMghflMmxswNIS3L0bPBpAuXYP
+3URhB3ohOphkM6hUwvvyMty+DS9e9PMPeoAEnc2kCfVoI7L/Eu/DubkJN27AvXvh3bnAG6Cc0EcG
+8AYaPIJvDTIfOrBXAUORV9Yh1RO7OXsCP2oLfgnekBpkFH4gR3FUeH9gZBTlc2MB3YJV3YL7f8Cv
+AtU4KjS2UN6VHjOP9/3zKcBiSHJ5FXAKlb/gT+A7twKNWfh5BI5vq5YRkUwkMRGXgKCqiPQDNH4X
+QHZVaat2miJvX4us/w2Pn8CtK/C0OIP4tFb78DPvRydrtdrEsWMjkxMTVarVEpVKEhdITGNcOO12
+l2YzrTcarfr2dnur1Wr/oLqz1GqtRw9DwcSdOniCmcmhGPRL3NWDGO+98G3A8h9o6H9F/wBW0dpY
+a/wI5gAAAABJRU5ErkJggg==
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F1%2F%23inbox
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAERUlEQVRIib2VT4iVVRjGn+c933f/
+OfeaJmqWZmajiDFiE2S5mBo0bCGFjos2rcyKtikRxKwEZ+OiMogIArEQXGguQh1HMFzo4EJJsARp
+/BOMOI0zc53vft8579ti7r1znUzUoGfxbc45v+c95zzv+YD/SwawFxAD+NgMA60XYjaDMRN6EHCP
+Cj948N41DZMIAAjYz/PmPTW7rbDir8yuvHXjxnUDSMAeqnKA3IZw9xCeiedieTqCyyT+BAABgP5n
+5619slI6lhc3sKAQnzjz3JKeBvxBR9YYI2C+3/UUFsiJKOcGSvPlWPUI1jYNYpa2l51bnRgSM1tR
+cLL/j1de3GPr1hUJmN3nyAxwBOwMeopjH7+wx8XcT3CFJkjQxtVxUbY3DXIIpdQYjCaJqU+CRpVc
+bme1rIevr+9oJxCsPrcOFwLhVndH+6rXrh0uVvM7g7fIJ+ZVIZYyOIdS3cDoJa85X3UG0iiRAhwL
+IUTCDbOL+ePDXZ1bCWjDgIAOd3VuLbrc8XzMDWNZCKpGBSMDSXjnjVo3oH31ziEOtvdgVnIbzoKZ
+ONBMxryGYLakFMmBke7OvkEgHgTike7OvlIkB4JxyR0fAkFREI5msfr4dLIU742+gWaKhhas4fdP
+f4GuWYvQdf5L5v2EKZ8wgUlNLWSwqBxFnyzrfnk1AJSc2zTuvakgCEUCYHkEqanDt8mq7Lu0Ix5L
+bTqmhWxcEZXx07pPZWj+Grz9y+dcZpNU5MzMi5EYzby1RW4TAIxm3gQAzUSNmCsm17QNfeMdOJ4s
+RqUClKWG5iUrHWmGUjqmF5Zvwtebf6wNVZZebLManTgCCE6IqgatalAnBIhACsvOeJnFix9MrK8d
+SxejIikEBl/PhEx9DEbCIJiVjGNkzjL56NUfPozT6q6Sk6QgEqlZEJACUs1CQSQqiUwWMr/r3Tef
+3zGUlWWOpDAAZoTUMyGNXNAAIxEoKGSTEkshi0//3jcetAfElUrkIgVUAa1ELgJxZTzNtrkz5/tC
+MQslBPEKGAjSmuhmtkGAmAqZwpmDFwNkYf/ZozfvJBtTr0cqIq4i4lKvR27eSTYuPHX+qAFSUBEl
+jGS97aebf+oOWhMOgDR6iYyADqArWnn2wtW9J89tmdSwe1LD7r0nz21ZefbC1YEuRATUG41G1pvw
+Hk09doTZjJFIPQHgdQyEqX3B9/YPftbSzeQpBACIaERL7WYGqxPrr6kIiMzM/NQcCwFRfV80TkOl
+0cmtL20QVYH4OttTCNbnRgCgQJIvIDbfFosDYIjs7mRcxxKgNcAzToAAjCqxK8Z5kFCvUVSKESbS
+pGmQJck+N5FrU7OKpsFIp6budmMH+HcZAIQabweGw1AKAdZGk/FQre1rVNDUqp5fc5duDSvafyO+
+2ZE9APxPvf9SjEVlA4YFvZfSewd7e+X+q/6Depv31arpNOAhf5ctamU96trH19++TAcABMfbPwAA
+AABJRU5ErkJggg==
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fwww.facebook.com%2Fmessages
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEPElEQVRIibWUy28cRRDGf1XdM7uz
+3oe9jp04QCIekoVAIgogOASBeIRT4AicEfwF/BkcOSHBCSEuSKCceBxQuEEgKIpCglBCYiKcRLEX
+J96dnZnu4jDrjUNiyAFKPWp1dXd981VVf/A/mwAsH37n/mbkOe+TORUnYjGCCap3vOQVVBXnHAAh
+BETEQhV1HIJVVbmeK9+c/fLd8x6gk7af8S55P2v1PAZmBoCq3IxqW78DIRohRKpoIGBSbyYNR8Mp
+o+GgSkL5JlADzLTn51vtBS8CVVUgk0gi2wAAkdpXVpHxuKIKcYouImiiZK0Wzfa8H16/Og/gAZqN
+jqbNdoyhKA3JiTFDxLbi24RNVQbKMrB/aZZHlxfpz2VYhKIMjMelnPltbXR+5UYzSRtJq5XrFMBU
+oxkSqqIRqwKQZBJ6SiFixGjs6mY8fWA3R55fZmmxO2UXI/bBpz/YqTNXGjPirZE2IoDWuXa3pWO7
+qQqjUUW71eDFQw/w8qGHbglen0HmZ9uEaBPGdYP4ugsqMYuylXczk3qu16l3bJjRnkk5+Mge9t0z
+Sz4u+OnUBX459wdFUSIYZ1dGZM0U71XKvJApgFNFRKYsJiDTeZSXDDZyijLQ6zQBWB8M+eTocb4+
+dpp8XBBjZGFxL7v37sN5x+ZmdZPBTiYCMcK4DIzykqIMJN4jIoyryPlLQwZ5k92Le6jKQNpsYhbB
+DLan6O9mZqgKm8OCXf0ZXn1hmWjGrn6LbqeBmdHrZLz+yuMcfnbMwnwPM+H4qRVOnL5CUyNJkuwM
+ICI4VTZujHlwf5+3XnuCJLn1Vc91M944cmC6jiGwNtjgu5OXSUIk9fX5O2vBbYj/fuzkzytc/P0q
+SeJwqsQq7szArJaCbidj8OeQ9z78grLM2bM4x5GXDjI322Z9cIOjX53g8tV1sqzJrxeucfFyQeIz
+nCpFXu4MABBipD3T4PqNnI8/P865C5d48rGHOPTUwzXAxoiPPvueH0+eY/+9C6TNNq32LFmrrm/g
+HxhAXYcYA+ocvf4Si2VGr7+Ec/UV5zyz/SUWlmBuVw9D8L7em0jlzgBb78GioarMdDuMSqXT7aBa
+S7Sqo9vt0O+P6fbaFEVJjIZZ/bntbRrNJv5ae6x+7YiImBlFUZDnOUVR1H0OmMWb/nFqtbIaTj0g
+Fieaf3dddJdWM7dbfL7eUFVVE9WCILlggkxZ1Bcns0xaVkS3+WEyclFFVb2IbpNri9EsqmrSiFI1
+xNd53tJX5xzOjfG+QZZlAGRZhvcNnEtxvoFJIIaQqiaTOsQ4BShjeY3hepW1+j5tpVgMwE3xS5zi
+koq0OUOvV0tAr5eQNmdwSYskbUEVIFVEIN8cBIKtTQFCjN9K2Hx7GOOcqpOakclWJwTnGA83GF5P
+WV0dcN/SLKurA4bX1xgPB+TDSFVVZqIqMVhVhXUVf+y/rO+O9hfT3vh1AbZzOAAAAABJRU5ErkJg
+gg==
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fkey.admissions.upenn.edu%2Faccount%2Flogin%3Fr%3Dhttps%253a%252f%252fkey.admissions.upenn.edu%252fapply%252fstatus%253ftab%253dhome
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACT0lEQVRIibVWPW/TUBQ99z2rIFWC
+dKFEHeIMfEkgTCoKqMxUYgBngykpE6MTZydMDCVxJH5A0wW6NYx0R62ESFIhpE40EUipkBAJDAjV
+z5chJE3axHEDPds7vvece5/97jPBB45l6ErK+yAyGQgRYAAAA1UCmmAuSaVepwrV2jAN8hF+AqKk
+XwFdMBelUk8HGR0yeG7PmgCWQRQKJL5v0gSwmMm9L/XSoneRS8eSIFo7sjgAEIVAtJZLx/q67naQ
+S8eSLMTykYUHgTne6YSA7p5Xxqp8sEFTKnUtVajWBAAoKbP/TRwAiEJKyiwACMcydBAl/OLtpXeI
+Xprv4+YXHsN69tbPJOFYhi5cTZjBihIHiZE5riZMAQQzGA/CFMSsH58BTgsQRY5LnQBDjA5rQwqt
+by2EDJQnwFwfFeQpF2H9Sh83PXMRv3/99E9k3hJMNHQSdvDt6w5mbz9E5PwNEAlcvn4PkXNz+PKp
+4q9P1KSlTMwiCMcvcOLkJBLpVzg1Fe5yu58/4uWLR2D2hhvAS5FjGbrStJ1RXQDAxIlJnJm5gEb9
+A5TaGxkvXTcq32zuNu/cCkdBZIxKUGoPP743fKveL59XbKdSFAAglcoyuBWgiUBgcEsq1Z5FAJAq
+VGvECHZ7BQAxkp3brfsxr280thdunq2D6J9GB3neYiZfXu2s+w6anS8XwRwfZ7sY3AJz3M6Xi738
+oeO4vtHYvjs3vcpEU0FefFudVzSlHthOZfPgI9+Z61iG3h7nwiTmEIiu/hXcYqIm4JU01yv5/bb8
+AV4J2IQfPmN/AAAAAElFTkSuQmCC
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fwww.netflix.com%2Fbrowse
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADKUlEQVRIiZWWS28cVRCFv1O3u8ce
+T+z4AU4UoSwisWKDhFiwZIGIskFC4u9g/gl7EC8hIRmFJQs22SA2kAUP4wTHcvBDnkffe1jMTORY
+00YuqXXV6ur67qmqW91wwXYgAH6pb+4+b9b9Z7M+2mvW2+fNxtljVh/M/T6n/9b39dqzb+pVf1nd
+GO/Wa/66uvHwYoy5vXTz8Wzdd4ksga1i5yT1+3Xcn/urnkgzX0lgOu0lwCez9ciFE5tKkqUY2q5C
+7//E8h0AT6qwjQHboMthOwA7szVjHZSCJAQxdGmTde9WSu+8cJbQFTu/ElBLPrQZ2k62skQluZeq
+j6YebZZtX7HzhYC5JUtDzKGLJCkgnbrQWu8d0L99CCWbsK+ZorlJRhJPXUCyjDLkQcSg1L0PHqPz
+VkTC1yvyBQSN4JnNia2QMBjbYR6cMC5ju5X+P0cLARmogZHNP6U4yWDiDGuQ9Ma7DN781xzHHHvd
+FJlpfy9J/FUyszQr4zKCO7eSPjwsJdkyQld10+IaANmmH+LA1pFNEiqIsZ3Woro/xLdPbYWQTWcd
+FgICsEU9fcu/l+KeVMAa296UVjYU9YmLK2MDpSNNCwFlJiMs90P84aKRnZLlVtKSyHcjfGYosqTO
+bulWIEMxWkE6Kp4c2qeNpk05tuNuhACNLSQo10kRgAVFeCDcwP5xKd81IgemNd6Q2FL4zCYwXZ3U
+CZidHwdoKyL/nSdf9GAvoTB2SLwWwRAjd8+lTsCsK5QRK7D6A+ePTu2fV5ARJWO2Q2osJph0XQUv
+ODI9qbpBE5hvmdZB2bBKeEtiaNMloRsgwNNjWkG5h5e3JuOvTks5SSgVY2G2FUyH3mIJHSdZnk5J
+WbKTKJsQ4uxJJe8OFCBytnklwkuIYi+U0HGSPf3UTCfE7KoSwCi3n2VbyaZILEvalBhrsYRuBdgy
+2XY2boUKwJOcf2zl3yopZRi3pZQthWNWhJ1LsToAVmVUiWYJUg/1wQngbc73RoWH24oYQJ2kZlPS
+pqehLgOqxSnScIT3Mb+2lOMM+zV+Ontczif50/OGgWFg++Y49Pqr0gSmfyYXIf8Bguy4XuILZFsA
+AAAASUVORK5CYII=
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fwww.collegeconfidential.com%2F
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACfUlEQVRIia2WPWhTURTHf+flZXAI
+DSiItZgUrLWDNpViB4cSLIKLTcHBLzBB3BUEQRRT6i50cFChDRUbcIkoHbTi0EWk0Nf6AX7UpoIK
+HUpaLaJJ7nFIE0zTvCToGS//8/ufe98791zBJZ6fCAWzFv0iElHFLyIhAFV1RMioaspreBhOOulq
+DKkOtq6LEHUroBiqjHqNGdzMqMJg8mQoopaMgPjrgf9lkxGjsb5xJ1XV4MmpUFTEGmkMvMFGTezI
+fWe0wuB/wEtQYwaKOxEonHnOIzONH0u10Iyd165w0klbAFmPxOuCi+ALdiAeu5bQX2CCFKq3Flzl
+HpuDgwl8gXaQwqmuzr9m+sZ5TPZ31Tw7b1qtnMeK1Cq8++odfIE9vLkd59nZHuaGL+ML7iV0adg1
+L+exIraqRkQ2bYdS9U1t+5l/cItvU48BWHo5ycdtO2ju7Xc1UNWILRB0E/nbuwD4OvWobH1xYozF
+iTFXA6DJQiTgpvDtagPg1/JSLVhFiEjIqiVa/fQWgC3bWxo2ALBQXXQTZD7MAdBy+HjZenPvMbqv
+3XWFKzprKVS9CQsqw/KrFwSOnmFneADx2GztPERH7ErtflAy8vT0gQvATVehCD1D98r6YO3LAtND
+58j+WHHLvFhXo5V8PDZNu/fx/fN78j/XaurtvGm1wkknrWiiHgPN58i8m6kLrmiidBd58xpHcd1r
+Q6GsePMaB7AAwkknLWrqml71hKiJFqdbqQ/6xp2Uqon9K1zVlE21zUemWKMITY2RWRE10Y0js6KT
++8adlG1MqN4PX2BrwjYmtBEOVV4VxVj/hSOqGkHwC9K5DpxFyYhIys6blNuz5Q+zSQKOjuCnNgAA
+AABJRU5ErkJggg==
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome://favicon2/?size=24&scale_factor=1x&show_fallback_monogram=&page_url=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1S0Jp55yhnH_tNWcCfoLdURdxpFaSrgslrAchLrYV_7U%2Fedit
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEv0lEQVRIibVVXYydVRVda5/z3e/+
+TLkzlNJSYUITTMdirY1pBAwkpQoBkxofbh8IZiLEGB40pjHhwRAnNfjDgzESQnhBEiDQqRiDMT7Q
+ADWgDwaiBDpoTJGKSCt2/mfu/e45e/lwZ8LMMECMcSc738M539p7rf1zgI+yCdgHHelDzlaNHxkA
+AL5xVXlRLFvWLhwAHH2be/61OTyP9D8F2DPZqWl67u7pc7MdZRUEoJXfalHV47tPP3b9kfkfE8gf
+hLE5xRXq9X7+9pYdw8eKRm0vAsdQhLFQcGyRYeyGkblPfW7n0n3+rN0JANLmWJsxIABd/Wjnqkap
+FyzYJUszi+n8m+9GC4QLKOn49b7T1d6LFxq9Xjhbej7Am3FeALlK8kMZAChj/o7VbHuuEuqtetka
+bgbmbAvJbHznebv6osVGvxdS2eJoCnZ0JTNtxNnIgAC07/jhgxHFSQgQBCOZu30/+7cLYbRYwNOf
+fj1/rKys71QkIKLXVb5m6PN4ZWOA9QwmwGsnO42Y4zGLwSCJAF2OolVTe2vzwtHRt2cvb3RD5QYj
+6JBCjY0S4ZgASuuTfi9ABwET8OUq3W71eJ1SSgDJgXsm47ZLWq/evuNfZ8EggwaSi8yVcoz4Yn4G
+h0lIkwgbJSIA7PnZrdubQ83nYNytKjvJIMFJyGrmZxfLm/45/Nh2XRyf8GVlAQEAIaRQR8xd/iEu
+pUP8EuZXC75WIjUa5V1WhjFVOYMwQQKQrRGDd9PP3/nKo6fwBn6ZFnEyNBkBJYACGXJPKTZxoD+E
+8Y0SEYD2T3b2AHY0LycXaAQpQRZp3svvOvIPAYrfRK+I6V6vNB8CjZAPEGDqyU12j36Ly1Y7yjAB
+AiBz+p6VYQgOkaJDIghECyn5wy/f9vQr6HSCBOONOJUrPMUCQQDgAkhmh0Jpl/ar8F1gsKsIAPuf
+OHw4luWTSl5TFkmYBGc0U/I3psPc/jNHTs6upa7ncHlK9kcLttXdHaAByhYIEMvez7cUX8ALhp/e
+UgaGcUZrKMtBUIBIiFH97LpnBXxd+/Eg3orwe62Ws0AfCELzJLc6hmQ2DoAcufuh9nAcegqheVA5
+rc4VXBmtZn3qsnDDlKdaIeaBZBg0JwAz5vSDmfFPfHLmpd3L1iKVQTIXAewzH59eOHNnnP7R12eL
+O/78p9BoHcq92b7BbGVj6tLtO8asvWUP6AC5joIpYy7W8Iv5r+VdU28xI6w0pqNWxNDt5tO7fnem
+a4MhmHtA+d9vW8HAULnYw/CWyHarQKqWXLnKSl33NZ5ylVvdBX9x9BBf2nmN6mEJqMnrJcK8VX9t
+aPHBlTadsHMPHzgj1/20aC6gCAW2tbfSJRNAcPBd7zRBzAycvPKrthSGQM8USLq+3/79axc0qPyE
+A8C5qv0TpeVXFcqwtd3ul2WZITlJh6DBTlvvoHk9dfX6yL78myu+XG1D15aBU9ueffmRlfWwZpIf
+2dXtp/ytZi3+Y2RLu6CVgbFuFstgsW6b++BOtBh+NXpbbar58b/s6J07unZtv1c3iSD12WMzn2la
+PAKyJUGwgR7YxEQIDoBgzfszI/N/f/z4fXunBgT5vrfh/2KbZCaic8KAzn8JdQI4ccSx4VX7D582
+StSpBVXpAAAAAElFTkSuQmCC
+
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome://resources/css/text_defaults_md.css
+
+@charset "utf-8";
+
+@import url("chrome://resources/css/roboto.css");
+
+body { font-family: Roboto, system-ui, sans-serif; font-size: 81.25%; }
+
+button { font-family: Roboto, system-ui, sans-serif; }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome://resources/css/roboto.css
+
+@charset "utf-8";
+
+@font-face { font-family: Roboto; font-style: normal; font-weight: 400; src=
+: local("Roboto"), local("Roboto-Regular"), url("chrome://resources/roboto/=
+roboto-regular.woff2") format("woff2"); }
+
+@font-face { font-family: Roboto; font-style: normal; font-weight: 500; src=
+: local("Roboto Medium"), local("Roboto-Medium"), url("chrome://resources/r=
+oboto/roboto-medium.woff2") format("woff2"); }
+
+@font-face { font-family: Roboto; font-style: normal; font-weight: 700; src=
+: local("Roboto Bold"), local("Roboto-Bold"), url("chrome://resources/robot=
+o/roboto-bold.woff2") format("woff2"); }
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome://new-tab-page/shared_vars.css
+
+@charset "utf-8";
+
+html { --ntp-active-background-color: rgba(var(--google-grey-900-rgb), 0.16=
+); --ntp-background-override-color-rgb: 255, 255, 255; --ntp-background-ove=
+rride-color: rgba(var(--ntp-background-override-color-rgb)); --ntp-border-c=
+olor: var(--google-grey-refresh-300); --ntp-focus-shadow-color: rgba(var(--=
+google-blue-600-rgb), 0.4); --ntp-hover-background-color: rgba(var(--google=
+-grey-900-rgb), 0.1); --ntp-selected-background-color: rgba(var(--google-bl=
+ue-refresh-700-rgb), 0.16); --ntp-selected-border-color: var(--google-blue-=
+600); --ntp-selected-light-background-color: rgba(var(--google-blue-600-rgb=
+), 0.24); --ntp-selected-primary-text-color: var(--google-blue-refresh-700)=
+; --ntp-module-text-color: #616161; --ntp-chip-background-color: var(--goog=
+le-blue-600); --ntp-chip-text-color: white; --ntp-icon-button-color-active:=
+ var(--google-grey-refresh-700); --ntp-icon-button-color: var(--google-grey=
+-600); --ntp-module-scroll-button-color: var(--google-grey-refresh-100); --=
+ntp-module-scroll-button-hover-color: var(--google-grey-refresh-300); --ntp=
+-focus-shadow: 0 0 0 2px var(--ntp-focus-shadow-color); --ntp-module-text-s=
+ize: 13px; }
+
+@media (prefers-color-scheme: dark) {
+  html { --ntp-active-background-color: rgba(var(--google-grey-200-rgb), 0.=
+16); --ntp-background-override-color-rgb: var(--google-grey-900-rgb); --ntp=
+-border-color: var(--google-grey-refresh-700); --ntp-focus-shadow-color: rg=
+ba(var(--google-blue-refresh-300-rgb), 0.5); --ntp-hover-background-color: =
+rgba(var(--google-grey-200-rgb), 0.1); --ntp-selected-background-color: rgb=
+a(var(--google-blue-refresh-300-rgb), 0.16); --ntp-selected-border-color: v=
+ar(--google-blue-refresh-300); --ntp-selected-light-background-color: rgba(=
+var(--google-blue-refresh-300-rgb), 0.24); --ntp-selected-primary-text-colo=
+r: var(--google-blue-refresh-300); --ntp-chip-background-color: var(--googl=
+e-blue-300); --ntp-chip-text-color: var(--google-grey-900); --ntp-icon-butt=
+on-color-active: var(--google-grey-refresh-300); --ntp-icon-button-color: w=
+hite; --ntp-module-scroll-button-color: var(--google-grey-refresh-700); --n=
+tp-module-scroll-button-hover-color: var(--google-grey-600); }
+}
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/html
+Content-ID: <frame-3F1EF6E581C82FADF9503001EB3E8063@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome-untrusted://new-tab-page/custom_background_image?url=
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252"></head><body></body></html>
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG----
+Content-Type: text/html
+Content-ID: <frame-1360494B91A353F999496AF8A01A2083@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"></head><body></body></html>
+------MultipartBoundary--rRX9TTQtDjE73vwbFVuTYnvuPiu8zqleNebnoeuzKG------
