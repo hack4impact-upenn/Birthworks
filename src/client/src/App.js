@@ -16,9 +16,10 @@ import NotFoundPage from './pages/NotFoundPage';
 import DashboardPage from './pages/DashboardPage';
 import AdminUserManagementPage from './pages/AdminUserManagementPage';
 import ViewCustomersPage from './pages/ViewCustomersPage';
-import CertificationPage from './pages/CertificationPage';
+import CertificationCard from './components/CertificationCard';
 import CertificationBox from './components/CertificationBox';
 import PersonalInfoPage from './pages/PersonalInfoPage';
+import MainTabPage from './pages/MainTabPage';
 //import PersonalInfoBox from './components/PersonalInfoBox';
 
 const queryCache = new QueryCache();
@@ -57,6 +58,7 @@ function App() {
                 <PublicRoute exact path="/" component={IndexPage} />
                 <PublicRoute exact path="/login" component={LoginPage} />
                 <PublicRoute exact path="/register" component={RegisterPage} />
+                <PublicRoute exact path="/tab" component={MainTabPage} />
                 <PublicRoute
                   exact
                   path="/users"
