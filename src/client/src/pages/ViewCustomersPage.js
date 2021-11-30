@@ -1,6 +1,9 @@
-import React from 'react';
+import { max } from 'lodash';
+import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import Table from '../components/Table';
+
+const maxPageNumber = 10;
 
 const placeholderCustomers = [
   {
@@ -24,6 +27,40 @@ const placeholderCustomers = [
 ];
 
 function ViewCustomersPage() {
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const increasePage = () => {
+    if (pageNumber < maxPageNumber) {
+      const newPageNumber = pageNumber + 1;
+      setPageNumber(newPageNumber);
+      updatePage(newPageNumber);
+    }
+  };
+
+  const decreasePage = () => {
+    if (pageNumber > 1) {
+      const newPageNumber = pageNumber - 1;
+      setPageNumber(newPageNumber);
+      updatePage(newPageNumber);
+    }
+  };
+
+  const goToEnd = () => {
+    const newPageNumber = maxPageNumber;
+    setPageNumber(newPageNumber);
+    updatePage(newPageNumber);
+  };
+
+  const goToStart = () => {
+    const newPageNumber = 1;
+    setPageNumber(newPageNumber);
+    updatePage(newPageNumber);
+  };
+
+  const updatePage = (newPageNumber) => {
+    alert(`fetching page number ... ${newPageNumber}`);
+  };
+
   return (
     <div className="container">
       <SearchBar></SearchBar>
@@ -34,6 +71,13 @@ function ViewCustomersPage() {
         hoverable={true}
         rowLink={() => console.log('clicked')}
       ></Table>
+      <div>
+        <div onClick={goToStart}>{'<<'}</div>
+        <div onClick={decreasePage}>{'<'}</div>
+        <div onClick={decreasePage}>{pageNumber}</div>
+        <div onClick={increasePage}>{'>'}</div>
+        <div onClick={goToEnd}>{'>>'}</div>
+      </div>
     </div>
   );
 }
