@@ -27,14 +27,18 @@ router.post('/', async (req, res) => {
   const { page_num } = req.body;
   const { filters } = req.body;
   const { query } = req.body;
-  Customer.find({
-    $or: [
-      { first_name: { $regex: query } },
-      { last_name: { $regex: query } },
-      { email: { $regex: query } },
-      { phone: { $regex: query } },
-    ],
-  })
+  let find_query = {};
+  if (typeof query !== 'undefined') {
+    find_query = {
+      $or: [
+        { first_name: { $regex: query } },
+        { last_name: { $regex: query } },
+        { email: { $regex: query } },
+        { phone: { $regex: query } },
+      ],
+    };
+  }
+  Customer.find(find_query)
     .skip(page_num * number_of_customers)
     .limit(number_of_customers)
     .then((result) => res.status(200).json({ success: true, result }))
