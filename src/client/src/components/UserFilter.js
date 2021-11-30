@@ -6,14 +6,14 @@ import SearchBar from './SearchBar';
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: left;
-  width: 100%;
+  align-items: start;
+  width: 50%;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   width: 100%;
 `;
 
