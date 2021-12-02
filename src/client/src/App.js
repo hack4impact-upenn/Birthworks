@@ -55,7 +55,7 @@ function App() {
             {false && <ReactQueryDevtools />}
             <main>
               <Switch>
-                <PublicRoute exact path="/" component={IndexPage} />
+                <PublicRoute exact path="/" component={ViewCustomersPage} />
                 <PublicRoute exact path="/login" component={LoginPage} />
                 <PublicRoute exact path="/register" component={RegisterPage} />
                 <PublicRoute exact path="/tab" component={MainTabPage} />

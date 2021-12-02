@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import UserFilter from '../components/UserFilter';
 import api from '../api';
 
 function IndexPage() {

@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 `;
 
-function DropdownComponent({ name, options }) {
+function DropdownComponent({ name, options, handleChange }) {
   const optionList = options.map((option) => <option>{option.name}</option>);
 
   var bodyContent;
@@ -35,10 +35,30 @@ function DropdownComponent({ name, options }) {
 
   return (
     <Container>
-      <h1>{name}</h1>
-      <div class="select">
-        <select>{bodyContent}</select>
-      </div>
+      {name == null ? (
+        <div className="select">
+          {handleChange == null ? (
+            <select>{bodyContent}</select>
+          ) : (
+            <select onChange={(event) => handleChange(event)}>
+              {bodyContent}
+            </select>
+          )}
+        </div>
+      ) : (
+        <div>
+          <h1>{name}</h1>
+          <div className="select">
+            {handleChange == null ? (
+              <select>{bodyContent}</select>
+            ) : (
+              <select onChange={(event) => handleChange(event)}>
+                {bodyContent}
+              </select>
+            )}
+          </div>
+        </div>
+      )}
     </Container>
   );
 }

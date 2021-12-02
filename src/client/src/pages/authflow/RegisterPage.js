@@ -123,22 +123,6 @@ function RegisterPage() {
       >
         {({ errors, isSubmitting }) => (
           <Form>
-            <Container3 className="container">
-              <MenuButton1
-                type="menu"
-                className="button is-link"
-                disabled={isSubmitting}
-              >
-                View Existing Users
-              </MenuButton1>
-              <MenuButton1
-                type="menu"
-                className="button is-link"
-                disabled={isSubmitting}
-              >
-                Add Users
-              </MenuButton1>
-            </Container3>
             <Container3 className="container"></Container3>
             <Container2 className="container">
               <FormField
