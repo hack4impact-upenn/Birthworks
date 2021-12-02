@@ -2,8 +2,9 @@ import { max } from 'lodash';
 import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import Table from '../components/Table';
+import styled from 'styled-components';
 
-const maxPageNumber = 10;
+const maxPageNumber = 3;
 
 const placeholderCustomers = [
   {
@@ -24,6 +25,114 @@ const placeholderCustomers = [
     Email: 'ziyaxu@hack4impact.org',
     PhoneNumber: 'XXX-XXX-XXXX',
   },
+  {
+    Id: '4',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '5',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '6',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '7',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '8',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '9',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '10',
+    Name: 'Ziya Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '11',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '12',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '13',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '14',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '15',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '16',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '17',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '18',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '19',
+    Name: 'Ziya "Page 2" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '20',
+    Name: 'Ziya "Page 3" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
+  {
+    Id: '21',
+    Name: 'Ziya "Page 3" Xu',
+    Email: 'ziyaxu@hack4impact.org',
+    PhoneNumber: 'XXX-XXX-XXXX',
+  },
 ];
 
 function ViewCustomersPage() {
@@ -33,7 +142,6 @@ function ViewCustomersPage() {
     if (pageNumber < maxPageNumber) {
       const newPageNumber = pageNumber + 1;
       setPageNumber(newPageNumber);
-      updatePage(newPageNumber);
     }
   };
 
@@ -41,24 +149,28 @@ function ViewCustomersPage() {
     if (pageNumber > 1) {
       const newPageNumber = pageNumber - 1;
       setPageNumber(newPageNumber);
-      updatePage(newPageNumber);
     }
   };
 
   const goToEnd = () => {
     const newPageNumber = maxPageNumber;
     setPageNumber(newPageNumber);
-    updatePage(newPageNumber);
   };
 
   const goToStart = () => {
     const newPageNumber = 1;
     setPageNumber(newPageNumber);
-    updatePage(newPageNumber);
   };
 
-  const updatePage = (newPageNumber) => {
-    alert(`fetching page number ... ${newPageNumber}`);
+  const leftButton = styled.div`
+    width: 60px;
+    border-width: 30px;
+    border-color: red blue green yellow;
+    border-style: solid;
+  `;
+
+  const getEntriesOnPage = (entry) => {
+    return Math.ceil(parseInt(entry.Id) / 10) == pageNumber;
   };
 
   return (
@@ -67,16 +179,42 @@ function ViewCustomersPage() {
       <Table
         headerColumns={['Name', 'Email', 'Phone Number']}
         dataColumns={['Name', 'Email', 'PhoneNumber']}
-        data={placeholderCustomers}
+        data={placeholderCustomers.filter(getEntriesOnPage)}
         hoverable={true}
         rowLink={() => console.log('clicked')}
       ></Table>
       <div>
-        <div onClick={goToStart}>{'<<'}</div>
-        <div onClick={decreasePage}>{'<'}</div>
-        <div onClick={decreasePage}>{pageNumber}</div>
-        <div onClick={increasePage}>{'>'}</div>
-        <div onClick={goToEnd}>{'>>'}</div>
+        <div class="columns is-mobile is-centered">
+          <div
+            onClick={goToStart}
+            style={{ cursor: 'pointer' }}
+            class="column is-narrow"
+          >
+            {'<<'}
+          </div>
+          <div
+            onClick={decreasePage}
+            style={{ cursor: 'pointer' }}
+            class="column is-narrow"
+          >
+            {'<'}
+          </div>
+          <div class="column is-narrow">{pageNumber}</div>
+          <div
+            onClick={increasePage}
+            style={{ cursor: 'pointer' }}
+            class="column is-narrow"
+          >
+            {'>'}
+          </div>
+          <div
+            onClick={goToEnd}
+            style={{ cursor: 'pointer' }}
+            class="column is-narrow"
+          >
+            {'>>'}
+          </div>
+        </div>
       </div>
     </div>
   );
