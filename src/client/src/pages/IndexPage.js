@@ -11,92 +11,6 @@ function IndexPage() {
     })
   );
 
-  const certifications = [
-    {
-      entryDate: Date.now(),
-      completionDate: Date.now(),
-      recertificationDate: Date.now(),
-      certificationDate: Date.now(),
-      trainer: 'some trainer',
-      name: 'some name',
-    },
-    {
-      entryDate: Date.now(),
-      completionDate: Date.now(),
-      recertificationDate: Date.now(),
-      certificationDate: Date.now(),
-      trainer: 'cert trainer',
-      name: 'another name',
-    },
-  ];
-
-  const workshops = [
-    {
-      startDate: Date.now(),
-      endDate: Date.now(),
-      location: 'virtual',
-      mentor: 'some trainer',
-      name: 'some name',
-    },
-    {
-      startDate: Date.now(),
-      endDate: Date.now(),
-      location: 'virtual',
-      mentor: 'some trainer',
-      name: 'some name',
-    },
-  ];
-
-  const options1 = [
-    {
-      name: 'Due in 6 months',
-    },
-    {
-      name: 'Due in 3 months',
-    },
-    {
-      name: 'Due in 1 month',
-    },
-    {
-      name: 'Expired',
-    },
-  ];
-
-  const name1 = 'Recertification';
-
-  const options2 = [
-    {
-      name: 'Due in 2 months',
-    },
-    {
-      name: 'Due in 1 month',
-    },
-    {
-      name: 'Expired',
-    },
-  ];
-  const name2 = 'Membership Renewal';
-
-  const options3 = [
-    {
-      name: 'Childbirth Educator',
-    },
-    {
-      name: 'Birth Doula',
-    },
-    {
-      name: 'Postpartum Doula',
-    },
-    {
-      name: 'ACED',
-    },
-    {
-      name: 'Kangaroula',
-    },
-  ];
-
-  const name3 = 'Program';
-
   return (
     <div className="container center">
       <header className="hero">
@@ -123,14 +37,6 @@ function IndexPage() {
           ))}
         </div>
       )}
-      <UserFilter
-        name1={name1}
-        options1={options1}
-        name2={name2}
-        options2={options2}
-        name3={name3}
-        options3={options3}
-      />
       <footer className="section">
         To be filled in with the actual app, soon! :)
       </footer>
