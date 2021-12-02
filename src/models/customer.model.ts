@@ -27,8 +27,12 @@ const CustomerSchema = new Schema({
   membership_end: { type: Date, required: true },
   notes_read: { type: String, required: true },
   notes_write: { type: String, required: true },
-  workshops: { type: [Number], required: true },
-  certifications: { type: [Number], required: true },
+  workshops: [
+    { type: mongoose.Schema.Types.ObjectId, ref: 'Workshop', required: true },
+  ],
+  certifications: [
+    { type: mongoose.Schema.Types.ObjectId, ref: 'Cert', required: true },
+  ],
 });
 
 const Customer = mongoose.model<ICustomer>('Customer', CustomerSchema);
