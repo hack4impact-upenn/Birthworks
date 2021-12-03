@@ -59,7 +59,6 @@ function customerInvalid(c: any, filter: any) {
   if (filter.membership != 'undefined' && filter != '') {
     membership_bad = c.membership_end < getMaxExpDate(filter.membership);
   }
-  console.log('');
   return recertifications_bad || membership_bad;
 }
 
@@ -95,7 +94,7 @@ router.post('/', async (req, res) => {
       result = result.filter((customer) => customerInvalid(customer, filters));
       res.status(200).json({ success: true, result });
     })
-    .catch((e) => console.log(e));
+    .catch((e) => errorHandler(res, e));
 });
 
 /**
