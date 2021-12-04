@@ -50,16 +50,24 @@ function customerInvalid(c: any, filter: any) {
   const temp_c = JSON.parse(JSON.stringify(c));
   const certs = temp_c.cert_obj;
   let recertifications_bad = false;
-  if (filter.recertification != 'undefined' && filter != '') {
+  let has_recertification_filter = false;
+  if (filter && filter.recertification != null) {
+    has_recertification_filter = true;
     recertifications_bad = certs.some(
       expiresTooSoon.bind(null, filter.recertification)
     );
   }
   let membership_bad = false;
-  if (filter.membership != 'undefined' && filter != '') {
+  let has_membership_filter = false;
+  if (filter && filter.membership != null) {
+    has_membership_filter = true;
     membership_bad = c.membership_end < getMaxExpDate(filter.membership);
   }
-  return recertifications_bad || membership_bad;
+  return (
+    recertifications_bad ||
+    membership_bad ||
+    (!has_membership_filter && !has_recertification_filter)
+  );
 }
 
 router.post('/', async (req, res) => {
