@@ -17,7 +17,9 @@ function CertificationBox({ certification }) {
     <div className="container">
       <Box>
         <div className="block">
-          <strong>{certification.name}</strong>.
+          <div>
+            <strong>{certification.name}</strong>.
+          </div>
         </div>
         <div className="block">
           <Columns>

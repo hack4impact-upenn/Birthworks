@@ -15,13 +15,22 @@ const boxStyle = {
   boxRadius: '20px',
 };
 
+const NameHeading = styled.h1`
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 2 rem;
+  margin-bottom: 0.5rem;
+`;
+
 function PersonalInfoBox({ personal_info }) {
   return (
     <div className="container">
-      <Box>
-        <div className="block">
-          <strong>{personal_info.name || 'Last Name, First Name'}</strong>.
-        </div>
+      <div className="block">
+        <NameHeading>
+          {personal_info.name || 'Last Name, First Name'}
+        </NameHeading>
+      </div>
+      <div class="box">
         <div className="block">
           {personal_info.location || 'City, State, Country'}
         </div>
@@ -45,7 +54,7 @@ function PersonalInfoBox({ personal_info }) {
             ? format(personal_info.memberUntilDate, 'MM/dd/yy')
             : 'MM/DD/YY'}
         </div>
-      </Box>
+      </div>
     </div>
   );
 }

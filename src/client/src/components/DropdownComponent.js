@@ -8,7 +8,7 @@ const Container = styled.div`
   border-top-right-radius: 15px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  text-align: center;
+  text-align: start;
   padding-bottom: 16px;
 
   h1 {

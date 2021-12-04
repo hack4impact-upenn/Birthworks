@@ -11,16 +11,16 @@ const NameHeading = styled.h1`
   margin-bottom: 0.5rem;
 `;
 
-const WorkshopContainer = styled.div`
-  border: 1px solid black;
-  border-radius: 20px;
-  padding-top: 3rem;
-  padding-right: 2.5rem;
-  padding-bottom: 3rem;
-  padding-left: 2.5rem;
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    #ffffff;
-`;
+// const WorkshopContainer = styled.div`
+//   border: 1px solid black;
+//   border-radius: 20px;
+//   padding-top: 3rem;
+//   padding-right: 2.5rem;
+//   padding-bottom: 3rem;
+//   padding-left: 2.5rem;
+//   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+//     #ffffff;
+// `;
 
 const ListContainer = styled.div`
   margin-top: 1 rem;
@@ -43,12 +43,10 @@ function WorkshopCard({ workshops }) {
 
   return (
     <div className="container">
-      <WorkshopContainer>
-        <div className="block">
-          <NameHeading>Last Name, First Name</NameHeading>
-        </div>
-        {bodyContent}
-      </WorkshopContainer>
+      <div className="block">
+        <NameHeading>Last Name, First Name</NameHeading>
+      </div>
+      {bodyContent}
     </div>
   );
 }

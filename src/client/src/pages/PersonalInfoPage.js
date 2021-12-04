@@ -56,9 +56,7 @@ function PersonalInfoPage({ personal_info }) {
   };
   return (
     <div className="container">
-      <WrapperBox>
-        <PersonalInfoBox personal_info={dict}></PersonalInfoBox>
-      </WrapperBox>
+      <PersonalInfoBox personal_info={dict}></PersonalInfoBox>
     </div>
   );
 }
