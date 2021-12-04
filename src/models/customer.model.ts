@@ -35,6 +35,6 @@ const CustomerSchema = new Schema({
   ],
 });
 
-const Customer = mongoose.model<ICustomer>('Customer', CustomerSchema);
+const Customer = mongoose.model<ICustomer>('Customers', CustomerSchema);
 
 export { Customer, ICustomer };
