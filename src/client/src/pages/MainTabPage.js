@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import PersonalInfoPage from './PersonalInfoPage';
 import TabSelector from '../components/TabSelector.js';
 import WorkshopCard from '../components/WorkshopCard';
@@ -8,6 +9,7 @@ import { Box, Block, Columns, Column } from 'react-bulma-components';
 import React, { useState, useEffect } from 'react';
 import CertificationCard from '../components/CertificationCard';
 import NotesCard from '../components/NotesCard';
+import api from '../api';
 
 const workshops = [
   {
@@ -60,6 +62,15 @@ const TabContainer = styled.div`
 `;
 
 function MainTabPage() {
+  const { customer_id } = useParams();
+
+  const { isLoading, error, data } = useQuery('customer', () =>
+    api.get(`/api/customers/${customer_id}`).then((res) => {
+      console.log(res);
+      return res.data;
+    })
+  );
+
   const options = [
     'Personal Information',
     'Workshops',

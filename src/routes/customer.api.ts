@@ -126,6 +126,7 @@ router.patch('/:id', async (req, res) => {
 
 router.get('/:customer_id', async (req, res) => {
   const { customer_id } = req.params;
+  console.log(customer_id);
   Customer.findById(customer_id)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((e) => errorHandler(res, e));

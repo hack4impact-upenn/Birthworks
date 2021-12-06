@@ -61,6 +61,11 @@ function App() {
                 <PublicRoute exact path="/tab" component={MainTabPage} />
                 <PublicRoute
                   exact
+                  path="/customers/:customer_id"
+                  component={MainTabPage}
+                />
+                <PublicRoute
+                  exact
                   path="/users"
                   component={AdminUserManagementPage}
                 />
