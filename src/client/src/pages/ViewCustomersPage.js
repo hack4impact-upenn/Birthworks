@@ -54,8 +54,6 @@ const name3 = 'Program';
 
 const maxPageNumber = 3;
 
-const customers = [];
-
 const placeholderCustomers = [
   {
     Id: '1',

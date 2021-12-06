@@ -3,6 +3,7 @@ import { Cert, ICert } from '../models/cert.model';
 import express from 'express';
 import auth from '../middleware/auth';
 import errorHandler from './error';
+import mongoose from 'mongoose';
 
 const number_of_customers = 10;
 
@@ -111,10 +112,10 @@ router.post('/', async (req, res) => {
  * field with the value of the notes param.
  */
 const patch_err_msg = 'Error updating customer notes';
-router.patch('/:id', async (req, res) => {
-  const { id } = req.params;
+router.patch('/:customer_id', async (req, res) => {
+  const { customer_id } = req.params;
   const { notes } = req.body;
-  Customer.findByIdAndUpdate(id, { notes_write: notes }, (err, _) => {
+  Customer.findByIdAndUpdate(customer_id, { notes_write: notes }, (err, _) => {
     if (err) {
       return errorHandler(res, patch_err_msg);
     }
@@ -126,8 +127,30 @@ router.patch('/:id', async (req, res) => {
 
 router.get('/:customer_id', async (req, res) => {
   const { customer_id } = req.params;
-  console.log(customer_id);
-  Customer.findById(customer_id)
+  Customer.aggregate([
+    {
+      $lookup: {
+        from: 'certifications',
+        localField: 'certifications',
+        foreignField: '_id',
+        as: 'cert_obj',
+      },
+    },
+    {
+      $lookup: {
+        from: 'workshops',
+        localField: 'workshops',
+        foreignField: '_id',
+        as: 'work_obj',
+      },
+    },
+    {
+      $match: {
+        _id: new mongoose.Types.ObjectId(customer_id),
+      },
+    },
+  ])
+
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((e) => errorHandler(res, e));
 });

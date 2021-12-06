@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import PersonalInfoPage from './PersonalInfoPage';
 import TabSelector from '../components/TabSelector.js';
 import WorkshopCard from '../components/WorkshopCard';
+import PersonalInfoBox from '../components/PersonalInfoBox';
 import 'bulma/css/bulma.min.css';
 import { Box, Block, Columns, Column } from 'react-bulma-components';
 import React, { useState, useEffect } from 'react';
@@ -65,9 +65,8 @@ function MainTabPage() {
   const { customer_id } = useParams();
 
   const { isLoading, error, data } = useQuery('customer', () =>
-    api.get(`/api/customers/${customer_id}`).then((res) => {
-      console.log(res);
-      return res.data;
+    api.get(`/api/customer/${customer_id}`).then((res) => {
+      return res.data.result[0];
     })
   );
 
@@ -79,15 +78,19 @@ function MainTabPage() {
   ];
   const [selectedOptionIndex, setSelectedOptionIndex] = React.useState(0);
 
+  // adding in some hooks below
+
   var pageShown = () => {
     if (selectedOptionIndex === 0) {
-      return <PersonalInfoPage />;
+      return <PersonalInfoBox customer={data} />; // check that this hook is correct
     } else if (selectedOptionIndex === 1) {
-      return <WorkshopCard workshops={workshops} />;
+      return <WorkshopCard workshops={data.work_obj} customer={data} />;
     } else if (selectedOptionIndex === 2) {
-      return <CertificationCard certifications={certifications} />;
+      return (
+        <CertificationCard certifications={data.cert_obj} customer={data} />
+      );
     } else if (selectedOptionIndex === 3) {
-      return <NotesCard />;
+      return <NotesCard customer={data} />;
     }
   };
   return (
@@ -103,7 +106,11 @@ function MainTabPage() {
           </TabContainer>
         </div>
         <div class="column is-four-fifths">
-          <InformationContainer> {pageShown()}</InformationContainer>
+          {isLoading ? (
+            <p>Loading</p>
+          ) : (
+            <InformationContainer> {pageShown()}</InformationContainer>
+          )}
         </div>
       </div>
     </div>

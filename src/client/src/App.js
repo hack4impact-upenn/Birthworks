@@ -18,9 +18,7 @@ import AdminUserManagementPage from './pages/AdminUserManagementPage';
 import ViewCustomersPage from './pages/ViewCustomersPage';
 import CertificationCard from './components/CertificationCard';
 import CertificationBox from './components/CertificationBox';
-import PersonalInfoPage from './pages/PersonalInfoPage';
 import MainTabPage from './pages/MainTabPage';
-//import PersonalInfoBox from './components/PersonalInfoBox';
 
 const queryCache = new QueryCache();
 
@@ -73,11 +71,6 @@ function App() {
                   exact
                   path="/customers"
                   component={ViewCustomersPage}
-                />
-                <PublicRoute
-                  exact
-                  path="/personalinfo"
-                  component={PersonalInfoPage}
                 />
                 <PrivateRoute
                   exact

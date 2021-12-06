@@ -2,6 +2,7 @@ import { divide } from 'mathjs';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Colors from '../common/Colors';
+import api from '../api';
 
 const Container = styled.div`
   border: 1px solid #000000;
@@ -118,12 +119,21 @@ const dummyUser = {
     'Some notes content here... \n ex. Renewed Membership \n (This section can be edited)',
 };
 
-function NotesCard() {
+// pass in a hook here, added the customer hook
+
+function NotesCard({ customer }) {
   const [editing, setEditing] = useState(false);
-  const [newNotes, setNewNotes] = useState(dummyUser.newNotes);
+  const [newNotes, setNewNotes] = useState(customer.notes_write); // needs to be customer.notes_read?
 
   const UpdateText = () => {
     setEditing(false);
+    api
+      .patch(`/api/customer/${customer._id}`, { notes: newNotes })
+      .then((res) => {
+        console.log(res);
+        return res.data;
+      })
+      .catch((e) => console.log(e));
   };
 
   const handleChange = (event) => {
@@ -134,7 +144,7 @@ function NotesCard() {
     <div>
       <div class="block">
         <NameHeading>
-          {dummyUser.lastName}, {dummyUser.firstName}
+          {customer.last_name}, {customer.first_name}
         </NameHeading>
       </div>
       <div class="block">
@@ -148,7 +158,7 @@ function NotesCard() {
               </form>
             ) : (
               <div>
-                <span>{newNotes}</span>{' '}
+                <p>{newNotes}</p>{' '}
                 <Icon onClick={() => setEditing(!editing)}>
                   {' '}
                   <i class="fas fa-pencil-alt"></i>
@@ -162,7 +172,7 @@ function NotesCard() {
         <div class="box">
           <OldNotesField>
             <h1>Old Notes</h1>
-            <p>{dummyUser.oldNotes}</p>
+            <p>{customer.notes_read}</p>
           </OldNotesField>
         </div>
       </div>
