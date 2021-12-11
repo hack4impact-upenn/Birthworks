@@ -6,11 +6,6 @@ import 'bulma/css/bulma.min.css';
 import { Box, Block, Columns, Column } from 'react-bulma-components';
 import { format } from 'date-fns';
 
-// type PersInfoBoxProps = {
-
-//   personal_info: PersInf;
-// };
-
 const boxStyle = {
   boxRadius: '20px',
 };
@@ -22,37 +17,34 @@ const NameHeading = styled.h1`
   margin-bottom: 0.5rem;
 `;
 
-function PersonalInfoBox({ personal_info }) {
+function PersonalInfoBox({ customer }) {
   return (
     <div className="container">
       <div className="block">
         <NameHeading>
-          {personal_info.name || 'Last Name, First Name'}
+          {customer.last_name || 'Last Name'},{' '}
+          {customer.first_name || 'First Name'}
         </NameHeading>
       </div>
       <div class="box">
         <div className="block">
-          {personal_info.location || 'City, State, Country'}
+          {customer.city || 'City'}, {customer.state || 'State'},{' '}
+          {customer.country || 'Country'}
         </div>
         <div className="block">
           {' '}
-          Phone Number: {personal_info.phoneNumber || '(xxx) xxx-xxxx'}
+          Phone Number: {customer.phone || '(xxx) xxx-xxxx'}
         </div>
         <div className="block">
-          Email: {personal_info.email || 'username@birthworks.org'}
+          Email: {customer.email || 'username@birthworks.org'}
         </div>
         <div className="block">
           {' '}
           Member Since:{' '}
-          {personal_info.memberSinceDate
-            ? format(personal_info.memberSinceDate, 'MM/dd/yy')
-            : 'MM/DD/YY'}
+          {format(new Date(customer.membership_start), 'MM/dd/yy')}
         </div>
         <div className="block">
-          Member Until:{' '}
-          {personal_info.memberUntilDate
-            ? format(personal_info.memberUntilDate, 'MM/dd/yy')
-            : 'MM/DD/YY'}
+          Member Until: {format(new Date(customer.membership_end), 'MM/dd/yy')}
         </div>
       </div>
     </div>

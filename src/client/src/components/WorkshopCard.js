@@ -27,7 +27,7 @@ const ListContainer = styled.div`
   margin-bottom: 10 rem;
 `;
 
-function WorkshopCard({ workshops }) {
+function WorkshopCard({ workshops, customer }) {
   const workshopList = workshops.map((workshop) => (
     <div className="block">
       <WorkshopBox key={workshop.id} workshop={workshop} />
@@ -41,10 +41,13 @@ function WorkshopCard({ workshops }) {
     bodyContent = <ListContainer>{workshopList}</ListContainer>;
   }
 
+  // edited the name heading here to call the first and last name
   return (
     <div className="container">
       <div className="block">
-        <NameHeading>Last Name, First Name</NameHeading>
+        <NameHeading>
+          {customer.last_name}, {customer.first_name}
+        </NameHeading>
       </div>
       {bodyContent}
     </div>

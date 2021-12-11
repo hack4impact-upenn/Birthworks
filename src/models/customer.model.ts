@@ -15,6 +15,8 @@ interface ICustomer extends mongoose.Document {
   notes_write: string;
   workshops: [number];
   certifications: [number];
+  email: string;
+  phone: string;
 }
 
 const CustomerSchema = new Schema({
@@ -33,6 +35,8 @@ const CustomerSchema = new Schema({
   certifications: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'Cert', required: true },
   ],
+  email: { type: String, required: true },
+  phone: { type: String, required: true },
 });
 
 const Customer = mongoose.model<ICustomer>('Customers', CustomerSchema);

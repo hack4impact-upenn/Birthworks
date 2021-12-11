@@ -18,28 +18,31 @@ function CertificationBox({ certification }) {
       <Box>
         <div className="block">
           <div>
-            <strong>{certification.name}</strong>.
+            <strong>{certification.name}</strong>
           </div>
         </div>
         <div className="block">
           <Columns>
             <div className="column">
               <div className="block">
-                Entry Date: {format(certification.entryDate, 'MM/dd/yyyy')}
+                Entry Date:{' '}
+                {format(new Date(certification.entry_date), 'MM/dd/yyyy')}
               </div>
               <div className="block">
                 Completion Date:{' '}
-                {format(certification.completionDate, 'MM/dd/yyyy')}
+                {format(new Date(certification.completion_date), 'MM/dd/yyyy')}
               </div>
               <div className="block">
                 Certification:{' '}
-                {format(certification.certificationDate, 'MM/dd/yyyy')}
+                {format(new Date(certification.certificate), 'MM/dd/yyyy')}
               </div>
             </div>
             <div className="column">
               <div className="block">
                 Recertification Date:{' '}
-                {format(certification.recertificationDate, 'MM/dd/yyyy')}
+                {certification.recertification_dates.map((data) =>
+                  format(new Date(data), 'MM/dd/yyyy')
+                ) + ' '}
               </div>
               <div className="block">Trainer: {certification.trainer}</div>
             </div>
