@@ -127,32 +127,37 @@ router.patch('/:customer_id', async (req, res) => {
 
 router.get('/:customer_id', async (req, res) => {
   const { customer_id } = req.params;
-  Customer.aggregate([
-    {
-      $lookup: {
-        from: 'certifications',
-        localField: 'certifications',
-        foreignField: '_id',
-        as: 'cert_obj',
-      },
-    },
-    {
-      $lookup: {
-        from: 'workshops',
-        localField: 'workshops',
-        foreignField: '_id',
-        as: 'work_obj',
-      },
-    },
-    {
-      $match: {
-        _id: new mongoose.Types.ObjectId(customer_id),
-      },
-    },
-  ])
 
-    .then((result) => res.status(200).json({ success: true, result }))
-    .catch((e) => errorHandler(res, e));
+  try {
+    Customer.aggregate([
+      {
+        $lookup: {
+          from: 'certifications',
+          localField: 'certifications',
+          foreignField: '_id',
+          as: 'cert_obj',
+        },
+      },
+      {
+        $lookup: {
+          from: 'workshops',
+          localField: 'workshops',
+          foreignField: '_id',
+          as: 'work_obj',
+        },
+      },
+      {
+        $match: {
+          _id: new mongoose.Types.ObjectId(customer_id),
+        },
+      },
+    ])
+
+      .then((result) => res.status(200).json({ success: true, result }))
+      .catch((e) => errorHandler(res, e));
+  } catch (err) {
+    errorHandler(res, err);
+  }
 });
 
 export default router;

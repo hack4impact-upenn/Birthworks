@@ -65,9 +65,14 @@ function MainTabPage() {
   const { customer_id } = useParams();
 
   const { isLoading, error, data } = useQuery('customer', () =>
-    api.get(`/api/customer/${customer_id}`).then((res) => {
-      return res.data.result[0];
-    })
+    api
+      .get(`/api/customer/${customer_id}`)
+      .then((res) => {
+        return res.data.result[0];
+      })
+      .catch((_) => {
+        return null;
+      })
   );
 
   const options = [
@@ -81,6 +86,9 @@ function MainTabPage() {
   // adding in some hooks below
 
   var pageShown = () => {
+    if (data == null) {
+      return 'INCORRECT CUSTOMER ID';
+    }
     if (selectedOptionIndex === 0) {
       return <PersonalInfoBox customer={data} />; // check that this hook is correct
     } else if (selectedOptionIndex === 1) {
