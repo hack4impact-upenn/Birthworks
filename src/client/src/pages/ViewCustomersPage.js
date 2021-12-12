@@ -1,6 +1,7 @@
 import Table from '../components/Table';
 import React, { useState } from 'react';
 import UserFilter from '../components/UserFilter';
+import styled from 'styled-components';
 
 const options1 = [
   {
@@ -183,6 +184,8 @@ const placeholderCustomers = [
   },
 ];
 
+const PageContainter = styled.div``;
+
 function ViewCustomersPage() {
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -215,56 +218,58 @@ function ViewCustomersPage() {
   };
 
   return (
-    <div className="container">
-      <UserFilter
-        name1={name1}
-        options1={options1}
-        name2={name2}
-        options2={options2}
-        name3={name3}
-        options3={options3}
-      />
-      <Table
-        headerColumns={['Name', 'Email', 'Phone Number']}
-        dataColumns={['Name', 'Email', 'PhoneNumber']}
-        data={placeholderCustomers.filter(getEntriesOnPage)}
-        hoverable={true}
-        rowLink={() => console.log('clicked')}
-      ></Table>
-      <div>
-        <div class="columns is-mobile is-centered">
-          <div
-            onClick={goToStart}
-            style={{ cursor: 'pointer' }}
-            class="column is-narrow"
-          >
-            {'<<'}
-          </div>
-          <div
-            onClick={decreasePage}
-            style={{ cursor: 'pointer' }}
-            class="column is-narrow"
-          >
-            {'<'}
-          </div>
-          <div class="column is-narrow">{pageNumber}</div>
-          <div
-            onClick={increasePage}
-            style={{ cursor: 'pointer' }}
-            class="column is-narrow"
-          >
-            {'>'}
-          </div>
-          <div
-            onClick={goToEnd}
-            style={{ cursor: 'pointer' }}
-            class="column is-narrow"
-          >
-            {'>>'}
+    <PageContainter>
+      <div className="container">
+        <UserFilter
+          name1={name1}
+          options1={options1}
+          name2={name2}
+          options2={options2}
+          name3={name3}
+          options3={options3}
+        />
+        <Table
+          headerColumns={['Name', 'Email', 'Phone Number']}
+          dataColumns={['Name', 'Email', 'PhoneNumber']}
+          data={placeholderCustomers.filter(getEntriesOnPage)}
+          hoverable={true}
+          rowLink={() => console.log('clicked')}
+        ></Table>
+        <div>
+          <div class="columns is-mobile is-centered">
+            <div
+              onClick={goToStart}
+              style={{ cursor: 'pointer' }}
+              class="column is-narrow"
+            >
+              {'<<'}
+            </div>
+            <div
+              onClick={decreasePage}
+              style={{ cursor: 'pointer' }}
+              class="column is-narrow"
+            >
+              {'<'}
+            </div>
+            <div class="column is-narrow">{pageNumber}</div>
+            <div
+              onClick={increasePage}
+              style={{ cursor: 'pointer' }}
+              class="column is-narrow"
+            >
+              {'>'}
+            </div>
+            <div
+              onClick={goToEnd}
+              style={{ cursor: 'pointer' }}
+              class="column is-narrow"
+            >
+              {'>>'}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </PageContainter>
   );
 }
 

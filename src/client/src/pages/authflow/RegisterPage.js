@@ -142,8 +142,8 @@ function RegisterPage() {
             <Container3 className="container"></Container3>
             <Container2 className="container">
               <FormField
-                name="firstName"
-                type="firstName"
+                name="first_name"
+                type="first_name"
                 placeholder="First Name"
                 placeholderTextColor="#969696"
                 errors={errors}
@@ -151,15 +151,15 @@ function RegisterPage() {
             </Container2>
             <Container4 className="container">
               <FormField
-                name="lastName"
-                type="lastName"
+                name="last_name"
+                type="last_name"
                 placeholder="Last Name"
                 placeholderTextColor="#969696"
                 errors={errors}
               />
             </Container4>
             <FormField
-              name="name=email"
+              name="email"
               type="email"
               placeholder="Email"
               placeholderTextColor="#969696"
