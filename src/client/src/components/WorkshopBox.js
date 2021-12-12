@@ -11,17 +11,18 @@ function WorkshopBox({ workshop }) {
     <div className="container">
       <Box>
         <div className="block">
-          <strong>{workshop.name}</strong>.
+          <strong>{workshop.workshop_name}</strong>
         </div>
         <div className="block"> Location: {workshop.location} </div>
         <div className="block">
           <Columns>
             <div className="column">
               <div className="block">
-                Start Date: {format(workshop.startDate, 'MM/dd/yyyy')}
+                Start Date:{' '}
+                {format(new Date(workshop.start_date), 'MM/dd/yyyy')}
               </div>
               <div className="block">
-                End Date: {format(workshop.endDate, 'MM/dd/yyyy')}
+                End Date: {format(new Date(workshop.end_date), 'MM/dd/yyyy')}
               </div>
             </div>
             <div className="column">

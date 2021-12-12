@@ -1,13 +1,15 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-import PersonalInfoPage from './PersonalInfoPage';
+import { Link, useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import TabSelector from '../components/TabSelector.js';
 import WorkshopCard from '../components/WorkshopCard';
+import PersonalInfoBox from '../components/PersonalInfoBox';
 import 'bulma/css/bulma.min.css';
 import { Box, Block, Columns, Column } from 'react-bulma-components';
 import React, { useState, useEffect } from 'react';
 import CertificationCard from '../components/CertificationCard';
 import NotesCard from '../components/NotesCard';
+import api from '../api';
 
 const workshops = [
   {
@@ -60,6 +62,19 @@ const TabContainer = styled.div`
 `;
 
 function MainTabPage() {
+  const { customer_id } = useParams();
+
+  const { isLoading, error, data } = useQuery('customer', () =>
+    api
+      .get(`/api/customer/${customer_id}`)
+      .then((res) => {
+        return res.data.result[0];
+      })
+      .catch((_) => {
+        return null;
+      })
+  );
+
   const options = [
     'Personal Information',
     'Workshops',
@@ -68,15 +83,22 @@ function MainTabPage() {
   ];
   const [selectedOptionIndex, setSelectedOptionIndex] = React.useState(0);
 
+  // adding in some hooks below
+
   var pageShown = () => {
+    if (data == null) {
+      return 'INCORRECT CUSTOMER ID';
+    }
     if (selectedOptionIndex === 0) {
-      return <PersonalInfoPage />;
+      return <PersonalInfoBox customer={data} />; // check that this hook is correct
     } else if (selectedOptionIndex === 1) {
-      return <WorkshopCard workshops={workshops} />;
+      return <WorkshopCard workshops={data.work_obj} customer={data} />;
     } else if (selectedOptionIndex === 2) {
-      return <CertificationCard certifications={certifications} />;
+      return (
+        <CertificationCard certifications={data.cert_obj} customer={data} />
+      );
     } else if (selectedOptionIndex === 3) {
-      return <NotesCard />;
+      return <NotesCard customer={data} />;
     }
   };
   return (
@@ -92,7 +114,11 @@ function MainTabPage() {
           </TabContainer>
         </div>
         <div class="column is-four-fifths">
-          <InformationContainer> {pageShown()}</InformationContainer>
+          {isLoading ? (
+            <p>Loading</p>
+          ) : (
+            <InformationContainer> {pageShown()}</InformationContainer>
+          )}
         </div>
       </div>
     </div>

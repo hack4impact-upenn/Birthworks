@@ -31,7 +31,7 @@ const ListContainer = styled.div`
   margin-bottom: 10 rem;
 `;
 
-function CertificationCard({ certifications }) {
+function CertificationCard({ certifications, customer }) {
   const certificationList = certifications.map((certification) => (
     <div className="block">
       <CertificationBox key={certification.id} certification={certification} />
@@ -45,10 +45,14 @@ function CertificationCard({ certifications }) {
     bodyContent = <ListContainer>{certificationList}</ListContainer>;
   }
 
+  // edited the name heading here to call the first and last name
+
   return (
     <div className="container">
       <div className="block">
-        <NameHeading>Last Name, First Name</NameHeading>
+        <NameHeading>
+          {customer.last_name}, {customer.first_name}
+        </NameHeading>
       </div>
       {bodyContent}
     </div>

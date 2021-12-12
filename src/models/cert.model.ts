@@ -9,7 +9,7 @@ interface ICert extends mongoose.Document {
   entry_date: Date;
   completion_date: Date;
   certificate: Date;
-  recertification_date: [Date];
+  recertification_dates: [Date];
   mentor: string;
 }
 
@@ -19,7 +19,7 @@ const CertSchema = new Schema({
   entry_date: { type: Date, required: true },
   completion_date: { type: Date, required: true },
   certificate: { type: Date, required: true },
-  recertification_date: { type: [Date], required: true },
+  recertification_dates: { type: [Date], required: true },
   mentor: { type: String, required: false },
 });
 
