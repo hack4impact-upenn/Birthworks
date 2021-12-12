@@ -5,8 +5,9 @@ import { AuthContext } from '../../context';
 const PublicRoute = (props) => {
   const auth = useContext(AuthContext);
 
+  // fix this
   return auth.isAuthenticated ? (
-    <Redirect to="/dashboard" />
+    <Route path={props.path} exact={props.exact} component={props.component} />
   ) : (
     <Route path={props.path} exact={props.exact} component={props.component} />
   );
