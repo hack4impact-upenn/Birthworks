@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '../components/Table';
 import UserFilter from '../components/UserFilter';
+import api from '../../api/index';
 
 const certifications = [
   {
@@ -40,6 +41,9 @@ const workshops = [
 
 const options1 = [
   {
+    name: 'No filter selected',
+  },
+  {
     name: 'Due in 6 months',
   },
   {
@@ -57,6 +61,9 @@ const name1 = 'Recertification';
 
 const options2 = [
   {
+    name: 'No filter selected',
+  },
+  {
     name: 'Due in 2 months',
   },
   {
@@ -69,6 +76,9 @@ const options2 = [
 const name2 = 'Membership Renewal';
 
 const options3 = [
+  {
+    name: 'No filter selected',
+  },
   {
     name: 'Childbirth Educator',
   },
@@ -110,17 +120,65 @@ const placeholderCustomers = [
 ];
 
 function ViewCustomersPage() {
+  const [data, setData] = useState([]);
+  const [filterCert, setCertFilter] = useState({});
+  const [filterRenewal, setRenewalFilter] = useState({});
+  const [filterProgram, setProgramFilter] = useState({});
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const setCertFilter = (selectedFilter) => {
+    setCertFilter(selectedFilter);
+  };
+
+  const setRenewalFilter = (selectedFilter) => {
+    setRenewalFilter(selectedFilter);
+  };
+
+  const setProgramFilter = (selectedFilter) => {
+    setProgramFilter(selectedFilter);
+  };
+
+  const setPage = (pageNumber) => {
+    setPageNumber(pageNumber);
+  };
+
+  const fetchData = async () => {
+    // function
+    // make the api calls
+    // set the current data with the api data
+    // /api/customer -> pass in filters and query and page number
+    // api paramerters
+    // pageNumber -> int
+    // query: {
+    // first_name, last_name, email, phone_number
+    //}
+    // filters : {
+    // recertification:number, membersp:nunber
+    // }
+    const result = await apicall();
+    setData(result);
+  };
+
+  useEffect(async () => {
+    fetchData();
+  }, [filter]);
+  // rerun whenver filters
+
   return (
     <div className="container">
       <UserFilter
         name1={name1}
         options1={options1}
+        setCertFilter={setCertFilter}
         name2={name2}
         options2={options2}
+        setRenewalFilter={setRenewalFilter}
         name3={name3}
         options3={options3}
+        setProgamFilter={setProgramFilter}
       />
       <Table
+        setPage={setPage}
         headerColumns={['Name', 'Email', 'Phone Number']}
         dataColumns={['Name', 'Email', 'PhoneNumber']}
         data={placeholderCustomers}

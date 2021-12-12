@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 `;
 
-function DropdownComponent({ name, options }) {
+function DropdownComponent({ name, options, setSelectedFilter }) {
   const optionList = options.map((option) => <option>{option.name}</option>);
 
   var bodyContent;
@@ -32,12 +32,19 @@ function DropdownComponent({ name, options }) {
   } else {
     bodyContent = optionList;
   }
+  const [filter, setFilter] = useState({});
+
+  const handleChange = (event) => {
+    setFilter(event.target.value);
+  };
 
   return (
     <Container>
       <h1>{name}</h1>
       <div class="select">
-        <select>{bodyContent}</select>
+        <select onChange={handleChange}>
+          <select>{bodyContent}</select>
+        </select>
       </div>
     </Container>
   );

@@ -17,15 +17,37 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-function UserFilter({ name1, options1, name2, options2, name3, options3 }) {
+function UserFilter({
+  name1,
+  options1,
+  setCertFilter,
+  name2,
+  options2,
+  setRenewalFilter,
+  name3,
+  options3,
+  setProgramFilter,
+}) {
   return (
     <div>
       <Wrapper>
         <SearchBar />
         <Container>
-          <DropdownComponent name={name1} options={options1} />
-          <DropdownComponent name={name2} options={options2} />
-          <DropdownComponent name={name3} options={options3} />
+          <DropdownComponent
+            setSelectedFilter={setCertFilter}
+            name={name1}
+            options={options1}
+          />
+          <DropdownComponent
+            setSelectedFilter={setRenewalFilter}
+            name={name2}
+            options={options2}
+          />
+          <DropdownComponent
+            setSelectedFilter={setProgramFilter}
+            name={name3}
+            options={options3}
+          />
         </Container>
       </Wrapper>
     </div>
