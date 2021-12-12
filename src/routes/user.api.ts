@@ -14,10 +14,10 @@ const saltRounds = 10;
 
 /* account signup endpoint */
 router.post('/signup', async (req, res) => {
-  const { firstName } = req.body;
-  const { lastName } = req.body;
+  const { first_name } = req.body;
+  const { last_name } = req.body;
   const { email } = req.body;
-  const { company } = req.body;
+  const type = 'user';
   const { password } = req.body;
 
   if (await User.findOne({ email })) {
@@ -31,10 +31,10 @@ router.post('/signup', async (req, res) => {
     }
 
     const newUser = new User({
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       email,
-      institutionName: company,
+      type,
       password: hashedPassword,
     });
 
