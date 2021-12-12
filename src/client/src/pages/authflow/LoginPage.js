@@ -51,7 +51,6 @@ const inputStyles = {
   padding: '10px 20px 8px 36px',
   border: 'none',
   width: '100%',
-  fontFamily: 'Montserrat',
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -79,7 +78,7 @@ function LoginPage() {
   const auth = useContext(AuthContext);
 
   if (auth.isAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/customers" />;
   }
 
   async function handleSubmit({ email, password }, actions) {

@@ -178,7 +178,7 @@ function RegisterPage() {
               className="button is-link"
               disabled={isSubmitting}
             >
-              Create User
+              Register
             </CreateUserButton>
           </Form>
         )}
