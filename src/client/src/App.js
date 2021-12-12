@@ -18,7 +18,7 @@ import AdminUserManagementPage from './pages/AdminUserManagementPage';
 import ViewCustomersPage from './pages/ViewCustomersPage';
 import CertificationCard from './components/CertificationCard';
 import CertificationBox from './components/CertificationBox';
-import MainTabPage from './pages/MainTabPage';
+import CustomerPage from './pages/CustomerPage';
 
 const queryCache = new QueryCache();
 
@@ -56,11 +56,11 @@ function App() {
                 <PublicRoute exact path="/" component={ViewCustomersPage} />
                 <PublicRoute exact path="/login" component={LoginPage} />
                 <PublicRoute exact path="/register" component={RegisterPage} />
-                <PublicRoute exact path="/tab" component={MainTabPage} />
+                <PublicRoute exact path="/tab" component={CustomerPage} />
                 <PublicRoute
                   exact
                   path="/customers/:customer_id"
-                  component={MainTabPage}
+                  component={CustomerPage}
                 />
                 <PublicRoute
                   exact

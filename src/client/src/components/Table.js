@@ -82,7 +82,11 @@ function Table(props) {
           if (props.hoverable) {
             console.log('hoverable');
             return (
-              <tr key={i} id={'hoverableRow'} onClick={props.rowLink}>
+              <tr
+                key={i}
+                id={'hoverableRow'}
+                onClick={() => props.rowLink(entry)}
+              >
                 {props.dataColumns.map(function (col, j) {
                   if (col == 'Delete') {
                     return getDeleteElement(i, j);
