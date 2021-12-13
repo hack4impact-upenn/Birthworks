@@ -67,7 +67,7 @@ function App() {
                   path="/users"
                   component={AdminUserManagementPage}
                 />
-                <PublicRoute
+                <PrivateRoute
                   exact
                   path="/customers"
                   component={ViewCustomersPage}
