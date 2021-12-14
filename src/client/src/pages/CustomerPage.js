@@ -61,7 +61,7 @@ const TabContainer = styled.div`
   margin: 2rem;
 `;
 
-function MainTabPage() {
+function CustomerPage() {
   const { customer_id } = useParams();
 
   const { isLoading, error, data } = useQuery('customer', () =>
@@ -125,4 +125,4 @@ function MainTabPage() {
   );
 }
 
-export default MainTabPage;
+export default CustomerPage;

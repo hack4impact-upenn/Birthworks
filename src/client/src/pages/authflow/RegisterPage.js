@@ -91,7 +91,7 @@ function RegisterPage() {
   const auth = useContext(AuthContext);
 
   if (auth.isAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/customers" />;
   }
 
   async function handleSubmit(values, actions) {
@@ -178,7 +178,7 @@ function RegisterPage() {
               className="button is-link"
               disabled={isSubmitting}
             >
-              Create User
+              Register
             </CreateUserButton>
           </Form>
         )}
