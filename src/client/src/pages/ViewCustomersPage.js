@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-=======
->>>>>>> master
 import Table from '../components/Table';
-import React, { useState } from 'react';
 import UserFilter from '../components/UserFilter';
-import api from '../../api/index';
+import api from '../api/index';
 
 const options1 = [
   {
@@ -198,28 +194,34 @@ const placeholderCustomers = [
 ];
 
 function ViewCustomersPage() {
-<<<<<<< HEAD
   const [data, setData] = useState([]);
   const [filterCert, setCertFilter] = useState({});
   const [filterRenewal, setRenewalFilter] = useState({});
   const [filterProgram, setProgramFilter] = useState({});
   const [pageNumber, setPageNumber] = useState(1);
 
-  const setCertFilter = (selectedFilter) => {
+  const setCert = (selectedFilter) => {
     setCertFilter(selectedFilter);
   };
 
-  const setRenewalFilter = (selectedFilter) => {
+  const setRenewal = (selectedFilter) => {
     setRenewalFilter(selectedFilter);
   };
 
-  const setProgramFilter = (selectedFilter) => {
+  const setProgram = (selectedFilter) => {
     setProgramFilter(selectedFilter);
   };
 
   const setPage = (pageNumber) => {
     setPageNumber(pageNumber);
   };
+
+  const { isLoading, error, data } = useQuery('users', () =>
+    api.get('/api/users').then((res) => {
+      console.log(res);
+      return res.data;
+    })
+  );
 
   const fetchData = async () => {
     // function
@@ -234,7 +236,11 @@ function ViewCustomersPage() {
     // filters : {
     // recertification:number, membersp:nunber
     // }
-    const result = await apicall();
+    const result = await api.get('/api/users').then((res) => {
+      console.log(res);
+      return res.data;
+    });
+
     setData(result);
   };
 
@@ -242,9 +248,6 @@ function ViewCustomersPage() {
     fetchData();
   }, [filter]);
   // rerun whenver filters
-
-=======
-  const [pageNumber, setPageNumber] = useState(1);
 
   const increasePage = () => {
     if (pageNumber < maxPageNumber) {
@@ -274,19 +277,18 @@ function ViewCustomersPage() {
     return Math.ceil(parseInt(entry.Id) / 10) == pageNumber;
   };
 
->>>>>>> master
   return (
     <div className="container">
       <UserFilter
         name1={name1}
         options1={options1}
-        setCertFilter={setCertFilter}
+        setCertFilter={setCert}
         name2={name2}
         options2={options2}
-        setRenewalFilter={setRenewalFilter}
+        setRenewalFilter={setRenewal}
         name3={name3}
         options3={options3}
-        setProgamFilter={setProgramFilter}
+        setProgamFilter={setProgram}
       />
       <Table
         setPage={setPage}

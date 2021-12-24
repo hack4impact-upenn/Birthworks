@@ -32,10 +32,9 @@ function DropdownComponent({ name, options, setSelectedFilter }) {
   } else {
     bodyContent = optionList;
   }
-  const [filter, setFilter] = useState({});
 
   const handleChange = (event) => {
-    setFilter(event.target.value);
+    setSelectedFilter(event.target.value);
   };
 
   return (
