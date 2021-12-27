@@ -7,7 +7,7 @@ const PublicRoute = (props) => {
 
   // fix this
   return auth.isAuthenticated ? (
-    <Route path={props.path} exact={props.exact} component={props.component} />
+    <Redirect to="/customers" />
   ) : (
     <Route path={props.path} exact={props.exact} component={props.component} />
   );

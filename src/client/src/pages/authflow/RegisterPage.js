@@ -23,18 +23,6 @@ const Container2 = styled.div`
   padding-right: 1%;
 `;
 
-const Container3 = styled.div`
-  background-color: #ffffff;
-  border-radius: 20px;
-  min-width: 35 px !important;
-  display: inline-block;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: left;
-`;
-
 const Container4 = styled.div`
   background-color: #ffffff;
   border-radius: 20px;
@@ -50,19 +38,6 @@ const CreateUserButton = styled.button`
   background-color: #b4579e !important;
   border-radius: 10px;
   margin-left: auto;
-  display: block;
-`;
-
-const MenuButton1 = styled.button`
-  width: 15%;
-  font-weight: 700;
-  text-align: left;
-  font-size: 10px;
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  border: 10px #000000 !important;
-  border-radius: 10px;
-  margin-right: right;
   display: block;
 `;
 
@@ -96,7 +71,7 @@ function RegisterPage() {
 
   async function handleSubmit(values, actions) {
     try {
-      await api.post('/api/users/signup', values);
+      await api.post('/api/user/signup', values);
       await auth.login(values.email, values.password);
     } catch (error) {
       const { message, code } =
@@ -107,7 +82,7 @@ function RegisterPage() {
       if (code === 'already-exists') {
         fields = ['email'];
       } else {
-        fields = ['firstName', 'lastName', 'email', 'password'];
+        fields = ['first_name', 'last_name', 'email', 'password'];
       }
       for (const field of fields) {
         actions.setFieldError(field, message);
@@ -118,12 +93,16 @@ function RegisterPage() {
   return (
     <Container className="container">
       <Formik
-        initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
+        initialValues={{
+          first_name: '',
+          last_name: '',
+          email: '',
+          password: '',
+        }}
         onSubmit={handleSubmit}
       >
         {({ errors, isSubmitting }) => (
           <Form>
-            <Container3 className="container"></Container3>
             <Container2 className="container">
               <FormField
                 name="first_name"

@@ -13,11 +13,8 @@ import LoginPage from './pages/authflow/LoginPage';
 import RegisterPage from './pages/authflow/RegisterPage';
 import IndexPage from './pages/IndexPage';
 import NotFoundPage from './pages/NotFoundPage';
-import DashboardPage from './pages/DashboardPage';
 import AdminUserManagementPage from './pages/AdminUserManagementPage';
 import ViewCustomersPage from './pages/ViewCustomersPage';
-import CertificationCard from './components/CertificationCard';
-import CertificationBox from './components/CertificationBox';
 import CustomerPage from './pages/CustomerPage';
 
 const queryCache = new QueryCache();
@@ -53,16 +50,16 @@ function App() {
             {false && <ReactQueryDevtools />}
             <main>
               <Switch>
-                <PublicRoute exact path="/" component={ViewCustomersPage} />
+                <PublicRoute exact path="/" component={IndexPage} />
                 <PublicRoute exact path="/login" component={LoginPage} />
                 <PublicRoute exact path="/register" component={RegisterPage} />
                 <PublicRoute exact path="/tab" component={CustomerPage} />
-                <PublicRoute
+                <PrivateRoute
                   exact
                   path="/customers/:customer_id"
                   component={CustomerPage}
                 />
-                <PublicRoute
+                <PublicRoute // TODO: change to PrivateRoute when done testing
                   exact
                   path="/users"
                   component={AdminUserManagementPage}
@@ -71,11 +68,6 @@ function App() {
                   exact
                   path="/customers"
                   component={ViewCustomersPage}
-                />
-                <PrivateRoute
-                  exact
-                  path="/dashboard"
-                  component={DashboardPage}
                 />
                 <Route exact={false} component={NotFoundPage} />
               </Switch>
