@@ -3,6 +3,7 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import Table from '../components/Table';
 import UserTable from '../components/UserTable';
+import RegisterPage from './authflow/RegisterPage';
 
 const placeholderUsers = [
   {
@@ -25,9 +26,9 @@ const placeholderUsers = [
   },
 ];
 
-function AdminUserManagementPage() {
+const ViewExistingUsers = () => {
   return (
-    <div className="container">
+    <div>
       <SearchBar></SearchBar>
       <Table
         headerColumns={['User Type', 'Name', 'Email', 'Delete']}
@@ -35,6 +36,15 @@ function AdminUserManagementPage() {
         data={placeholderUsers}
         hoverable={false}
       ></Table>
+    </div>
+  );
+};
+
+function AdminUserManagementPage() {
+  return (
+    <div className="container">
+      <ViewExistingUsers />
+      <RegisterPage />
     </div>
   );
 }
