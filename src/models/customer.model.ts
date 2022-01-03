@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
+mongoose.Schema.Types.String.checkRequired((v) => typeof v === 'string');
+
 interface ICustomer extends mongoose.Document {
   _id: string;
   first_name: string;
