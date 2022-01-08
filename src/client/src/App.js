@@ -10,12 +10,12 @@ import { AuthContext } from './context';
 
 // import pages
 import LoginPage from './pages/authflow/LoginPage';
-import RegisterPage from './pages/authflow/RegisterPage';
 import IndexPage from './pages/IndexPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AdminUserManagementPage from './pages/AdminUserManagementPage';
 import ViewCustomersPage from './pages/ViewCustomersPage';
 import CustomerPage from './pages/CustomerPage';
+import AddUserPage from './pages/AddUserPage';
 
 const queryCache = new QueryCache();
 
@@ -52,18 +52,17 @@ function App() {
               <Switch>
                 <PublicRoute exact path="/" component={IndexPage} />
                 <PublicRoute exact path="/login" component={LoginPage} />
-                <PublicRoute exact path="/register" component={RegisterPage} />
-                <PublicRoute exact path="/tab" component={CustomerPage} />
                 <PrivateRoute
                   exact
                   path="/customers/:customer_id"
                   component={CustomerPage}
                 />
-                <PublicRoute // TODO: change to PrivateRoute when done testing
+                <PrivateRoute
                   exact
-                  path="/users"
+                  path="/viewUsers"
                   component={AdminUserManagementPage}
                 />
+                <PrivateRoute exact path="/addUser" component={AddUserPage} />
                 <PrivateRoute
                   exact
                   path="/customers"

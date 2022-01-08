@@ -1,14 +1,6 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-// import { IPersInf} from '../../../models/cert.model';
 import 'bulma/css/bulma.min.css';
-
-import { Box, Block, Columns, Column } from 'react-bulma-components';
 import { format } from 'date-fns';
-
-const boxStyle = {
-  boxRadius: '20px',
-};
 
 const NameHeading = styled.h1`
   font-size: 24px;
@@ -28,7 +20,7 @@ function PersonalInfoBox({ customer }) {
       </div>
       <div class="box">
         <div className="block">
-          {customer.city || 'City'}, {customer.state || 'State'},{' '}
+          Location: {customer.city || 'City'}, {customer.state || 'State'},{' '}
           {customer.country || 'Country'}
         </div>
         <div className="block">

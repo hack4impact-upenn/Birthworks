@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Colors from '../common/Colors';
+import api from '../api';
+import { useHistory } from 'react-router-dom';
 
 const StyledTable = styled.table`
   border: 1px solid #000000;
@@ -53,11 +54,36 @@ const StyledTable = styled.table`
   }
 `;
 
-function getDeleteElement(i, j) {
-  console.log('delete col');
-  console.log(`dataCol${j}`);
+function getDeleteElement(i, j, data) {
+  const history = useHistory();
+
+  const onClickHandler = (user) => {
+    try {
+      console.log(`click and delete ${user.id}`);
+      // api.delete(`/api/users/${user.id}`);
+      // history.push(`/viewUsers`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onMouseEnterHandler = () => {
+    console.log('enter');
+  };
+
+  const onMouseLeaveHandler = () => {
+    console.log('leave');
+  };
+
   return (
-    <td key={`row${i}col${j}`} id={`dataCol${j}`} class={'deleteData'}>
+    <td
+      key={`row${i}col${j}`}
+      id={`dataCol${j}`}
+      class={'deleteData'}
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
+      onClick={onClickHandler(data[i])}
+    >
       Delete
     </td>
   );
@@ -80,7 +106,6 @@ function Table(props) {
       <tbody>
         {props.data.map(function (entry, i) {
           if (props.hoverable) {
-            console.log('hoverable');
             return (
               <tr
                 key={i}
@@ -89,7 +114,7 @@ function Table(props) {
               >
                 {props.dataColumns.map(function (col, j) {
                   if (col == 'Delete') {
-                    return getDeleteElement(i, j);
+                    return getDeleteElement(i, j, props.data);
                   }
                   return (
                     <td key={`row${i}col${j}`} id={`dataCol${j}`}>
@@ -104,7 +129,7 @@ function Table(props) {
               <tr key={i}>
                 {props.dataColumns.map(function (col, j) {
                   if (col == 'Delete') {
-                    return getDeleteElement(i, j);
+                    return getDeleteElement(i, j, props.data);
                   }
                   return (
                     <td key={`row${i}col${j}`} id={`dataCol${j}`}>

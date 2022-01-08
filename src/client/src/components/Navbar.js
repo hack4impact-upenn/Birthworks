@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
-import { Redirect } from 'react-router-dom';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import Colors from '../common/Colors';
 import { AuthContext } from '../context';
 import DropdownComponent from './DropdownComponent';
 import 'bulma/css/bulma.min.css';
+import api from '../api';
 
 const NavBarItems = styled.div`
   &:hover {
@@ -18,16 +17,16 @@ function Navbar() {
   const history = useHistory();
 
   const options = [
-    { name: 'User Name' },
+    { name: 'View Customers' },
     { name: 'View Users' },
     { name: 'Logout' },
   ];
 
   async function handleChange(event) {
-    if (event.target.value == 'User Name') {
-      history.push(`/personalinfo`);
+    if (event.target.value == 'View Customers') {
+      history.push(`/customers`);
     } else if (event.target.value == 'View Users') {
-      history.push(`/users`);
+      history.push(`/viewUsers`);
     } else if (event.target.value == 'Logout') {
       handleLogout();
       history.push(`/login`);
@@ -38,7 +37,14 @@ function Navbar() {
     await auth.logout();
   }
 
-  // change auth is authenticated to be correct!
+  const [userName, setUserName] = useState(null);
+  useEffect(async () => {
+    if (auth.isAuthenticated) {
+      const request = await api.get('/api/users/me');
+      setUserName(request.data.data.email);
+    }
+  }, [auth.isAuthenticated]);
+
   return (
     <nav
       className="navbar"
@@ -52,12 +58,15 @@ function Navbar() {
         </div>
         <div className="navbar-menu">
           <div className="navbar-end">
-            {!auth.isAuthenticated ? (
-              <div style={{ marginTop: '7%' }}>
-                <DropdownComponent
-                  options={options}
-                  handleChange={handleChange}
-                />
+            {auth.isAuthenticated ? (
+              <div>
+                <div className="navbar-username">{userName}</div>
+                <div style={{ marginTop: '7%' }}>
+                  <DropdownComponent
+                    options={options}
+                    handleChange={handleChange}
+                  />
+                </div>
               </div>
             ) : (
               <></>

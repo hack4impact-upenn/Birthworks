@@ -5,7 +5,7 @@ import auth from '../middleware/auth';
 import errorHandler from './error';
 import mongoose from 'mongoose';
 
-const number_of_customers = 10;
+const page_size = 10;
 
 const router = express.Router();
 
@@ -71,10 +71,11 @@ function customerInvalid(c: any, filter: any) {
   );
 }
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
   const { page_num } = req.body;
   const { filters } = req.body;
   const { query } = req.body;
+
   let find_query = {};
   if (typeof query !== 'undefined') {
     find_query = {
@@ -86,6 +87,7 @@ router.post('/', async (req, res) => {
       ],
     };
   }
+
   Customer.aggregate([
     {
       $lookup: {
@@ -97,8 +99,8 @@ router.post('/', async (req, res) => {
     },
   ])
     .match(find_query)
-    .skip((page_num - 1) * number_of_customers)
-    .limit(number_of_customers)
+    .skip((page_num - 1) * page_size)
+    .limit(page_size)
     .then((result) => {
       result = result.filter((customer) => customerInvalid(customer, filters));
       res.status(200).json({ success: true, result });

@@ -114,7 +114,19 @@ router.get('/me', auth, (req, res) => {
     .catch((err) => errorHandler(res, err.message));
 });
 
-/* TESTING ENDPOINTS BELOW (DELETE IN PRODUCTION) */
+router.delete('/:user_id', async (req, res) => {
+  const { user_id } = req.params;
+  // console.log(user_id);
+  try {
+    const user = await User.findById(user_id);
+    if (!user) return errorHandler(res, 'User does not exist.');
+    await User.findByIdAndDelete(user_id);
+    return res.status(200).json({ success: true });
+  } catch (err) {
+    errorHandler(res, err.message);
+  }
+});
+
 /* fetch all users in database */
 router.get('/', (_, res) => {
   User.find({})
@@ -122,6 +134,7 @@ router.get('/', (_, res) => {
     .catch((e) => errorHandler(res, e));
 });
 
+/* TESTING ENDPOINTS BELOW (DELETE IN PRODUCTION) */
 /* delete all users in database */
 router.delete('/', (_, res) => {
   User.deleteMany({})

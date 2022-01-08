@@ -1,11 +1,10 @@
 import Table from '../components/Table';
 import React, { useState } from 'react';
 import UserFilter from '../components/UserFilter';
-import { re } from 'mathjs';
-import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import api from '../api';
 
-const options1 = [
+const recertificationFilterOptions = [
   {
     name: 'Due in 6 months',
   },
@@ -19,10 +18,9 @@ const options1 = [
     name: 'Expired',
   },
 ];
+const recertification = 'Recertification';
 
-const name1 = 'Recertification';
-
-const options2 = [
+const membershipFilterOptions = [
   {
     name: 'Due in 2 months',
   },
@@ -33,9 +31,9 @@ const options2 = [
     name: 'Expired',
   },
 ];
-const name2 = 'Membership Renewal';
+const membership = 'Membership Renewal';
 
-const options3 = [
+const programFilterOptions = [
   {
     name: 'Childbirth Educator',
   },
@@ -52,148 +50,37 @@ const options3 = [
     name: 'Kangaroula',
   },
 ];
-
-const name3 = 'Program';
-
-const maxPageNumber = 3;
-
-const placeholderCustomers = [
-  {
-    Id: '1',
-    Name: 'Cristin Tighe',
-    Email: 'programdirector@birthworks.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '2',
-    Name: 'Mohamed Abaker',
-    Email: 'mohamed.abakerg@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '3',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '4',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '5',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '6',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '7',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '8',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '9',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '10',
-    Name: 'Ziya Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '11',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '12',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '13',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '14',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '15',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '16',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '17',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '18',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '19',
-    Name: 'Ziya "Page 2" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '20',
-    Name: 'Ziya "Page 3" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-  {
-    Id: '21',
-    Name: 'Ziya "Page 3" Xu',
-    Email: 'ziyaxu@hack4impact.org',
-    PhoneNumber: 'XXX-XXX-XXXX',
-  },
-];
-
-
+const program = 'Program';
 
 function ViewCustomersPage() {
   const [pageNumber, setPageNumber] = useState(1);
+  const maxPageNumber = 3;
+
+  const [customers, setCustomers] = useState([]);
+
+  const getCustomers = () => {
+    api
+      .get('/api/customer', {
+        page_num: pageNumber,
+      })
+      .then((res) => {
+        setCustomers(
+          res.data.result.map((customer) => ({
+            id: customer._id,
+            name: customer.first_name + ' ' + customer.last_name,
+            email: customer.email,
+            phone_number: customer.phone,
+          }))
+        );
+        return res.data;
+      });
+  };
+  getCustomers();
 
   const increasePage = () => {
     if (pageNumber < maxPageNumber) {
       const newPageNumber = pageNumber + 1;
+      getCustomers();
       setPageNumber(newPageNumber);
     }
   };
@@ -201,45 +88,43 @@ function ViewCustomersPage() {
   const decreasePage = () => {
     if (pageNumber > 1) {
       const newPageNumber = pageNumber - 1;
+      getCustomers();
       setPageNumber(newPageNumber);
     }
   };
 
   const goToEnd = () => {
     const newPageNumber = maxPageNumber;
+    getCustomers();
     setPageNumber(newPageNumber);
   };
 
   const goToStart = () => {
     const newPageNumber = 1;
+    getCustomers();
     setPageNumber(newPageNumber);
-  };
-
-  const getEntriesOnPage = (entry) => {
-    return Math.ceil(parseInt(entry.Id) / 10) == pageNumber;
   };
 
   const history = useHistory();
 
   const redirectToCustomerPage = (customer) => {
-    console.log(customer);
-    history.push(`/customers/${customer.Id}`);
+    history.push(`/customers/${customer.id}`);
   };
 
   return (
-    <div className="container">
+    <div className="ViewCustomers">
       <UserFilter
-        name1={name1}
-        options1={options1}
-        name2={name2}
-        options2={options2}
-        name3={name3}
-        options3={options3}
+        name1={recertification}
+        options1={recertificationFilterOptions}
+        name2={membership}
+        options2={membershipFilterOptions}
+        name3={program}
+        options3={programFilterOptions}
       />
       <Table
         headerColumns={['Name', 'Email', 'Phone Number']}
-        dataColumns={['Name', 'Email', 'PhoneNumber']}
-        data={placeholderCustomers.filter(getEntriesOnPage)}
+        dataColumns={['name', 'email', 'phone']}
+        data={customers}
         hoverable={true}
         rowLink={(customer) => redirectToCustomerPage(customer)}
       ></Table>
@@ -276,7 +161,7 @@ function ViewCustomersPage() {
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 

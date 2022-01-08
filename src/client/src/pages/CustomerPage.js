@@ -1,51 +1,14 @@
 import styled from 'styled-components/macro';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import TabSelector from '../components/TabSelector.js';
 import WorkshopCard from '../components/WorkshopCard';
 import PersonalInfoBox from '../components/PersonalInfoBox';
 import 'bulma/css/bulma.min.css';
-import { Box, Block, Columns, Column } from 'react-bulma-components';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CertificationCard from '../components/CertificationCard';
 import NotesCard from '../components/NotesCard';
 import api from '../api';
-
-const workshops = [
-  {
-    startDate: Date.now(),
-    endDate: Date.now(),
-    location: 'virtual',
-    mentor: 'some trainer',
-    name: 'some name',
-  },
-  {
-    startDate: Date.now(),
-    endDate: Date.now(),
-    location: 'virtual',
-    mentor: 'some trainer',
-    name: 'some name',
-  },
-];
-
-const certifications = [
-  {
-    entryDate: Date.now(),
-    completionDate: Date.now(),
-    recertificationDate: Date.now(),
-    certificationDate: Date.now(),
-    trainer: 'some trainer',
-    name: 'some name',
-  },
-  {
-    entryDate: Date.now(),
-    completionDate: Date.now(),
-    recertificationDate: Date.now(),
-    certificationDate: Date.now(),
-    trainer: 'cert trainer',
-    name: 'another name',
-  },
-];
 
 const InformationContainer = styled.div`
   margin: 2rem;
@@ -90,7 +53,7 @@ function CustomerPage() {
       return 'INCORRECT CUSTOMER ID';
     }
     if (selectedOptionIndex === 0) {
-      return <PersonalInfoBox customer={data} />; // check that this hook is correct
+      return <PersonalInfoBox customer={data} />;
     } else if (selectedOptionIndex === 1) {
       return <WorkshopCard workshops={data.work_obj} customer={data} />;
     } else if (selectedOptionIndex === 2) {
@@ -101,6 +64,7 @@ function CustomerPage() {
       return <NotesCard customer={data} />;
     }
   };
+
   return (
     <div>
       <div class="columns">
