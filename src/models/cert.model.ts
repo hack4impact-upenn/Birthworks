@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 interface ICert extends mongoose.Document {
   _id: string;
-  customer_id: number;
+  customer_id: string;
   name: string;
   entry_date: Date;
   completion_date: Date;
@@ -15,7 +15,7 @@ interface ICert extends mongoose.Document {
 
 const CertSchema = new Schema({
   name: { type: String, required: true },
-  customer_id: { type: Number, required: true },
+  customer_id: { type: String, required: true },
   entry_date: { type: Date, required: true },
   completion_date: { type: Date, required: true },
   certificate: { type: Date, required: true },
