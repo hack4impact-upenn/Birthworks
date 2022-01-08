@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import UserFilter from '../components/UserFilter';
 import { useHistory } from 'react-router-dom';
 import api from '../api';
+import SearchBar from '../components/SearchBar';
+import { useQuery } from 'react-query';
 
 const recertificationFilterOptions = [
   {
@@ -111,8 +113,32 @@ function ViewCustomersPage() {
     history.push(`/customers/${customer.id}`);
   };
 
+  const onSearch = (query) => {
+    console.log('querying');
+    api
+      .get('/api/customer', {
+        page_num: pageNumber,
+        query,
+      })
+      .then((res) => {
+        setCustomers(
+          res.data.result.map((customer) => ({
+            id: customer._id,
+            name: customer.first_name + ' ' + customer.last_name,
+            email: customer.email,
+            phone_number: customer.phone,
+          }))
+        );
+        return res.data;
+      });
+  };
+
   return (
     <div className="ViewCustomers">
+      <SearchBar
+        placeholder={'Search by name, email, phone'}
+        onSearch={onSearch}
+      />
       <UserFilter
         name1={recertification}
         options1={recertificationFilterOptions}
@@ -129,7 +155,7 @@ function ViewCustomersPage() {
         rowLink={(customer) => redirectToCustomerPage(customer)}
       ></Table>
       <div>
-        <div class="columns is-mobile is-centered">
+        <div class="columns is-mobile is-centered padding-top: 20px">
           <div
             onClick={goToStart}
             style={{ cursor: 'pointer' }}

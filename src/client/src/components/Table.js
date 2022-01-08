@@ -8,13 +8,12 @@ const StyledTable = styled.table`
   display: table;
   table-layout: auto;
   width: 100%;
-  padding-bottom: 20px;
   border-collapse: separate;
   border-spacing: 0px 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   th {
     font-weight: 600;
     font-size: 16px;
@@ -58,21 +57,21 @@ function getDeleteElement(i, j, data) {
   const history = useHistory();
 
   const onClickHandler = (user) => {
-    try {
-      console.log(`click and delete ${user.id}`);
-      // api.delete(`/api/users/${user.id}`);
-      // history.push(`/viewUsers`);
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   console.log(`click and delete ${user.id}`);
+    //   // api.delete(`/api/users/${user.id}`);
+    //   // history.push(`/viewUsers`);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   const onMouseEnterHandler = () => {
-    console.log('enter');
+    // console.log('enter');
   };
 
   const onMouseLeaveHandler = () => {
-    console.log('leave');
+    // console.log('leave');
   };
 
   return (
