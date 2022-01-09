@@ -1,5 +1,6 @@
 import 'bulma/css/bulma.min.css';
 import styled from 'styled-components';
+import React from 'react';
 
 const Container = styled.div`
   width: 100%;
@@ -24,8 +25,11 @@ const Container = styled.div`
 `;
 
 function DropdownComponent({ name, options, handleChange }) {
-  const optionList = options.map((option) => <option>{option.name}</option>);
-
+  const optionList = options.map((option) => (
+    <option key={option.value} value={option.value}>
+      {option.name}
+    </option>
+  ));
   var bodyContent;
   if (options.length === 0) {
     bodyContent = <p>no options found</p>;
