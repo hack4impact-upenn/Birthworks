@@ -1,5 +1,5 @@
 import Table from '../components/Table';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserFilter from '../components/UserFilter';
 import { useHistory } from 'react-router-dom';
 import api from '../api';
@@ -56,14 +56,15 @@ const program = 'Program';
 
 function ViewCustomersPage() {
   const [pageNumber, setPageNumber] = useState(1);
+  const [maxPages, setMaxPages] = useState(1);
   const maxPageNumber = 3;
 
   const [customers, setCustomers] = useState([]);
 
-  const getCustomers = () => {
-    api
-      .get('/api/customer', {
-        page_num: pageNumber,
+  const getCustomers = async (page) => {
+    await api
+      .post('/api/customer', {
+        page_num: page,
       })
       .then((res) => {
         setCustomers(
@@ -74,15 +75,18 @@ function ViewCustomersPage() {
             phone_number: customer.phone,
           }))
         );
+        setMaxPages(res.data.maxPages);
         return res.data;
       });
   };
-  getCustomers();
+  useEffect(() => {
+    getCustomers(1);
+  }, []);
 
   const increasePage = () => {
-    if (pageNumber < maxPageNumber) {
+    if (pageNumber < maxPages) {
       const newPageNumber = pageNumber + 1;
-      getCustomers();
+      getCustomers(newPageNumber);
       setPageNumber(newPageNumber);
     }
   };
@@ -90,20 +94,20 @@ function ViewCustomersPage() {
   const decreasePage = () => {
     if (pageNumber > 1) {
       const newPageNumber = pageNumber - 1;
-      getCustomers();
+      getCustomers(newPageNumber);
       setPageNumber(newPageNumber);
     }
   };
 
   const goToEnd = () => {
-    const newPageNumber = maxPageNumber;
-    getCustomers();
+    const newPageNumber = maxPages;
+    getCustomers(newPageNumber);
     setPageNumber(newPageNumber);
   };
 
   const goToStart = () => {
     const newPageNumber = 1;
-    getCustomers();
+    getCustomers(newPageNumber);
     setPageNumber(newPageNumber);
   };
 

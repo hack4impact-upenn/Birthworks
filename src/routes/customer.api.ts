@@ -71,7 +71,7 @@ function customerInvalid(c: any, filter: any) {
   );
 }
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
   const { page_num } = req.body;
   const { filters } = req.body;
   const { query } = req.body;
@@ -99,11 +99,14 @@ router.get('/', async (req, res) => {
     },
   ])
     .match(find_query)
-    .skip((page_num - 1) * page_size)
-    .limit(page_size)
     .then((result) => {
+      // find a better way to do this
+      const maxPages = Math.ceil(result.length / page_size);
       result = result.filter((customer) => customerInvalid(customer, filters));
-      res.status(200).json({ success: true, result });
+      const begin = (page_num - 1) * page_size;
+      const end = begin + page_size;
+      result = result.splice(begin, page_size);
+      res.status(200).json({ success: true, result, maxPages });
     })
     .catch((e) => errorHandler(res, e));
 });
