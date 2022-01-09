@@ -1,11 +1,10 @@
-import { Customer, ICustomer } from '../models/customer.model';
-import { Cert, ICert } from '../models/cert.model';
+import { Customer } from '../models/customer.model';
+import { ICert } from '../models/cert.model';
 import express from 'express';
-import auth from '../middleware/auth';
 import errorHandler from './error';
 import mongoose from 'mongoose';
 
-const page_size = 10;
+const PAGE_SIZE = 10;
 
 const router = express.Router();
 
@@ -71,6 +70,7 @@ function customerInvalid(c: any, filter: any) {
   );
 }
 
+// must be post request because get request doesn't have a request body
 router.post('/', async (req, res) => {
   const { page_num } = req.body;
   const { filters } = req.body;
@@ -101,11 +101,10 @@ router.post('/', async (req, res) => {
     .match(find_query)
     .then((result) => {
       // find a better way to do this
-      const maxPages = Math.ceil(result.length / page_size);
       result = result.filter((customer) => customerInvalid(customer, filters));
-      const begin = (page_num - 1) * page_size;
-      const end = begin + page_size;
-      result = result.splice(begin, page_size);
+      const maxPages = Math.ceil(result.length / PAGE_SIZE);
+      const begin = (page_num - 1) * PAGE_SIZE;
+      result = result.splice(begin, PAGE_SIZE);
       res.status(200).json({ success: true, result, maxPages });
     })
     .catch((e) => errorHandler(res, e));

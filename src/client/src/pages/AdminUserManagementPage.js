@@ -12,10 +12,6 @@ const TabContainer = styled.div`
   padding-left: 240px;
 `;
 
-const onSearch = (query) => {
-  setQuery(query);
-};
-
 const AdminUserManagementPage = () => {
   const [users, setUsers] = useState([]);
   const { isLoading, error, data } = useQuery('users', () =>
@@ -32,6 +28,25 @@ const AdminUserManagementPage = () => {
     })
   );
 
+  const onSearch = (query) => {
+    console.log(`admin user query ${query}`);
+    api
+      .post('/api/users', {
+        query,
+      })
+      .then((res) => {
+        setUsers(
+          res.data.result.map((user) => ({
+            id: user._id,
+            type: user.type,
+            name: user.first_name + ' ' + user.last_name,
+            email: user.email,
+          }))
+        );
+        return res.data;
+      });
+  };
+
   return (
     <div className="AdminUserManagement">
       <div>
@@ -42,7 +57,7 @@ const AdminUserManagementPage = () => {
             Add User
           </Link>
         </TabContainer>
-        <SearchBar placeholder={'Search by name'} onSearch={onSearch} />
+        <SearchBar placeholder={'Search by name, email'} onSearch={onSearch} />
       </div>
       <div>
         <Table

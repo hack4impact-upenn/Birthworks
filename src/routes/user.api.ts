@@ -105,7 +105,7 @@ router.get('/me', auth, (req, res) => {
   const { userId } = req;
 
   return User.findById(userId)
-    .select('firstName lastName email _id')
+    .select('first_name last_name email _id')
     .then((user) => {
       if (!user) return errorHandler(res, 'User does not exist.');
 
@@ -128,8 +128,23 @@ router.delete('/:user_id', async (req, res) => {
 });
 
 /* fetch all users in database */
-router.get('/', (_, res) => {
-  User.find({})
+// must be post request because get request doesn't have a request body
+router.post('/', (req, res) => {
+  const { query } = req.body;
+  let find_query = {};
+  if (typeof query !== 'undefined') {
+    console.log('query exists');
+    find_query = {
+      $or: [
+        { first_name: { $regex: query, $options: 'i' } },
+        { last_name: { $regex: query, $options: 'i' } },
+        { email: { $regex: query, $options: 'i' } },
+      ],
+    };
+  }
+
+  User.aggregate()
+    .match(find_query)
     .then((result) => res.status(200).json({ success: true, result }))
     .catch((e) => errorHandler(res, e));
 });
