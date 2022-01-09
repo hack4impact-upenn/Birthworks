@@ -57,13 +57,15 @@ function getDeleteElement(i, j, data) {
   const history = useHistory();
 
   const onClickHandler = (user) => {
-    // try {
-    //   console.log(`click and delete ${user.id}`);
-    //   // api.delete(`/api/users/${user.id}`);
-    //   // history.push(`/viewUsers`);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    console.log();
+    try {
+      console.log(`click and delete ${user.id}`);
+      api.delete(`/api/users/${user.id}`);
+      window.location.reload(false);
+      //history.push(`/viewUsers`);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onMouseEnterHandler = () => {
@@ -79,9 +81,12 @@ function getDeleteElement(i, j, data) {
       key={`row${i}col${j}`}
       id={`dataCol${j}`}
       class={'deleteData'}
+      style={{ cursor: 'pointer' }}
       onMouseEnter={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
-      onClick={onClickHandler(data[i])}
+      onClick={() => {
+        onClickHandler(data[i]);
+      }}
     >
       Delete
     </td>
