@@ -15,7 +15,7 @@ const TabContainer = styled.div`
 const AdminUserManagementPage = () => {
   const [users, setUsers] = useState([]);
   const { isLoading, error, data } = useQuery('users', () =>
-    api.get('/api/users').then((res) => {
+    api.post('/api/users').then((res) => {
       setUsers(
         res.data.result.map((user) => ({
           id: user._id,
