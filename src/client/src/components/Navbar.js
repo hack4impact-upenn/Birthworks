@@ -40,8 +40,10 @@ function Navbar() {
   const [userName, setUserName] = useState(null);
   useEffect(async () => {
     if (auth.isAuthenticated) {
-      const request = await api.get('/api/users/me');
-      setUserName(request.data.data.email);
+      const id_req = await api.get('/api/users/me');
+      setUserName(
+        id_req.data.data.first_name + ' ' + id_req.data.data.last_name
+      );
     }
   }, [auth.isAuthenticated]);
 

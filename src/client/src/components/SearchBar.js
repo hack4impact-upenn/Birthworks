@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import FormField from '../components/FormField';
-import Colors from '../common/Colors';
 import { Formik, Form } from 'formik';
 
 const Container = styled.div`
@@ -22,10 +21,6 @@ const SearchButton = styled.button`
   border-radius: 6px;
   margin: 8px 0 10px 30px;
 `;
-
-function handleSubmit() {
-  return;
-}
 
 const SearchContainer = ({ children, icon }) => {
   if (!icon) return children;
@@ -51,19 +46,23 @@ const SearchContainer = ({ children, icon }) => {
   );
 };
 
-function SearchBar() {
+const SearchBar = ({ onSearch, placeholder }) => {
+  const onSubmit = (values) => {
+    onSearch(values.query);
+  };
+
   return (
     <Container>
-      <Formik initialValues={{ query: '' }} onSubmit={handleSubmit}>
+      <Formik initialValues={{ query: '' }} onSubmit={onSubmit}>
         {({ errors, isSearching }) => (
           <Form
             style={{ display: 'flex', alignContent: 'center', width: '100%' }}
           >
             <SearchContainer icon="fa-search">
               <FormField
-                name="search"
+                name="query"
                 errors={errors}
-                placeholder={'Search By Name'}
+                placeholder={placeholder}
                 style={{
                   paddingLeft: '35px',
                   backgroundColor: '#F2F2F2',
@@ -84,6 +83,6 @@ function SearchBar() {
       </Formik>
     </Container>
   );
-}
+};
 
 export default SearchBar;
