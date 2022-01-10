@@ -5,11 +5,26 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import api from '../api';
 import { useQuery } from 'react-query';
+import ViewPageTableContainer from '../components/ViewPageTableContainer';
 
 const TabContainer = styled.div`
-  padding-top: 75px;
-  padding-right: 240px;
-  padding-left: 240px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 500px;
+  a {
+    color: #b4579e;
+  }
+  a:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+`;
+
+const Tab = styled.div`
+  width: 250px;
+  display: inline-block;
 `;
 
 const AdminUserManagementPage = () => {
@@ -48,26 +63,29 @@ const AdminUserManagementPage = () => {
   };
 
   return (
-    <div className="AdminUserManagement">
+    <ViewPageTableContainer className="AdminUserManagement">
       <div>
         <TabContainer>
-          <Link to="/viewUsers">View Existing Users</Link>
-          <div class="divider" />
-          <Link style={{ color: 'black' }} to="/addUser">
-            Add User
-          </Link>
+          <Tab>
+            <Link style={{ color: 'black' }} to="/viewUsers">
+              View Existing Users
+            </Link>
+          </Tab>
+          <Tab>
+            <Link to="/addUser">Add User</Link>
+          </Tab>
         </TabContainer>
         <SearchBar placeholder={'Search by name, email'} onSearch={onSearch} />
       </div>
       <div>
         <Table
-          headerColumns={['User Type', 'Name', 'Email', 'Delete']}
-          dataColumns={['type', 'name', 'email', 'Delete']}
+          headerColumns={['Name', 'Email', 'Delete']}
+          dataColumns={['name', 'email', 'Delete']}
           data={users}
           hoverable={false}
         />
       </div>
-    </div>
+    </ViewPageTableContainer>
   );
 };
 

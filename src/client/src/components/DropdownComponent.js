@@ -10,7 +10,7 @@ const Container = styled.div`
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   text-align: start;
-  padding-bottom: 16px;
+  padding-bottom: 20px;
 
   h1 {
     font-style: normal;

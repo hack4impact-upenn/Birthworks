@@ -7,16 +7,17 @@ import { AuthContext } from '../context';
 import api from '../api';
 import FormField from '../components/FormField';
 import { useHistory } from 'react-router-dom';
+import ViewPageTableContainer from '../components/ViewPageTableContainer';
 
-const Container = styled.div`
+const FormContainer = styled.div`
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 60px;
+  padding-top: 10px;
   max-width: 1000px !important;
   top: 100px;
 `;
 
-const Container2 = styled.div`
+const LeftNameFieldContainer = styled.div`
   background-color: #ffffff;
   border-radius: 20px;
   max-width: 500px !important;
@@ -25,13 +26,12 @@ const Container2 = styled.div`
   padding-right: 1%;
 `;
 
-const Container4 = styled.div`
+const RightNameFieldContainer = styled.div`
   background-color: #ffffff;
   border-radius: 20px;
   max-width: 500px !important;
   display: inline-block;
   width: 50%;
-  padding-left: 1%;
 `;
 
 const CreateUserButton = styled.button`
@@ -44,9 +44,23 @@ const CreateUserButton = styled.button`
 `;
 
 const TabContainer = styled.div`
-  padding-top: 75px;
-  padding-right: 240px;
-  padding-left: 240px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 500px;
+  a {
+    color: #b4579e;
+  }
+  a:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+`;
+
+const Tab = styled.div`
+  width: 250px;
+  display: inline-block;
 `;
 
 function AddUserPage() {
@@ -76,15 +90,18 @@ function AddUserPage() {
   }
 
   return (
-    <div className="AddUserPage">
+    <ViewPageTableContainer className="AddUserPage">
       <TabContainer>
-        <Link to="/viewUsers">View Existing Users</Link>
-        <div class="divider" />
-        <Link style={{ color: 'black' }} to="/addUser">
-          Add User
-        </Link>
+        <Tab>
+          <Link to="/viewUsers">View Existing Users</Link>
+        </Tab>
+        <Tab>
+          <Link style={{ color: 'black' }} to="/addUser">
+            Add User
+          </Link>
+        </Tab>
       </TabContainer>
-      <Container className="AddUserForm">
+      <FormContainer className="AddUserForm">
         <Formik
           initialValues={{
             first_name: '',
@@ -96,7 +113,7 @@ function AddUserPage() {
         >
           {({ errors, isSubmitting }) => (
             <Form>
-              <Container2 className="container">
+              <LeftNameFieldContainer className="container">
                 <FormField
                   name="first_name"
                   type="first_name"
@@ -104,8 +121,8 @@ function AddUserPage() {
                   placeholderTextColor="#969696"
                   errors={errors}
                 />
-              </Container2>
-              <Container4 className="container">
+              </LeftNameFieldContainer>
+              <RightNameFieldContainer className="container">
                 <FormField
                   name="last_name"
                   type="last_name"
@@ -113,7 +130,7 @@ function AddUserPage() {
                   placeholderTextColor="#969696"
                   errors={errors}
                 />
-              </Container4>
+              </RightNameFieldContainer>
               <FormField
                 name="email"
                 type="email"
@@ -139,8 +156,8 @@ function AddUserPage() {
             </Form>
           )}
         </Formik>
-      </Container>
-    </div>
+      </FormContainer>
+    </ViewPageTableContainer>
   );
 }
 

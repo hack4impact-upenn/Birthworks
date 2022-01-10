@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import api from '../api';
-import { useHistory } from 'react-router-dom';
 
 const StyledTable = styled.table`
   border: 1px solid #000000;
@@ -54,26 +53,14 @@ const StyledTable = styled.table`
 `;
 
 function getDeleteElement(i, j, data) {
-  const history = useHistory();
-
   const onClickHandler = (user) => {
     console.log();
     try {
-      console.log(`click and delete ${user.id}`);
       api.delete(`/api/users/${user.id}`);
       window.location.reload(false);
-      //history.push(`/viewUsers`);
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const onMouseEnterHandler = () => {
-    // console.log('enter');
-  };
-
-  const onMouseLeaveHandler = () => {
-    // console.log('leave');
   };
 
   return (
@@ -82,8 +69,6 @@ function getDeleteElement(i, j, data) {
       id={`dataCol${j}`}
       class={'deleteData'}
       style={{ cursor: 'pointer' }}
-      onMouseEnter={onMouseEnterHandler}
-      onMouseLeave={onMouseLeaveHandler}
       onClick={() => {
         onClickHandler(data[i]);
       }}
