@@ -4,6 +4,7 @@ import UserFilter from '../components/UserFilter';
 import { useHistory } from 'react-router-dom';
 import api from '../api';
 import SearchBar from '../components/SearchBar';
+import ViewPageTableContainer from '../components/ViewPageTableContainer';
 
 const recertificationFilterOptions = [
   {
@@ -139,7 +140,6 @@ function ViewCustomersPage() {
   };
 
   const history = useHistory();
-
   const redirectToCustomerPage = (customer) => {
     history.push(`/customers/${customer.id}`);
   };
@@ -212,7 +212,7 @@ function ViewCustomersPage() {
   };
 
   return (
-    <div className="ViewCustomers">
+    <ViewPageTableContainer className="ViewCustomers">
       <SearchBar
         placeholder={'Search by name, email, phone'}
         onSearch={onSearch}
@@ -268,7 +268,7 @@ function ViewCustomersPage() {
           </div>
         </div>
       </div>
-    </div>
+    </ViewPageTableContainer>
   );
 }
 

@@ -1,26 +1,49 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import { AuthContext } from '../context';
 import DropdownComponent from './DropdownComponent';
 import 'bulma/css/bulma.min.css';
+import styled from 'styled-components';
 import api from '../api';
 
-const NavBarItems = styled.div`
-  &:hover {
-    cursor: pointer;
+const NavBar = styled.div`
+  width: 100%;
+`;
+
+const Logo = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 45px;
+  img {
+    width: 100%;
+    height: auto;
   }
 `;
 
-function Navbar() {
-  const auth = useContext(AuthContext);
-  const history = useHistory();
+const HeaderMenuWrapper = styled.div`
+  float: right;
+  padding-right: 60px;
+`;
+const Username = styled.div`
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 5px;
+`;
+const Dropdown = styled.div`
+  padding-top: 5px;
+`;
 
+function Navbar() {
   const options = [
     { name: 'View Customers' },
     { name: 'View Users' },
     { name: 'Logout' },
   ];
+
+  const auth = useContext(AuthContext);
+  const history = useHistory();
 
   async function handleChange(event) {
     if (event.target.value == 'View Customers') {
@@ -52,30 +75,32 @@ function Navbar() {
       className="navbar"
       style={{ boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }}
     >
-      <div className="container">
-        <div className="navbar-brand">
-          <a href="/" className="navbar-item title is-4">
-            <img src={process.env.PUBLIC_URL + '/birthworks.png'} />
-          </a>
+      <NavBar>
+        <div className="column is-four-fifths">
+          <Logo>
+            <a href="/" className="navbar-item">
+              <img src={process.env.PUBLIC_URL + '/birthworks.png'} />
+            </a>
+          </Logo>
         </div>
-        <div className="navbar-menu">
-          <div className="navbar-end">
+        <div>
+          <HeaderMenuWrapper>
             {auth.isAuthenticated ? (
               <div>
-                <div className="navbar-username">{userName}</div>
-                <div style={{ marginTop: '7%' }}>
+                <Username>{userName}</Username>
+                <Dropdown>
                   <DropdownComponent
                     options={options}
                     handleChange={handleChange}
                   />
-                </div>
+                </Dropdown>
               </div>
             ) : (
               <></>
             )}
-          </div>
+          </HeaderMenuWrapper>
         </div>
-      </div>
+      </NavBar>
     </nav>
   );
 }

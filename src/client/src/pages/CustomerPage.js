@@ -1,17 +1,19 @@
-import styled from 'styled-components/macro';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
+import 'bulma/css/bulma.min.css';
+import React from 'react';
+import styled from 'styled-components/macro';
+import CertificationCard from '../components/CertificationCard';
+import NotesCard from '../components/NotesCard';
 import TabSelector from '../components/TabSelector.js';
 import WorkshopCard from '../components/WorkshopCard';
 import PersonalInfoBox from '../components/PersonalInfoBox';
-import 'bulma/css/bulma.min.css';
-import React from 'react';
-import CertificationCard from '../components/CertificationCard';
-import NotesCard from '../components/NotesCard';
+import ViewPageTableContainer from '../components/ViewPageTableContainer.js';
 import api from '../api';
 
 const InformationContainer = styled.div`
-  margin: 2rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
   padding-top: 3rem;
   padding-right: 2.5rem;
   padding-bottom: 3rem;
@@ -21,7 +23,16 @@ const InformationContainer = styled.div`
 `;
 
 const TabContainer = styled.div`
-  margin: 2rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+`;
+
+const BackButton = styled.button`
+  font-weight: 700;
+  background-color: #b4579e !important;
+  border-radius: 6px;
+  margin-top: 20px;
+  width: 100%;
 `;
 
 function CustomerPage() {
@@ -65,8 +76,13 @@ function CustomerPage() {
     }
   };
 
+  const history = useHistory();
+  const handleBackClick = () => {
+    history.goBack();
+  };
+
   return (
-    <div>
+    <ViewPageTableContainer>
       <div class="columns">
         <div class="column is-one-fifth">
           <TabContainer>
@@ -75,6 +91,14 @@ function CustomerPage() {
               selectedOptionIndex={selectedOptionIndex}
               setSelectedOptionIndex={setSelectedOptionIndex}
             />
+            <BackButton
+              type="button"
+              className="button is-link"
+              style={{ alignSelf: 'left' }}
+              onClick={handleBackClick}
+            >
+              Back to Customers
+            </BackButton>
           </TabContainer>
         </div>
         <div class="column is-four-fifths">
@@ -85,7 +109,7 @@ function CustomerPage() {
           )}
         </div>
       </div>
-    </div>
+    </ViewPageTableContainer>
   );
 }
 
