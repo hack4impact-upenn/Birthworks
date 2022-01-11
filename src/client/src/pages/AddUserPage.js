@@ -70,7 +70,7 @@ function AddUserPage() {
   async function handleSubmit(values, actions) {
     try {
       await api.post('/api/users/signup', values);
-      await auth.login(values.email, values.password);
+      //await auth.login(values.email, values.password);
       history.push(`/viewUsers`);
     } catch (error) {
       const { message, code } =
