@@ -17,10 +17,40 @@ enum validOrders {
   pdoula = 'Postpartum Doula Certification',
   pdoulap = 'Postpartum Doula Certification Program',
   bdoulaI = 'Birth Doula Certification-Indonesia',
+  ceducator = 'Certification - Childbirth Educator',
+  cdoula = 'Certification - Birth Doula',
 }
 
 function isDate(dateStr: string) {
   return !isNaN(new Date(dateStr).getDate());
+}
+
+function getName(s: string): string {
+  switch (s) {
+    case 'ACED Certification (Accelerated Childbirth Educator & Doula)':
+      return 'ACED (Childbirth Educator & Birth Doula)';
+    case 'Certified Childbirth Educator':
+      return 'Childbirth Educator';
+    case 'Doula Program (International)':
+      return 'Birth Doula';
+    case 'Doula Program (US Only)':
+      return 'Birth Doula';
+    case 'Postpartum Doula Certification':
+      return 'Postpartum Doula';
+    case 'Postpartum Doula Certification Program':
+      return 'Postpartum Doula';
+    case 'Birth Doula Certification-Indonesia':
+      return 'Birth Doula';
+    case 'Kangaroula (Advanced) Certification':
+      return 'Kangaroula (Advanced) Certification';
+    case 'Certification - Childbirth Educator':
+      return 'Childbirth Educator';
+    case 'Kangaroula (Advanced) Certification':
+      return 'Kangaroula (Advanced) Certification';
+    case 'Certification - Birth Doula':
+      return 'Birth Doula';
+  }
+  return 'unknown type';
 }
 
 function removeEmpty(obj: any) {
@@ -73,6 +103,7 @@ const readOrderData = async () => {
 
 const populateOrders = async () => {
   for (let i = 0; i < orderRows.length; i++) {
+    //console.log(orderRows[i])
     var customerByEmail = null;
     var customerByNameCombo = null;
     var customer;
@@ -90,22 +121,77 @@ const populateOrders = async () => {
         email: orderRows[i]['Email (Billing)'],
       });
     }
-
+    var flag = false;
     customer = customerByNameCombo || customerByEmail;
+    const uniqueIdentifier = orderRows[i]['Email (Billing)'];
 
-    if (!customer) {
+    if (
+      !(
+        typeof orderRows[i]['Order Date'] === 'string' &&
+        isDate(orderRows[i]['Order Date'])
+      )
+    ) {
       continue;
     }
 
+    if (!customer) {
+      if (!uniqueIdentifier || !(typeof uniqueIdentifier === 'string')) {
+        continue;
+      }
+      customer = new Customer();
+      customer.first_name = orderRows[i]['First Name (Billing)'];
+      customer.last_name = orderRows[i]['Last Name (Billing)'];
+      customer.city = orderRows[i]['City (Billing)'];
+      customer.state = orderRows[i]['State Code (Billing)'];
+      customer.country = orderRows[i]['Country Code (Billing)'];
+      customer.membership_start = new Date(orderRows[i]['Order Date']);
+      customer.membership_end = new Date(orderRows[i]['Order Date']);
+      customer.membership_end.setFullYear(
+        customer.membership_end.getFullYear() + 1
+      );
+      if (!customer.membership_start) {
+        continue;
+      }
+      //customer.membership_end = new Date(rows[i].tdoc);
+      customer.notes_read = '';
+      customer.notes_write = '';
+      customer.phone = orderRows[i]['Phone (Billing)'];
+      customer.email = uniqueIdentifier;
+      flag = true;
+    }
+
+    const newCert: ICert = new Cert();
     if (Object.values(validOrders).includes(orderRows[i]['Item Name'])) {
-      const newCert: ICert = new Cert();
+      const newName = getName(orderRows[i]['Item Name']);
+      const prevCert = await Cert.findOne({
+        customer_id: customer._id,
+        name: newName,
+      });
+      if (prevCert) {
+        continue;
+      }
       newCert.customer_id = customer._id;
       newCert.entry_date = orderRows[i]['Order Date'];
-      newCert.completion_date = orderRows[i]['Date'];
-      newCert.recertification_dates = orderRows[i]['Date'];
+      newCert.completion_date = orderRows[i]['Order Date'];
+      newCert.completion_date.setFullYear(
+        newCert.completion_date.getFullYear() + 1
+      );
+      newCert.certificate = orderRows[i]['Order Date'];
+      newCert.certificate.setFullYear(newCert.certificate.getFullYear() + 1);
+      newCert.recertification_dates = [orderRows[i]['Order Date']];
       newCert.mentor = orderRows[i]['mentor'];
-      newCert.name = orderRows[i]['Item Name'];
-
+      newCert.name = newName;
+      if (flag) {
+        customer.certifications = [newCert._id];
+        customer.save();
+      } else {
+        console.log('----------------');
+        await Customer.update(
+          { _id: customer._id },
+          { $push: { certifications: newCert._id } }
+        );
+      }
+      newCert.save();
       console.log(customer);
       console.log(newCert);
     }

@@ -15,8 +15,8 @@ interface ICustomer extends mongoose.Document {
   membership_end: Date;
   notes_read: string;
   notes_write: string;
-  workshops: [number];
-  certifications: [number];
+  workshops: [string];
+  certifications: [string];
   email: string;
   phone: string;
 }
