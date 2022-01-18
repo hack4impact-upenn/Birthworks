@@ -3,6 +3,7 @@ import { Customer, ICustomer } from '../../models/customer.model';
 import { Cert, ICert } from '../../models/cert.model';
 const fs = require('fs');
 const csv = require('csv-parser');
+const axios = require('axios');
 const path = 'src/utils/wordpress/members.csv';
 const orderPath = 'src/utils/wordpress/orders.csv';
 
@@ -178,7 +179,7 @@ const populateOrders = async () => {
       );
       newCert.certificate = orderRows[i]['Order Date'];
       newCert.certificate.setFullYear(newCert.certificate.getFullYear() + 1);
-      newCert.recertification_dates = [orderRows[i]['Order Date']];
+      newCert.recertification_dates = [newCert.certificate];
       newCert.mentor = orderRows[i]['mentor'];
       newCert.name = newName;
       if (flag) {
@@ -245,6 +246,124 @@ const populateMongo = async () => {
       }
     }
   }
+};
+
+export const sync = async () => {
+  const username = process.env.WOOCOMMERCE_KEY;
+  const password = process.env.WOOCOMMERCE_SECRET;
+  const uri = process.env.WP_WOCOMMERCE_API;
+  const token = `${username}:${password}`;
+  const encodedToken = Buffer.from(token).toString('base64');
+
+  var config = {
+    method: 'get',
+    url: uri,
+    headers: { Authorization: 'Basic ' + encodedToken },
+  };
+
+  axios(config)
+    .then(async function (response: any) {
+      const { data } = response;
+
+      for (let i = 0; i < data.length; i++) {
+        //console.log(orderRows[i])
+        var customerByEmail = null;
+        var customerByNameCombo = null;
+        var customer;
+        if (
+          data[i]['billing']['first_name'] &&
+          data[i]['billing']['last_name']
+        ) {
+          customerByNameCombo = await Customer.findOne({
+            first_name: data[i]['billing']['first_name'],
+            last_name: data[i]['billing']['last_name'],
+          });
+        }
+        if (data[i]['billing']['email']) {
+          customerByEmail = await Customer.findOne({
+            email: data[i]['billing']['email'],
+          });
+        }
+        var flag = false;
+        customer = customerByNameCombo || customerByEmail;
+        const uniqueIdentifier = data[i]['billing']['email'];
+
+        if (
+          !(
+            typeof data[i]['date_created'] === 'string' &&
+            isDate(data[i]['date_created'])
+          )
+        ) {
+          continue;
+        }
+
+        if (!customer) {
+          if (!uniqueIdentifier || !(typeof uniqueIdentifier === 'string')) {
+            continue;
+          }
+          customer = new Customer();
+          customer.first_name = data[i]['billing']['first_name'];
+          customer.last_name = data[i]['billing']['last_name'];
+          customer.city = data[i]['billing']['city'];
+          customer.state = data[i]['billing']['state'];
+          customer.country = data[i]['billing']['country'];
+          customer.membership_start = new Date(data[i]['date_created']);
+          customer.membership_end = new Date(data[i]['date_created']);
+          customer.membership_end.setFullYear(
+            customer.membership_end.getFullYear() + 1
+          );
+          if (!customer.membership_start) {
+            continue;
+          }
+          //customer.membership_end = new Date(rows[i].tdoc);
+          customer.notes_read = '';
+          customer.notes_write = '';
+          customer.phone = data[i]['billing']['phone'];
+          customer.email = uniqueIdentifier;
+          flag = true;
+        }
+
+        const newCert: ICert = new Cert();
+        if (
+          Object.values(validOrders).includes(data[i]['line_items'][0]['name'])
+        ) {
+          const newName = getName(data[i]['line_items'][0]['name']);
+          const prevCert = await Cert.findOne({
+            customer_id: customer._id,
+            name: newName,
+          });
+          if (prevCert) {
+            continue;
+          }
+          newCert.customer_id = customer._id;
+          newCert.entry_date = data[i]['date_created'];
+          newCert.completion_date = data[i]['date_created'];
+          newCert.completion_date.setFullYear(
+            newCert.completion_date.getFullYear() + 1
+          );
+          newCert.certificate = data[i]['date_created'];
+          newCert.certificate.setFullYear(
+            newCert.certificate.getFullYear() + 1
+          );
+          newCert.recertification_dates = [newCert.certificate];
+          newCert.mentor = '';
+          newCert.name = newName;
+          if (flag) {
+            customer.certifications = [newCert._id];
+            customer.save();
+          } else {
+            await Customer.update(
+              { _id: customer._id },
+              { $push: { certifications: newCert._id } }
+            );
+          }
+          newCert.save();
+        }
+      }
+    })
+    .catch(function (error: any) {
+      console.log(error);
+    });
 };
 
 const main = async () => {
