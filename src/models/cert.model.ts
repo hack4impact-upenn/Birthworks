@@ -23,6 +23,6 @@ const CertSchema = new Schema({
   mentor: { type: String, required: false },
 });
 
-const Cert = mongoose.model<ICert>('Cert', CertSchema);
+const Cert = mongoose.model<ICert>('Certification', CertSchema);
 
 export { Cert, ICert };

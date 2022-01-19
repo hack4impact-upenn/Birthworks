@@ -104,7 +104,6 @@ const readOrderData = async () => {
 
 const populateOrders = async () => {
   for (let i = 0; i < orderRows.length; i++) {
-    //console.log(orderRows[i])
     var customerByEmail = null;
     var customerByNameCombo = null;
     var customer;
@@ -186,22 +185,24 @@ const populateOrders = async () => {
         customer.certifications = [newCert._id];
         customer.save();
       } else {
-        console.log('----------------');
         await Customer.update(
           { _id: customer._id },
           { $push: { certifications: newCert._id } }
         );
       }
       newCert.save();
-      console.log(customer);
-      console.log(newCert);
     }
   }
 };
 
 const populateMongo = async () => {
   for (let i = 0; i < rows.length; i++) {
-    const uniqueIdentifier = rows[i].email;
+    var flagg = false;
+    var uniqueIdentifier = rows[i].email;
+    if (!uniqueIdentifier) {
+      uniqueIdentifier = rows[i].fname + '.' + rows[i].lname + '@fake.com';
+      flagg = true;
+    }
     if (
       uniqueIdentifier &&
       typeof uniqueIdentifier === 'string' &&
@@ -211,39 +212,44 @@ const populateMongo = async () => {
       const prevData: ICustomer | null = await Customer.findOne({
         email: uniqueIdentifier,
       });
+
       if (!prevData) {
         const customer: ICustomer = new Customer();
 
         if (!(typeof rows[i].tdoe === 'string' && isDate(rows[i].tdoe))) {
-          //console.log('p1');
-          continue;
+          customer.membership_start = new Date();
+        } else {
+          customer.membership_start = new Date(rows[i].tdoe);
         }
         if (!(typeof rows[i].tdoc === 'string' && isDate(rows[i].tdoc))) {
-          //console.log('p2');
-          continue;
+          customer.membership_end = new Date();
+        } else {
+          customer.membership_end = new Date(rows[i].tdoc);
         }
         if (!(typeof rows[i].tdoe === 'string' && rows[i].fname.length > 0)) {
-          //console.log('p3');
-          continue;
+          customer.first_name = 'Unknown';
+        } else {
+          customer.first_name = rows[i].fname;
         }
         if (!(typeof rows[i].tdoe === 'string' && rows[i].lname.length > 0)) {
-          //console.log('p4');
-          continue;
+          customer.last_name = 'unknown';
+        } else {
+          customer.last_name = rows[i].lname;
         }
-        customer.first_name = rows[i].fname;
-        customer.last_name = rows[i].lname;
+
         customer.city = rows[i].city;
         customer.state = rows[i].state;
         customer.country = rows[i].country;
-        customer.membership_start = new Date(rows[i].tdoe);
-        customer.membership_end = new Date(rows[i].tdoc);
         customer.notes_read = rows[i].comments;
         customer.notes_write = '';
         customer.phone = rows[i].phone;
         customer.email = uniqueIdentifier;
+
         const res = await customer.save();
       } else {
       }
+    } else {
+      console.log(uniqueIdentifier);
     }
   }
 };
@@ -254,6 +260,7 @@ export const sync = async () => {
   const uri = process.env.WP_WOCOMMERCE_API;
   const token = `${username}:${password}`;
   const encodedToken = Buffer.from(token).toString('base64');
+  console.log(password);
 
   var config = {
     method: 'get',
@@ -266,7 +273,6 @@ export const sync = async () => {
       const { data } = response;
 
       for (let i = 0; i < data.length; i++) {
-        //console.log(orderRows[i])
         var customerByEmail = null;
         var customerByNameCombo = null;
         var customer;
@@ -299,6 +305,7 @@ export const sync = async () => {
 
         if (!customer) {
           if (!uniqueIdentifier || !(typeof uniqueIdentifier === 'string')) {
+            console.log('hi');
             continue;
           }
           customer = new Customer();
