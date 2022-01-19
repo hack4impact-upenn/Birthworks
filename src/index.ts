@@ -1,7 +1,10 @@
 import socket from 'socket.io';
 import expressStatusMonitor from 'express-status-monitor';
 import createServer from './utils/createServer';
+import { sync } from './utils/wordpress/wordpress';
 import db from './utils/database';
+import { Customer, ICustomer } from './models/customer.model';
+import { Cert, ICert } from './models/cert.model';
 import './utils/config';
 
 const main = async () => {
@@ -25,6 +28,13 @@ const main = async () => {
 
   app.set('socketio', io);
   app.use(expressStatusMonitor({ websocket: io }));
+
+  await sync();
+  setInterval(async () => {
+    await sync();
+
+    //}, 1000 * 60 * 60 * 3)
+  }, 1000000);
 };
 
 main();
