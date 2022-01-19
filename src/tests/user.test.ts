@@ -30,8 +30,8 @@ test(
   'user signup success test',
   async (done) => {
     const data = {
-      firstName: 'Tester',
-      lastName: 'Smith',
+      first_name: 'Tester',
+      last_name: 'Smith',
       email: 'test@gmail.com',
       password: '123456',
       institutionName: 'My Company',
