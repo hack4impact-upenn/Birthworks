@@ -1,31 +1,10 @@
-import { divide } from 'mathjs';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Colors from '../common/Colors';
 import api from '../api';
 
-const Container = styled.div`
-  border: 1px solid #000000;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0px 10px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 51px;
-
-  h1 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 30px;
-  }
-`;
+/**
+ * Component with an old and new notes field. new is editable, old is not.
+ */
 
 const OldNotesField = styled.div`
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
@@ -109,17 +88,6 @@ const NameHeading = styled.h1`
   font-size: 24px;
   font-weight: 700;
 `;
-
-const dummyUser = {
-  firstName: 'Ziya',
-  lastName: 'Xu',
-  oldNotes:
-    'Some notes content here... \n ex. Renewed Membership \n (This section cannot be edited)',
-  newNotes:
-    'Some notes content here... \n ex. Renewed Membership \n (This section can be edited)',
-};
-
-// pass in a hook here, added the customer hook
 
 function NotesCard({ customer }) {
   const [editing, setEditing] = useState(false);

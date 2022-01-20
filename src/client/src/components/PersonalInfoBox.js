@@ -9,6 +9,10 @@ const NameHeading = styled.h1`
   margin-bottom: 0.5rem;
 `;
 
+/**
+ * Component to display the personal info of the current customer
+ */
+
 function PersonalInfoBox({ customer }) {
   return (
     <div className="container">

@@ -26,7 +26,9 @@ const ListContainer = styled.div`
   margin-top: 1 rem;
   margin-bottom: 10 rem;
 `;
-
+/**
+ * A component to display all workshops of the given customer
+ */
 function WorkshopCard({ workshops, customer }) {
   const workshopList = workshops.map((workshop) => (
     <div className="block">

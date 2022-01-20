@@ -46,6 +46,13 @@ const SearchContainer = ({ children, icon }) => {
   );
 };
 
+/**
+ * A generic component to make a search. Takes in a placeholder value to display
+ * in the search box and a function that does something when a search value is entered
+ * and typed
+ * @param {*} onSearch function to be called when search is clicked
+ * @param {*} placeholder search bar place holder
+ */
 const SearchBar = ({ onSearch, placeholder }) => {
   const onSubmit = (values) => {
     onSearch(values.query);

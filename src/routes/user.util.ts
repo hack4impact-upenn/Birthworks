@@ -3,6 +3,12 @@ import * as _ from 'lodash';
 import { User, IUser } from '../models/user.model';
 import { JWT_SECRET } from '../utils/config';
 
+/**
+ * A group of helping functions for authentication
+ * DO NOT MODIFY THIS FILE UNLESS YOU ARE SURE
+ * WHAT YOU ARE DOING
+ */
+
 class AuthError extends Error {
   code: string;
 

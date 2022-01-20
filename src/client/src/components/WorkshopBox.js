@@ -5,7 +5,9 @@ import { format } from 'date-fns';
 const boxStyle = {
   boxRadius: '20px',
 };
-
+/**
+ * A component to display single workshop for a customer
+ */
 function WorkshopBox({ workshop }) {
   return (
     <div className="container">

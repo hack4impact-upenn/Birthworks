@@ -27,6 +27,12 @@ const Tab = styled.div`
   display: inline-block;
 `;
 
+/**
+ * Admin User Management page. Can be found at "/viewUsers"
+ * This page allows you to view/delete the current members and
+ * has built navigation to the addUsers page
+ */
+
 const AdminUserManagementPage = () => {
   const [users, setUsers] = useState([]);
   const { isLoading, error, data } = useQuery('users', () =>

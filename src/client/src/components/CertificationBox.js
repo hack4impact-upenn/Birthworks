@@ -1,17 +1,11 @@
-import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-// import { ICert } from '../../../models/cert.model';
 import 'bulma/css/bulma.min.css';
-import { Box, Block, Columns, Column } from 'react-bulma-components';
+import { Box, Columns } from 'react-bulma-components';
 import { format } from 'date-fns';
 
-// type CertBoxProps = {
-//   certification: ICert;
-// };
-const boxStyle = {
-  boxRadius: '20px',
-};
-
+/**
+ * component for certification box
+ * @param {*} certification The certification to display
+ */
 function CertificationBox({ certification }) {
   return (
     <div className="container">

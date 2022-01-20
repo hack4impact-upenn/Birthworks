@@ -1,14 +1,29 @@
 import db from '../database';
 import { Customer, ICustomer } from '../../models/customer.model';
 import { Cert, ICert } from '../../models/cert.model';
+/*eslint-disable */
+//@typescript-eslint/no-var-requires
 const fs = require('fs');
 const csv = require('csv-parser');
 const axios = require('axios');
+/*eslint-enable */
 const path = 'src/utils/wordpress/members.csv';
 const orderPath = 'src/utils/wordpress/orders.csv';
 
 const rows: any = [];
 const orderRows: any = [];
+
+/**
+ * This file has two parts. Main(), a function run from the terminal through
+ * the script npm run wordpress
+ * this function looks at the orders.csv and members.csv files in the
+ * current directory and uses them to populate the database. if you have new
+ * files, please make sure they follow the same format (you can read the previous csv
+ * files or figure it out from the code)
+ * The second part is the sync function
+ * This function is called every 24 hours from the main app.
+ * The function connects to the woocommerce database and pulls data from there.
+ */
 
 enum validOrders {
   aced = 'ACED Certification (Accelerated Childbirth Educator & Doula)',
@@ -42,8 +57,6 @@ function getName(s: string): string {
       return 'Postpartum Doula';
     case 'Birth Doula Certification-Indonesia':
       return 'Birth Doula';
-    case 'Kangaroula (Advanced) Certification':
-      return 'Kangaroula (Advanced) Certification';
     case 'Certification - Childbirth Educator':
       return 'Childbirth Educator';
     case 'Kangaroula (Advanced) Certification':
@@ -104,8 +117,9 @@ const readOrderData = async () => {
 
 const populateOrders = async () => {
   for (let i = 0; i < orderRows.length; i++) {
-    var customerByEmail = null;
-    var customerByNameCombo = null;
+    let customerByEmail = null;
+    let customerByNameCombo = null;
+    // eslint-disable-next-line no-var
     var customer;
     if (
       orderRows[i]['First Name (Billing)'] &&
@@ -121,7 +135,7 @@ const populateOrders = async () => {
         email: orderRows[i]['Email (Billing)'],
       });
     }
-    var flag = false;
+    let flag = false;
     customer = customerByNameCombo || customerByEmail;
     const uniqueIdentifier = orderRows[i]['Email (Billing)'];
 
@@ -197,8 +211,8 @@ const populateOrders = async () => {
 
 const populateMongo = async () => {
   for (let i = 0; i < rows.length; i++) {
-    var flagg = false;
-    var uniqueIdentifier = rows[i].email;
+    let flagg = false;
+    let uniqueIdentifier = rows[i].email;
     if (!uniqueIdentifier) {
       uniqueIdentifier = rows[i].fname + '.' + rows[i].lname + '@fake.com';
       flagg = true;
@@ -246,10 +260,7 @@ const populateMongo = async () => {
         customer.email = uniqueIdentifier;
 
         const res = await customer.save();
-      } else {
       }
-    } else {
-      console.log(uniqueIdentifier);
     }
   }
 };
@@ -262,7 +273,7 @@ export const sync = async () => {
   const encodedToken = Buffer.from(token).toString('base64');
   console.log(password);
 
-  var config = {
+  const config = {
     method: 'get',
     url: uri,
     headers: { Authorization: 'Basic ' + encodedToken },
@@ -273,8 +284,9 @@ export const sync = async () => {
       const { data } = response;
 
       for (let i = 0; i < data.length; i++) {
-        var customerByEmail = null;
-        var customerByNameCombo = null;
+        let customerByEmail = null;
+        let customerByNameCombo = null;
+        // eslint-disable-next-line no-var
         var customer;
         if (
           data[i]['billing']['first_name'] &&
@@ -290,7 +302,7 @@ export const sync = async () => {
             email: data[i]['billing']['email'],
           });
         }
-        var flag = false;
+        let flag = false;
         customer = customerByNameCombo || customerByEmail;
         const uniqueIdentifier = data[i]['billing']['email'];
 

@@ -6,6 +6,10 @@ import 'bulma/css/bulma.min.css';
 import styled from 'styled-components';
 import api from '../api';
 
+/**
+ * Navbar compoent with birthworks logo and a dropdown for navigation, logging out, etc.
+ */
+
 const NavBar = styled.div`
   width: 100%;
 `;

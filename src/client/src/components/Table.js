@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import api from '../api';
 
+/**
+ * This is a generic table to be displayed. it takes in headers for the columns
+ * and the actual data
+ */
+
 const StyledTable = styled.table`
   border: 1px solid #000000;
   display: table;

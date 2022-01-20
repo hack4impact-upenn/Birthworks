@@ -35,6 +35,12 @@ const BackButton = styled.button`
   width: 100%;
 `;
 
+/**
+ * Found at ("/customer/:id")
+ * displays information of the user specified by the id in the path
+ * Has different tabs (imported from components) of different
+ * catogeries of infomration (personal, certifications, notes, ..etc)
+ */
 function CustomerPage() {
   const { customer_id } = useParams();
 

@@ -4,8 +4,10 @@ import { ATLAS_URI, NODE_ENV } from './config';
 
 mongoose.Promise = global.Promise;
 
-/* uncomment for database logger */
-// mongoose.set('debug', process.env.DEBUG !== 'production');
+/**
+ * Setting up the database
+ * DO NOT MODIFY UNLESS YOU ARE SURE WHAT YOU ARE DOING
+ */
 
 const opts = {
   useCreateIndex: true,
