@@ -63,6 +63,10 @@ const Tab = styled.div`
   display: inline-block;
 `;
 
+/**
+ * Add user page. Found at("/addUser")
+ * this page allows current members to add more members to the portal
+ */
 function AddUserPage() {
   const auth = useContext(AuthContext);
   const history = useHistory();

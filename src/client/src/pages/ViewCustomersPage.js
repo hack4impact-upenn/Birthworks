@@ -78,6 +78,11 @@ const programFilterOptions = [
 ];
 const program = 'Program';
 
+/**
+ * Found at ("/customers") and also redirected from the home path
+ * This is the main page and the page you are redirected to after logging in.
+ * This page will have a list of customers and filters.
+ */
 function ViewCustomersPage() {
   const [pageNumber, setPageNumber] = useState(1);
   const [maxPages, setMaxPages] = useState(1);

@@ -24,6 +24,13 @@ const Container = styled.div`
   }
 `;
 
+/**
+ * Generic dropdown component that allows you to create a dropdown
+ * @param {*} name The title of the dropdown button
+ * @param {*} options List of options to select from
+ * @param {*} handleChange function to get called when an option is selected
+ */
+
 function DropdownComponent({ name, options, handleChange }) {
   const optionList = options.map((option) => (
     <option key={option.value} value={option.value}>

@@ -13,7 +13,9 @@ const HomeLink = styled(Link)`
   font-size: 1.2rem;
   text-align: center;
 `;
-
+/**
+ * If the user entered an unvalid path, this page will be rendered
+ */
 function NotFoundPage() {
   return (
     <div className="container">

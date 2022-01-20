@@ -70,7 +70,13 @@ function customerInvalid(c: any, filter: any) {
   );
 }
 
-// must be post request because get request doesn't have a request body
+/**
+ * This returns (functions asa  get) all users specified by
+ * the filters, page_num and query in the request.
+ * req.page_num: number of the page you want to displat
+ * filters: membership and certification expiration
+ * query: string to find by in name, email or phone
+ */
 router.post('/', async (req, res) => {
   const { page_num } = req.body;
   const { filters } = req.body;

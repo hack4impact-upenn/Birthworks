@@ -1,6 +1,9 @@
 import { config as configDotenv } from 'dotenv';
 import { resolve } from 'path';
-
+/**
+ * Setting up the environments
+ * DO NOT MODIFY UNLESS YOU ARE SURE WHAT YOU ARE DOING
+ */
 switch (process.env.NODE_ENV) {
   case 'development':
     console.log("Environment is 'development'");

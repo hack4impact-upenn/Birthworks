@@ -4,7 +4,10 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import userRouter from '../routes/user.api';
 import customerRouter from '../routes/customer.api';
-
+/**
+ * Setting up server
+ * DO NOT MODIFY UNLESS YOU ARE SURE WHAT YOU ARE DOING
+ */
 const createServer = (): express.Express => {
   const app = express();
   app.set('port', process.env.PORT || 5000);

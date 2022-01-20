@@ -1,12 +1,6 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
 import CertificationBox from './CertificationBox';
 import 'bulma/css/bulma.min.css';
-import { Box, Block, Columns, Column } from 'react-bulma-components';
-
-// type CertProps = {
-//   certifications: ICert[],
-// };
 
 const NameHeading = styled.h1`
   font-size: 24px;
@@ -15,21 +9,15 @@ const NameHeading = styled.h1`
   margin-bottom: 0.5rem;
 `;
 
-// const CertificationContainer = styled.div`
-//   border: 1px solid black;
-//   border-radius: 20px;
-//   padding-top: 3rem;
-//   padding-right: 2.5rem;
-//   padding-bottom: 3rem;
-//   padding-left: 2.5rem;
-//   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-//     #ffffff;
-// `;
-
 const ListContainer = styled.div`
   margin-top: 1 rem;
   margin-bottom: 10 rem;
 `;
+
+/**
+ * Wrapper component that generates a list of certification boxes
+ * from all the certification the customer has
+ */
 
 function CertificationCard({ certifications, customer }) {
   const certificationList = certifications.map((certification) => (
@@ -44,8 +32,6 @@ function CertificationCard({ certifications, customer }) {
   } else {
     bodyContent = <ListContainer>{certificationList}</ListContainer>;
   }
-
-  // edited the name heading here to call the first and last name
 
   return (
     <div className="container">

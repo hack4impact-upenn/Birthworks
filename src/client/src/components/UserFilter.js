@@ -9,6 +9,10 @@ const Container = styled.div`
   width: 50%;
 `;
 
+/**
+ * A component that filters users by type.
+ */
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

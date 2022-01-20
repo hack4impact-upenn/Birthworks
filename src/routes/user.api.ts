@@ -12,7 +12,9 @@ import {
 const router = express.Router();
 const saltRounds = 10;
 
-/* account signup endpoint */
+/**
+ * Add a new user. Has to be logged in already
+ */
 router.post('/signup', async (req, res) => {
   const { first_name } = req.body;
   const { last_name } = req.body;
@@ -45,7 +47,9 @@ router.post('/signup', async (req, res) => {
   });
 });
 
-/* acccount login endpoint */
+/**
+ * Login a user that has already signed up to the chat
+ */
 router.post('/login', async (req, res) => {
   const { email } = req.body;
   const { password } = req.body;
@@ -76,7 +80,10 @@ router.post('/login', async (req, res) => {
   });
 });
 
-/* account jwt token refresh */
+/**
+ * This called frequently from the frontend, this is to ensure that the user
+ * is still logged in and has the correct tokens
+ */
 router.post('/refreshToken', (req, res) => {
   const { refreshToken } = req.body;
 
@@ -100,7 +107,9 @@ router.post('/refreshToken', (req, res) => {
     });
 });
 
-/* protected: get my info */
+/**
+ * get the information of the current user
+ */
 router.get('/me', auth, (req, res) => {
   const { userId } = req;
 
@@ -127,8 +136,10 @@ router.delete('/:user_id', async (req, res) => {
   }
 });
 
-/* fetch all users in database */
-// must be post request because get request doesn't have a request body
+/**
+ * Get all users in the database based on a query.
+ * Functions as a get
+ */
 router.post('/', (req, res) => {
   const { query } = req.body;
   let find_query = {};
@@ -146,14 +157,6 @@ router.post('/', (req, res) => {
   User.aggregate()
     .match(find_query)
     .then((result) => res.status(200).json({ success: true, result }))
-    .catch((e) => errorHandler(res, e));
-});
-
-/* TESTING ENDPOINTS BELOW (DELETE IN PRODUCTION) */
-/* delete all users in database */
-router.delete('/', (_, res) => {
-  User.deleteMany({})
-    .then(() => res.status(200).json({ success: true }))
     .catch((e) => errorHandler(res, e));
 });
 

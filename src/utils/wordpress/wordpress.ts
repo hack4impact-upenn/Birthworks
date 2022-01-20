@@ -13,6 +13,18 @@ const orderPath = 'src/utils/wordpress/orders.csv';
 const rows: any = [];
 const orderRows: any = [];
 
+/**
+ * This file has two parts. Main(), a function run from the terminal through
+ * the script npm run wordpress
+ * this function looks at the orders.csv and members.csv files in the
+ * current directory and uses them to populate the database. if you have new
+ * files, please make sure they follow the same format (you can read the previous csv
+ * files or figure it out from the code)
+ * The second part is the sync function
+ * This function is called every 24 hours from the main app.
+ * The function connects to the woocommerce database and pulls data from there.
+ */
+
 enum validOrders {
   aced = 'ACED Certification (Accelerated Childbirth Educator & Doula)',
   childbirth = 'Certified Childbirth Educator',

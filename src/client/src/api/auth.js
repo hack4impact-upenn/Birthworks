@@ -1,7 +1,6 @@
 /** Global object tracking authentication, access and refresh tokens. */
 
 import axios from 'axios';
-
 class Auth {
   accessToken = null;
 

@@ -16,7 +16,9 @@ const FooterContainer = styled.div`
   justify-content: space-around;
   z-index: 99;
 `;
-
+/**
+ * Wrapper around the whole, provides the footer and navbar
+ */
 const AppContainer = ({ children }) => {
   return (
     <div>
