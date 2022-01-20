@@ -15,7 +15,7 @@ const saltRounds = 10;
 /**
  * Add a new user. Has to be logged in already
  */
-router.post('/signup', async (req, res) => {
+router.post('/signup', auth, async (req, res) => {
   const { first_name } = req.body;
   const { last_name } = req.body;
   const { email } = req.body;
