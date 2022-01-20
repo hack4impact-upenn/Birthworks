@@ -213,7 +213,7 @@ const populateOrders = async () => {
       newCert.customer_id = customer._id;
       newCert.entry_date = orderRows[i]['Order Date'];
       newCert.completion_date = orderRows[i]['Order Date'];
-      let programDuration = getDuration(orderRows[i]['Item Name']);
+      const programDuration = getDuration(orderRows[i]['Item Name']);
       newCert.completion_date.setMonth(
         newCert.completion_date.getMonth() + programDuration
       );
@@ -234,6 +234,41 @@ const populateOrders = async () => {
         );
       }
       newCert.save();
+    } else {
+      if (orderRows[i]['Item Name'].split('').length > 0) {
+        const strings = orderRows[i]['Item Name'].split(' ');
+        if (
+          strings.length > 2 &&
+          strings[1] === 'Year' &&
+          strings[2] === 'Membership'
+        ) {
+          const memLength = parseInt(strings[0]);
+          if (!Number.isFinite(memLength)) {
+            continue;
+          }
+
+          if (flag) {
+            customer.membership_end.setFullYear(
+              customer.membership_start.getFullYear() + memLength
+            );
+            try {
+              customer.save();
+            } catch (err) {
+              console.log('err');
+            }
+          } else {
+            const newDate = new Date(customer.membership_start);
+            newDate.setFullYear(newDate.getFullYear() + memLength);
+            try {
+              await Customer.findByIdAndUpdate(customer._id, {
+                membership_end: newDate,
+              });
+            } catch (err) {
+              console.log('err');
+            }
+          }
+        }
+      }
     }
   }
 };
@@ -300,7 +335,6 @@ export const sync = async () => {
   const uri = process.env.WP_WOCOMMERCE_API;
   const token = `${username}:${password}`;
   const encodedToken = Buffer.from(token).toString('base64');
-  console.log(password);
 
   const config = {
     method: 'get',
@@ -346,7 +380,6 @@ export const sync = async () => {
 
         if (!customer) {
           if (!uniqueIdentifier || !(typeof uniqueIdentifier === 'string')) {
-            console.log('hi');
             continue;
           }
           customer = new Customer();
@@ -386,7 +419,7 @@ export const sync = async () => {
           newCert.customer_id = customer._id;
           newCert.entry_date = data[i]['date_created'];
           newCert.completion_date = data[i]['date_created'];
-          let programDuration = getDuration(orderRows[i]['Item Name']);
+          const programDuration = getDuration(data[i]['line_items'][0]['name']);
           newCert.completion_date.setMonth(
             newCert.completion_date.getMonth() + programDuration
           );
@@ -407,6 +440,41 @@ export const sync = async () => {
             );
           }
           newCert.save();
+        } else {
+          if (data[i]['line_items'][0]['name'].split('').length > 0) {
+            const strings = data[i]['line_items'][0]['name'].split(' ');
+            if (
+              strings.length > 2 &&
+              strings[1] === 'Year' &&
+              strings[2] === 'Membership'
+            ) {
+              const memLength = parseInt(strings[0]);
+              if (!Number.isFinite(memLength)) {
+                continue;
+              }
+
+              if (flag) {
+                customer.membership_end.setFullYear(
+                  customer.membership_start.getFullYear() + memLength
+                );
+                try {
+                  customer.save();
+                } catch (err) {
+                  console.log('err');
+                }
+              } else {
+                const newDate = new Date(customer.membership_start);
+                newDate.setFullYear(newDate.getFullYear() + memLength);
+                try {
+                  await Customer.findByIdAndUpdate(customer._id, {
+                    membership_end: newDate,
+                  });
+                } catch (err) {
+                  console.log('err');
+                }
+              }
+            }
+          }
         }
       }
     })
@@ -417,8 +485,7 @@ export const sync = async () => {
 
 const main = async () => {
   await db.open();
-  await readCustomerData();
+  //await readCustomerData();
   await readOrderData();
 };
-console.log(process.env.ATLAS_URI);
 main();

@@ -2,6 +2,7 @@ import { Customer } from '../models/customer.model';
 import { ICert } from '../models/cert.model';
 import express from 'express';
 import errorHandler from './error';
+import auth from '../middleware/auth';
 import mongoose from 'mongoose';
 
 const PAGE_SIZE = 10;
@@ -83,7 +84,7 @@ function correctType(c: any, type: any) {
  * filters: membership and certification expiration
  * query: string to find by in name, email or phone
  */
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
   const { page_num } = req.body;
   const { filters } = req.body;
   const { query } = req.body;
@@ -134,7 +135,7 @@ router.post('/', async (req, res) => {
  * field with the value of the notes param.
  */
 const patch_err_msg = 'Error updating customer notes';
-router.patch('/:customer_id', async (req, res) => {
+router.patch('/:customer_id', auth, async (req, res) => {
   const { customer_id } = req.params;
   const { notes } = req.body;
   Customer.findByIdAndUpdate(customer_id, { notes_write: notes }, (err, _) => {
@@ -149,7 +150,7 @@ router.patch('/:customer_id', async (req, res) => {
 /**
  * Get the information for a specific customer.
  */
-router.get('/:customer_id', async (req, res) => {
+router.get('/:customer_id', auth, async (req, res) => {
   const { customer_id } = req.params;
 
   try {
