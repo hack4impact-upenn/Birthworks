@@ -10,12 +10,12 @@ const Container = styled.div`
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   text-align: start;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 
   h1 {
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
     display: center;
     padding-bottom: 4px;

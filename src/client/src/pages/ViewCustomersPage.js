@@ -53,27 +53,27 @@ const membership = 'Membership Renewal';
 const programFilterOptions = [
   {
     name: 'Select',
-    value: 0,
+    value: 'Select',
   },
   {
     name: 'Childbirth Educator',
-    value: 1,
+    value: 'Childbirth Educator',
   },
   {
     name: 'Birth Doula',
-    value: 2,
+    value: 'Birth Doula',
   },
   {
     name: 'Postpartum Doula',
-    value: 3,
+    value: 'Postpartum Doula',
   },
   {
     name: 'ACED',
-    value: 4,
+    value: 'ACED (Childbirth Educator & Birth Doula)',
   },
   {
     name: 'Kangaroula',
-    value: 5,
+    value: 'Kangaroula',
   },
 ];
 const program = 'Program';
@@ -155,28 +155,15 @@ function ViewCustomersPage() {
   };
 
   const recertificationFilterHandler = (option) => {
-    let newFilters = {};
+    let newFilters = { ...filters };
+
     if (option.target.value < 0) {
-      if (filters.membership) {
-        // no recertification, has membership
-        newFilters = {
-          membership: filters.membership,
-        };
-      }
-      // else no recertifications or membership
+      console.log(option.target.value);
+      delete newFilters['recertification'];
     } else {
-      if (filters.membership) {
-        // has recertication and membership
-        newFilters = {
-          recertification: option.target.value,
-          membership: filters.membership,
-        };
-      } else {
-        // has recertification, no membership
-        newFilters = {
-          recertification: option.target.value,
-        };
-      }
+      console.log(newFilters);
+      newFilters['recertification'] = option.target.value;
+      console.log(newFilters);
     }
     getCustomers(pageNumber, query, newFilters);
     setFilters(newFilters);
@@ -184,36 +171,25 @@ function ViewCustomersPage() {
 
   const membershipFilterHandler = (option) => {
     console.log(`membership ${option.target.value}`);
-    let newFilters = {};
+    let newFilters = { ...filters };
     if (option.target.value < 0) {
-      if (filters.recertification) {
-        // no membership, has certification
-        newFilters = {
-          recertification: filters.recertification,
-        };
-      }
-      // else no membership or recertification
+      delete newFilters['membership'];
     } else {
-      if (filters.recertification) {
-        // has membership and recertification
-        newFilters = {
-          recertification: filters.recertification,
-          membership: option.target.value,
-        };
-      } else {
-        // has membership, no recertification
-        newFilters = {
-          membership: option.target.value,
-        };
-      }
+      newFilters['membership'] = option.target.value;
     }
     getCustomers(pageNumber, query, newFilters);
     setFilters(newFilters);
   };
 
-  // TODO: implement program filtering in GET (POST) customers endpoint
   const programFilterHandler = (option) => {
-    console.log(`program filter: ${option.target.value}`);
+    const newFilters = { ...filters };
+    if (option.target.value == 'Select') {
+      delete newFilters['type'];
+    } else {
+      newFilters['type'] = option.target.value;
+    }
+    getCustomers(pageNumber, query, newFilters);
+    setFilters(newFilters);
   };
 
   return (
@@ -241,7 +217,10 @@ function ViewCustomersPage() {
         rowLink={(customer) => redirectToCustomerPage(customer)}
       ></Table>
       <div>
-        <div class="columns is-mobile is-centered padding-top: 20px">
+        <div
+          class="columns is-mobile is-centered"
+          style={{ marginBottom: '50px' }}
+        >
           <div
             onClick={goToStart}
             style={{ cursor: 'pointer' }}

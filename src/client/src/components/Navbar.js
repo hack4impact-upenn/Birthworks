@@ -32,7 +32,7 @@ const HeaderMenuWrapper = styled.div`
 const Username = styled.div`
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 5px;
 `;
 const Dropdown = styled.div`
