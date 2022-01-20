@@ -70,6 +70,12 @@ function customerInvalid(c: any, filter: any) {
   );
 }
 
+function correctType(c: any, type: any) {
+  const temp_c = JSON.parse(JSON.stringify(c));
+  const certs = temp_c.cert_obj;
+  return certs.some((cert: any) => cert.name === type);
+}
+
 /**
  * This returns (functions asa  get) all users specified by
  * the filters, page_num and query in the request.
@@ -108,6 +114,12 @@ router.post('/', async (req, res) => {
     .then((result) => {
       // find a better way to do this
       result = result.filter((customer) => customerInvalid(customer, filters));
+
+      if (filters && filters.type) {
+        result = result.filter((customer) =>
+          correctType(customer, filters.type)
+        );
+      }
       const maxPages = Math.ceil(result.length / PAGE_SIZE);
       const begin = (page_num - 1) * PAGE_SIZE;
       result = result.splice(begin, PAGE_SIZE);
@@ -134,7 +146,9 @@ router.patch('/:customer_id', async (req, res) => {
       .json({ success: true, result: 'Notes successfully updated' });
   });
 });
-
+/**
+ * Get the information for a specific customer.
+ */
 router.get('/:customer_id', async (req, res) => {
   const { customer_id } = req.params;
 

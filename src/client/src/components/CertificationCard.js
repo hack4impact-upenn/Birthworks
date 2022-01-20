@@ -17,8 +17,9 @@ const ListContainer = styled.div`
 /**
  * Wrapper component that generates a list of certification boxes
  * from all the certification the customer has
+ * @param {*} certifications the certifications of the user
+ * @param {*} customer The customer we are displaying
  */
-
 function CertificationCard({ certifications, customer }) {
   const certificationList = certifications.map((certification) => (
     <div className="block">

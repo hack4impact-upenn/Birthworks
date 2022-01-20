@@ -11,6 +11,7 @@ const StyledTable = styled.table`
   border: 1px solid #000000;
   display: table;
   table-layout: auto;
+  margin-bottom: 20px;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px 10px;
