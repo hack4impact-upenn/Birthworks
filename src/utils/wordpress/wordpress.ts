@@ -67,6 +67,32 @@ function getName(s: string): string {
   return 'unknown type';
 }
 
+function getDuration(s: string): number {
+  switch (s) {
+    case 'ACED Certification (Accelerated Childbirth Educator & Doula)':
+      return 30;
+    case 'Certified Childbirth Educator':
+      return 24;
+    case 'Doula Program (International)':
+      return 18;
+    case 'Doula Program (US Only)':
+      return 18;
+    case 'Postpartum Doula Certification':
+      return 12;
+    case 'Postpartum Doula Certification Program':
+      return 12;
+    case 'Birth Doula Certification-Indonesia':
+      return 18;
+    case 'Certification - Childbirth Educator':
+      return 24;
+    case 'Kangaroula (Advanced) Certification':
+      return 18;
+    case 'Certification - Birth Doula':
+      return 18;
+  }
+  return 12;
+}
+
 function removeEmpty(obj: any) {
   return Object.fromEntries(
     Object.entries(obj).filter(
@@ -187,11 +213,14 @@ const populateOrders = async () => {
       newCert.customer_id = customer._id;
       newCert.entry_date = orderRows[i]['Order Date'];
       newCert.completion_date = orderRows[i]['Order Date'];
-      newCert.completion_date.setFullYear(
-        newCert.completion_date.getFullYear() + 1
+      let programDuration = getDuration(orderRows[i]['Item Name']);
+      newCert.completion_date.setMonth(
+        newCert.completion_date.getMonth() + programDuration
       );
       newCert.certificate = orderRows[i]['Order Date'];
-      newCert.certificate.setFullYear(newCert.certificate.getFullYear() + 1);
+      newCert.certificate.setMonth(
+        newCert.certificate.getMonth() + programDuration
+      );
       newCert.recertification_dates = [newCert.certificate];
       newCert.mentor = orderRows[i]['mentor'];
       newCert.name = newName;
@@ -357,12 +386,13 @@ export const sync = async () => {
           newCert.customer_id = customer._id;
           newCert.entry_date = data[i]['date_created'];
           newCert.completion_date = data[i]['date_created'];
-          newCert.completion_date.setFullYear(
-            newCert.completion_date.getFullYear() + 1
+          let programDuration = getDuration(orderRows[i]['Item Name']);
+          newCert.completion_date.setMonth(
+            newCert.completion_date.getMonth() + programDuration
           );
           newCert.certificate = data[i]['date_created'];
-          newCert.certificate.setFullYear(
-            newCert.certificate.getFullYear() + 1
+          newCert.certificate.setMonth(
+            newCert.certificate.getMonth() + programDuration
           );
           newCert.recertification_dates = [newCert.certificate];
           newCert.mentor = '';
@@ -390,5 +420,5 @@ const main = async () => {
   await readCustomerData();
   await readOrderData();
 };
-
+console.log(process.env.ATLAS_URI);
 main();
