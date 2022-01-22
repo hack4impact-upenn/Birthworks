@@ -485,7 +485,7 @@ export const sync = async () => {
 
 const main = async () => {
   await db.open();
-  //await readCustomerData();
+  await readCustomerData();
   await readOrderData();
 };
 main();
