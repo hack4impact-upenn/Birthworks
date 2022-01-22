@@ -123,7 +123,7 @@ router.get('/me', auth, (req, res) => {
     .catch((err) => errorHandler(res, err.message));
 });
 
-router.delete('/:user_id', async (req, res) => {
+router.delete('/:user_id', auth, async (req, res) => {
   const { user_id } = req.params;
   // console.log(user_id);
   try {
