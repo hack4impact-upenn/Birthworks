@@ -6,7 +6,7 @@ Dashboard to access, filter, and search users in birthworks unified databse.
 
 **Team Members:**
 
-- Ben Demmers
+- Ben Demers
 - Silvi Kabra
 - Ricky Raup
 - Grace Fujinaga
